@@ -9,7 +9,7 @@
     'image' => $page?->heroImage,
     'art' => 'training-card',
 ])
-<section class="section progidx" data-accent="amber">
+<section class="section progidx" data-accent="teal">
     <div class="container">
         <form class="filters" method="get" action="{{ lroute('programs.index') }}" aria-label="{{ __('programs.filter') }}">
             <div class="filters__chips" role="group" aria-label="{{ __('programs.category') }}">

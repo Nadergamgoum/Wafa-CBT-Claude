@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EngagementController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InsightController;
 use App\Http\Controllers\InstallController;
@@ -39,6 +40,8 @@ foreach (['ar' => 'ar', 'en' => ''] as $locale => $prefix) {
             Route::get('insights/{post:slug}', [InsightController::class, 'show'])->name('insights.show');
             Route::get('training-programs', [ProgramController::class, 'index'])->name('programs.index');
             Route::get('training-programs/{program:slug}', [ProgramController::class, 'show'])->name('programs.show');
+            Route::get('corporate-engagements', [EngagementController::class, 'index'])->name('engagements.index');
+            Route::get('corporate-engagements/{engagement:slug}', [EngagementController::class, 'show'])->name('engagements.show');
             Route::get('{category}/{service}', [ServiceController::class, 'show'])
                 ->where(['category' => $reserved.'[a-z0-9-]+', 'service' => '[a-z0-9-]+'])->name('service');
             // Single-segment URLs serve both service-category landing pages and CMS pages.

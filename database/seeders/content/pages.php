@@ -2,82 +2,115 @@
 
 $legalNote = tx(
     'This text is provided as a starting template and should be reviewed by WAFA’s legal advisor before publication.',
-    'هذا النص نموذج مبدئي، ويجب مراجعته من قبل المستشار القانوني لوفاء قبل النشر.'
+    'هذا النص نموذج مبدئي، ويجب مراجعته من قبل المستشار القانوني لـ WAFA قبل النشر.'
 );
 
 return [
     [
         'key' => 'about', 'slug' => 'about', 'template' => 'about', 'sort' => 2,
-        'title' => tx('About WAFA', 'عن وفاء'),
+        'title' => tx('About WAFA', 'عن WAFA'),
         'intro' => tx(
-            'WAFA brings together corporate medical insurance, employee benefits and insurance brokerage with HR consulting, organizational development, training and coaching.',
-            'تجمع وفاء بين التأمين الطبي للشركات ومزايا الموظفين والوساطة التأمينية من جهة، والاستشارات في الموارد البشرية والتطوير المؤسسي والتدريب والكوتشينغ من جهة أخرى.'
+            'Connecting insurance, people and growth. WAFA is a professional consultancy firm specializing in insurance brokerage, human resources consulting and training.',
+            'نربط بين التأمين والأفراد والنمو. WAFA مؤسسة استشارية متخصصة في الوساطة التأمينية واستشارات الموارد البشرية والتدريب.'
         ),
-        'seo' => SEO(tx('About WAFA', 'عن وفاء'), tx('Learn how WAFA combines corporate medical insurance, employee benefits and people solutions in one integrated approach.', 'تعرّف على كيفية جمع وفاء بين التأمين الطبي للشركات ومزايا الموظفين وحلول الموارد البشرية في منهجية واحدة متكاملة.')),
+        'seo' => SEO(
+            tx('About WAFA — Insurance Brokerage, HR Consulting & Training in Egypt', 'عن WAFA — الوساطة التأمينية واستشارات الموارد البشرية والتدريب في مصر'),
+            tx('WAFA is a professional consultancy firm in Egypt specializing in insurance brokerage, human resources consulting and training, founded by Dr. Wafaa Hashem.', 'WAFA مؤسسة استشارية في مصر متخصصة في الوساطة التأمينية واستشارات الموارد البشرية والتدريب، أسستها الدكتورة وفاء هاشم.'),
+            tx('insurance brokerage and HR consulting Egypt', 'الوساطة التأمينية واستشارات الموارد البشرية في مصر'),
+        ),
         'sections' => [
             B('split_feature', [
-                'background' => 'white', 'image_side' => 'end', 'art' => 'about',
+                'background' => 'white', 'image_side' => 'end', 'art' => 'beyond',
                 'eyebrow' => tx('Who we are', 'من نحن'),
-                'title' => tx('Protecting people. *Strengthening businesses.*', 'نحمي الأفراد. *ونمكّن المؤسسات.*'),
+                'title' => tx('Connecting insurance, *people and growth*', 'نربط بين التأمين *والأفراد والنمو*'),
                 'body' => tx(
-                    "Organizations depend on their people — and people depend on the protection and opportunities their organization provides.\n\nWAFA works at that intersection. Medical insurance and employee health benefits are at the core of what we do, supported by life, auto and property insurance. Alongside insurance, we help organizations build strong HR foundations, develop their teams and support their leaders.",
-                    "تعتمد المؤسسات على أفرادها، ويعتمد الأفراد على الحماية والفرص التي توفرها لهم مؤسساتهم.\n\nوفي هذه المساحة تعمل وفاء. فالتأمين الطبي ومزايا الموظفين الصحية في صميم عملنا، يدعمها التأمين على الحياة والمركبات والممتلكات. وإلى جانب التأمين، نساعد المؤسسات على بناء أسس قوية للموارد البشرية وتطوير فرقها ودعم قادتها."
+                    "We are a professional consultancy firm specializing in insurance brokerage, human resources consulting and training.\n\nWith a foundation built on trust, collaboration and innovation, we empower our clients to overcome challenges, enhance performance and achieve sustainable success in a dynamic business world.\n\nOur firm combines deep expertise, effective communication and a genuine passion for continuous development to deliver integrated solutions that help organizations and individuals thrive.",
+                    "نحن مؤسسة استشارية متخصصة في الوساطة التأمينية واستشارات الموارد البشرية والتدريب.\n\nانطلاقًا من أساس قائم على الثقة والتعاون والابتكار، نمكّن عملاءنا من تجاوز التحديات وتحسين الأداء وتحقيق نجاح مستدام في بيئة أعمال متغيرة.\n\nوتجمع مؤسستنا بين الخبرة العميقة والتواصل الفعّال والشغف الحقيقي بالتطوير المستمر، لتقديم حلول متكاملة تساعد المؤسسات والأفراد على النمو والازدهار."
                 ),
                 'points' => L(
-                    ['Corporate medical insurance & employee health benefits', 'Insurance brokerage for life, auto and property', 'HR consulting & organizational development', 'Training, business coaching & executive coaching'],
-                    ['التأمين الطبي للشركات ومزايا الموظفين الصحية', 'الوساطة التأمينية في الحياة والمركبات والممتلكات', 'الاستشارات في الموارد البشرية والتطوير المؤسسي', 'التدريب وكوتشينغ الأعمال والكوتشينغ التنفيذي']
+                    ['Insurance brokerage & corporate medical insurance management', 'Training & professional development', 'HR consulting & organizational development', 'Business & executive coaching'],
+                    ['الوساطة التأمينية وإدارة التأمين الطبي للشركات', 'التدريب والتطوير المهني', 'استشارات الموارد البشرية والتطوير المؤسسي', 'كوتشينغ الأعمال والكوتشينغ التنفيذي']
+                ),
+            ]),
+            B('founder', [
+                'background' => 'ivory', 'art' => 'person',
+                'photo' => M('founder'),
+                'eyebrow' => tx('Founded by', 'التأسيس'),
+                'name' => tx('Dr. Wafaa Hashem', 'الدكتورة وفاء هاشم'),
+                'role' => tx('Founder', 'المؤسِّسة'),
+                'bio' => tx(
+                    'Dr. Wafaa Hashem founded WAFA bringing over 25 years of experience in Egypt and abroad across HR management, insurance brokerage and professional training — as well as extensive academic experience teaching in postgraduate programs.',
+                    'أسست الدكتورة وفاء هاشم WAFA مستندةً إلى خبرة تزيد على 25 عامًا في مصر وخارجها في إدارة الموارد البشرية والوساطة التأمينية والتدريب المهني، إلى جانب خبرة أكاديمية واسعة في التدريس ببرامج الدراسات العليا.'
+                ),
+                'cta_label' => tx('Talk to Our Experts', 'تحدّث إلى خبرائنا'),
+                'cta_link' => '/contact#contact-form',
+            ]),
+            B('vision_mission', [
+                'background' => 'dark',
+                'eyebrow' => tx('Mission and vision', 'الرسالة والرؤية'),
+                'title' => tx('Where we are *heading*', 'إلى أين *نتجه*'),
+                'vision_title' => tx('Vision', 'الرؤية'),
+                'vision' => tx(
+                    'To be the most trusted and innovative partner in Egypt that connects the worlds of insurance, human resources and training — building sustainable growth for our clients through knowledge, communication and continuous improvement.',
+                    'أن نكون الشريك الأكثر ثقة وابتكارًا في مصر، الذي يربط بين عوالم التأمين والموارد البشرية والتدريب، ويبني نموًا مستدامًا لعملائه من خلال المعرفة والتواصل والتحسين المستمر.'
+                ),
+                'mission_title' => tx('Mission', 'الرسالة'),
+                'mission' => tx(
+                    'We deliver trusted and innovative solutions in insurance brokerage, human resources consultancy and professional training. We are dedicated to empowering organizations and individuals through trust, expertise and innovation — fostering effective communication, continuous learning and sustainable development to achieve lasting success.',
+                    'نقدّم حلولًا موثوقة ومبتكرة في الوساطة التأمينية واستشارات الموارد البشرية والتدريب المهني. ونلتزم بتمكين المؤسسات والأفراد من خلال الثقة والخبرة والابتكار، وتعزيز التواصل الفعّال والتعلّم المستمر والتنمية المستدامة لتحقيق نجاح دائم.'
                 ),
             ]),
             B('pillars', [
-                'layout' => 'dark', 'background' => 'dark',
-                'eyebrow' => tx('What we stand for', 'ما نؤمن به'),
-                'title' => tx('The principles behind *our work*', 'المبادئ التي *نعمل بها*'),
+                'layout' => 'lines', 'background' => 'white',
+                'eyebrow' => tx('Core values', 'قيمنا الأساسية'),
+                'title' => tx('The values behind *our work*', 'القيم التي *نعمل بها*'),
                 'items' => [
-                    I('badge-check', tx('Expertise', 'الخبرة'), tx('We bring specialist knowledge to every recommendation and explain it clearly.', 'نقدّم معرفة متخصصة في كل توصية ونشرحها بوضوح.')),
-                    I('target', tx('Tailored solutions', 'حلول مخصّصة'), tx('Every organization is different, so every solution starts with listening.', 'كل مؤسسة مختلفة، لذلك يبدأ كل حل بالإصغاء.')),
-                    I('heart-handshake', tx('Partnership', 'الشراكة'), tx('We aim for long-term relationships built on trust and responsiveness.', 'نسعى إلى علاقات طويلة الأمد قائمة على الثقة وسرعة الاستجابة.')),
-                    I('puzzle', tx('Integrated approach', 'منهجية متكاملة'), tx('Insurance and people solutions that work together, not in isolation.', 'حلول تأمينية وحلول للأفراد تعمل معًا، لا بمعزل عن بعضها.')),
+                    I('shield-check', tx('Integrity', 'النزاهة'), tx('We build trust through honesty, transparency and ethical practices in every interaction.', 'نبني الثقة من خلال الصدق والشفافية والممارسات الأخلاقية في كل تعامل.')),
+                    I('badge-check', tx('Expertise', 'الخبرة'), tx('Our deep knowledge of insurance and human resources enables us to deliver solutions that are practical, effective and aligned with client needs.', 'تمكّننا معرفتنا العميقة بالتأمين والموارد البشرية من تقديم حلول عملية وفعّالة ومتوافقة مع احتياجات العملاء.')),
+                    I('handshake', tx('Collaboration', 'التعاون'), tx('We believe in the power of connection — fostering strong relationships, teamwork and open communication to achieve shared goals.', 'نؤمن بقوة التواصل، فنعزّز العلاقات المتينة والعمل الجماعي والتواصل المفتوح لتحقيق أهداف مشتركة.')),
+                    I('book-open', tx('Continuous learning', 'التعلّم المستمر'), tx('We are committed to ongoing professional growth, embracing innovation and the latest industry updates to stay ahead and add real value.', 'نلتزم بالنمو المهني المستمر، ونتبنّى الابتكار وأحدث مستجدات القطاع لنبقى في المقدمة ونضيف قيمة حقيقية.')),
+                    I('heart-handshake', tx('Client focus', 'التركيز على العميل'), tx('Our clients are at the heart of everything we do. We listen, understand and tailor our services to create impactful and lasting results.', 'عملاؤنا في صميم كل ما نقوم به؛ نستمع ونفهم ونصمّم خدماتنا لتحقيق نتائج مؤثرة ودائمة.')),
+                ],
+            ]),
+            B('pillars', [
+                'layout' => 'numbers', 'background' => 'mist',
+                'eyebrow' => tx('Why WAFA', 'لماذا WAFA'),
+                'title' => tx('Why organizations *choose us*', 'لماذا *تختارنا* المؤسسات'),
+                'items' => [
+                    I(null, tx('Expertise', 'الخبرة'), tx('Deep understanding of HR, insurance and business operations.', 'فهم عميق للموارد البشرية والتأمين وعمليات الأعمال.')),
+                    I(null, tx('Excellence', 'التميّز'), tx('Trainers and coaches with hands-on experience.', 'مدرّبون وكوتشز يتمتعون بخبرة عملية.')),
+                    I(null, tx('Tailored solutions', 'حلول مخصّصة'), tx('Tailored solutions for every industry and organization size.', 'حلول مخصّصة لكل قطاع ولكل حجم مؤسسة.')),
+                    I(null, tx('Partnership', 'الشراكة'), tx('Long-term partnerships built on trust and transparency.', 'شراكات طويلة الأمد مبنية على الثقة والشفافية.')),
                 ],
             ]),
             B('ecosystem', [
                 'background' => 'white',
-                'eyebrow' => tx('An integrated approach', 'منهجية متكاملة'),
+                'eyebrow' => tx('Business scope', 'نطاق أعمالنا'),
                 'title' => tx('How our services *connect*', 'كيف *تترابط* خدماتنا'),
                 'lead' => tx('Each service stands on its own — and together they help organizations look after their people more completely.', 'كل خدمة قائمة بذاتها، وتساعد مجتمعةً المؤسسات على رعاية أفرادها بصورة أشمل.'),
                 'center_label' => tx('Your organization', 'مؤسستك'),
                 'items' => [
-                    I('heart-pulse', tx('Medical insurance', 'التأمين الطبي'), tx('Our flagship service.', 'خدمتنا الرئيسية.')),
-                    I('shield-check', tx('Life, auto & property', 'الحياة والمركبات والممتلكات'), tx('Protection for people and assets.', 'حماية للأفراد والأصول.')),
-                    I('users-round', tx('HR consulting', 'استشارات الموارد البشرية'), tx('Foundations for people management.', 'أسس لإدارة الأفراد.')),
-                    I('network', tx('Organizational development', 'التطوير المؤسسي'), tx('Alignment and transformation.', 'المواءمة والتحوّل.')),
-                    I('graduation-cap', tx('Training', 'التدريب'), tx('Skills for teams.', 'مهارات للفرق.')),
-                    I('compass', tx('Coaching', 'الكوتشينغ'), tx('Support for owners and leaders.', 'دعم لأصحاب الأعمال والقادة.')),
+                    I('heart-pulse', tx('Medical insurance', 'التأمين الطبي'), tx('Corporate medical insurance management.', 'إدارة التأمين الطبي للشركات.')),
+                    I('shield-check', tx('Insurance brokerage', 'الوساطة التأمينية'), tx('Life, auto and property insurance.', 'التأمين على الحياة والمركبات والممتلكات.')),
+                    I('users-round', tx('HR consulting', 'استشارات الموارد البشرية'), tx('Efficient, compliant, people-focused HR systems.', 'أنظمة موارد بشرية فعّالة وملتزمة ومتمحورة حول الأفراد.')),
+                    I('network', tx('Organizational development', 'التطوير المؤسسي'), tx('Structures aligned with business goals.', 'هياكل متوافقة مع أهداف العمل.')),
+                    I('graduation-cap', tx('Training', 'التدريب'), tx('Professional development for teams.', 'التطوير المهني للفرق.')),
+                    I('compass', tx('Coaching', 'الكوتشينغ'), tx('Business and executive coaching.', 'كوتشينغ الأعمال والكوتشينغ التنفيذي.')),
                 ],
             ]),
-            B('process', [
-                'layout' => 'cards', 'background' => 'ivory',
-                'eyebrow' => tx('How we work', 'كيف نعمل'),
-                'title' => tx('A consistent way of *working with you*', 'أسلوب ثابت في *العمل معك*'),
-                'items' => [
-                    ['title' => tx('Understand', 'الفهم'), 'text' => tx('We start by listening to your goals and context.', 'نبدأ بالإصغاء لأهدافك وسياقك.')],
-                    ['title' => tx('Design', 'التصميم'), 'text' => tx('We propose practical, tailored solutions.', 'نقترح حلولًا عملية ومخصّصة.')],
-                    ['title' => tx('Deliver', 'التنفيذ'), 'text' => tx('We implement with your team, step by step.', 'ننفّذ مع فريقك خطوة بخطوة.')],
-                    ['title' => tx('Support', 'الدعم'), 'text' => tx('We stay involved and keep improving.', 'نبقى إلى جانبك ونواصل التحسين.')],
-                ],
-            ]),
-            B('team', ['background' => 'white', 'eyebrow' => tx('Our team', 'فريقنا'), 'title' => tx('The people behind *WAFA*', 'الفريق وراء *وفاء*')]),
+            B('team', ['background' => 'white', 'eyebrow' => tx('Our team', 'فريقنا'), 'title' => tx('The people behind *WAFA*', 'الفريق وراء *WAFA*')]),
             B('testimonials', ['background' => 'mist', 'eyebrow' => tx('Client perspectives', 'آراء العملاء'), 'title' => tx('What our clients *say*', 'ماذا *يقول* عملاؤنا')]),
-            B('cta_band', ['layout' => 'contact', 'eyebrow' => tx('Work with us', 'اعمل معنا'), 'title' => tx('Let’s start with a *conversation*', 'لنبدأ *بحوار*'), 'lead' => tx('Tell us about your organization and what you would like to achieve.', 'حدّثنا عن مؤسستك وما تودّ تحقيقه.'), 'cta_label' => tx('Talk to Our Experts', 'تحدّث إلى خبرائنا'), 'cta_link' => '/contact#contact-form']),
+            B('cta_band', ['layout' => 'contact', 'eyebrow' => tx('Work with us', 'اعمل معنا'), 'title' => tx('Let’s start with a *conversation*', 'لنبدأ *بحوار*'), 'lead' => tx('Whether you’re seeking professional consulting, training or insurance solutions, our team is ready to assist you.', 'سواء كنت تبحث عن استشارات مهنية أو تدريب أو حلول تأمينية، فريقنا مستعد لمساعدتك.'), 'cta_label' => tx('Talk to Our Experts', 'تحدّث إلى خبرائنا'), 'cta_link' => '/contact#contact-form']),
         ],
     ],
     [
         'key' => 'contact', 'slug' => 'contact', 'template' => 'contact', 'sort' => 3,
         'title' => tx('Contact us', 'تواصل معنا'),
         'intro' => tx(
-            'Whether you are reviewing your medical insurance, planning HR improvements or looking for training, our team is ready to help.',
-            'سواء كنت تراجع تأمينك الطبي أو تخطط لتحسينات في الموارد البشرية أو تبحث عن تدريب، فريقنا مستعد لمساعدتك.'
+            'We value every message and inquiry. Whether you’re seeking professional consulting, training or insurance solutions, our team is ready to assist you.',
+            'نقدّر كل رسالة واستفسار. سواء كنت تبحث عن استشارات مهنية أو تدريب أو حلول تأمينية، فريقنا مستعد لمساعدتك.'
         ),
-        'seo' => SEO(tx('Contact WAFA', 'تواصل مع وفاء'), tx('Contact WAFA about corporate medical insurance, employee benefits, HR consulting, training or coaching.', 'تواصل مع وفاء بشأن التأمين الطبي للشركات أو مزايا الموظفين أو الاستشارات في الموارد البشرية أو التدريب أو الكوتشينغ.')),
+        'seo' => SEO(tx('Contact WAFA', 'تواصل مع WAFA'), tx('Contact WAFA about corporate medical insurance, employee benefits, HR consulting, training or coaching.', 'تواصل مع WAFA بشأن التأمين الطبي للشركات أو مزايا الموظفين أو الاستشارات في الموارد البشرية أو التدريب أو الكوتشينغ.')),
         'sections' => [
             B('faq', ['source' => 'auto', 'background' => 'mist', 'eyebrow' => tx('Before you get in touch', 'قبل أن تتواصل معنا'), 'title' => tx('Common *questions*', '*أسئلة* شائعة')]),
         ],
@@ -86,23 +119,39 @@ return [
         'key' => 'insights', 'slug' => 'insights', 'template' => 'insights', 'sort' => 4,
         'title' => tx('Insights', 'رؤى ومقالات'),
         'intro' => tx('Practical perspectives on medical insurance, employee benefits, HR and leadership.', 'رؤى عملية حول التأمين الطبي ومزايا الموظفين والموارد البشرية والقيادة.'),
-        'seo' => SEO(tx('Insights on Employee Benefits, HR & Leadership', 'رؤى حول مزايا الموظفين والموارد البشرية والقيادة'), tx('Articles and practical guidance on corporate medical insurance, employee benefits, HR and leadership from WAFA.', 'مقالات وإرشادات عملية حول التأمين الطبي للشركات ومزايا الموظفين والموارد البشرية والقيادة من وفاء.')),
+        'seo' => SEO(tx('Insights on Employee Benefits, HR & Leadership', 'رؤى حول مزايا الموظفين والموارد البشرية والقيادة'), tx('Articles and practical guidance on corporate medical insurance, employee benefits, HR and leadership from WAFA.', 'مقالات وإرشادات عملية حول التأمين الطبي للشركات ومزايا الموظفين والموارد البشرية والقيادة من WAFA.')),
         'sections' => [],
     ],
     [
         'key' => 'programs', 'slug' => 'training-programs', 'template' => 'programs', 'sort' => 5,
         'title' => tx('Training programs', 'البرامج التدريبية'),
-        'intro' => tx('Practical programs for managers, HR teams and professionals — available in different formats or tailored for your organization.', 'برامج عملية للمديرين وفرق الموارد البشرية والمهنيين، متاحة بأساليب تقديم مختلفة أو مخصّصة لمؤسستك.'),
-        'seo' => SEO(tx('Training Programs', 'البرامج التدريبية'), tx('Explore WAFA training programs in leadership, HR, professional skills and employee benefits awareness.', 'استكشف برامج وفاء التدريبية في القيادة والموارد البشرية والمهارات المهنية والتوعية بمزايا الموظفين.')),
+        'intro' => tx('Training program areas in strategic human resources management, leadership and team building, and soft skills — delivered as customized in-house or online workshops.', 'مجالات برامج تدريبية في الإدارة الاستراتيجية للموارد البشرية، والقيادة وبناء الفرق، والمهارات الشخصية، تُقدَّم كورش عمل مخصّصة داخل المؤسسة أو عبر الإنترنت.'),
+        'seo' => SEO(tx('Training Programs', 'البرامج التدريبية'), tx('WAFA training program areas: strategic human resources management, leadership and team building, and soft skills — customized in-house or online workshops.', 'مجالات برامج WAFA التدريبية: الإدارة الاستراتيجية للموارد البشرية، والقيادة وبناء الفرق، والمهارات الشخصية، كورش عمل مخصّصة داخل المؤسسة أو عبر الإنترنت.')),
         'sections' => [
             B('cta_band', ['layout' => 'soft', 'eyebrow' => tx('In-house training', 'التدريب داخل المؤسسة'), 'title' => tx('Need a program *designed for your team*?', 'هل تحتاج إلى برنامج *مصمّم لفريقك*؟'), 'lead' => tx('We tailor content, examples and format to your objectives.', 'نخصّص المحتوى والأمثلة وأسلوب التقديم وفق أهدافك.'), 'cta_label' => tx('Request a proposal', 'اطلب عرضًا'), 'cta_link' => '/contact#contact-form']),
+        ],
+    ],
+    [
+        'key' => 'engagements', 'slug' => 'corporate-engagements', 'template' => 'engagements', 'sort' => 6,
+        'title' => tx('Corporate Engagements', 'فعاليات الشركات'),
+        'intro' => tx(
+            'Interactive corporate sessions designed to strengthen team participation and encourage active engagement through structured group activities and experiential exercises.',
+            'جلسات مؤسسية تفاعلية مصمّمة لتعزيز مشاركة الفرق وتشجيع التفاعل الفعّال من خلال أنشطة جماعية منظّمة وتمارين تجريبية.'
+        ),
+        'seo' => SEO(
+            tx('Corporate Team Engagement Programs', 'برامج التفاعل والمشاركة المؤسسية للفرق'),
+            tx('Corporate team engagement and participation activities by WAFA — structured group activities and experiential exercises that strengthen communication, trust and teamwork.', 'أنشطة التفاعل والمشاركة المؤسسية من WAFA: أنشطة جماعية منظّمة وتمارين تجريبية تعزّز التواصل والثقة والعمل الجماعي.'),
+            tx('corporate team engagement', 'التفاعل المؤسسي للفرق'),
+        ),
+        'sections' => [
+            B('cta_band', ['layout' => 'soft', 'eyebrow' => tx('For your team', 'لفريقك'), 'title' => tx('Request a corporate *engagement program*', 'اطلب *برنامج تفاعل مؤسسي*'), 'lead' => tx('Tell us about your team and what you would like the session to achieve.', 'حدّثنا عن فريقك وما تودّ أن تحققه الجلسة.'), 'cta_label' => tx('Request a Corporate Engagement Program', 'اطلب برنامج تفاعل مؤسسي'), 'cta_link' => '/contact#contact-form', 'cta2_label' => tx('Chat on WhatsApp', 'تواصل عبر واتساب'), 'cta2_link' => '@whatsapp']),
         ],
     ],
     [
         'key' => 'privacy', 'slug' => 'privacy-policy', 'template' => 'legal', 'sort' => 10,
         'title' => tx('Privacy policy', 'سياسة الخصوصية'),
         'intro' => tx('How we collect, use and protect personal information submitted through this website.', 'كيف نجمع المعلومات الشخصية المرسلة عبر هذا الموقع ونستخدمها ونحميها.'),
-        'seo' => SEO(tx('Privacy Policy', 'سياسة الخصوصية'), tx('How WAFA collects, uses and protects personal information submitted through this website.', 'كيف تجمع وفاء المعلومات الشخصية المرسلة عبر هذا الموقع وتستخدمها وتحميها.')),
+        'seo' => SEO(tx('Privacy Policy', 'سياسة الخصوصية'), tx('How WAFA collects, uses and protects personal information submitted through this website.', 'كيف تجمع WAFA المعلومات الشخصية المرسلة عبر هذا الموقع وتستخدمها وتحميها.')),
         'sections' => [B('rich_text', ['narrow' => true, 'body' => tx(
             '<p><em>'.$legalNote['en'].'</em></p>
 <h2>Information we collect</h2><p>When you contact us through a form on this website, we collect the details you provide, such as your name, company, email address, phone number, area of interest and message.</p>
@@ -124,7 +173,7 @@ return [
         'key' => 'terms', 'slug' => 'terms-of-use', 'template' => 'legal', 'sort' => 11,
         'title' => tx('Terms of use', 'شروط الاستخدام'),
         'intro' => tx('The terms that apply when you use this website.', 'الشروط التي تنطبق عند استخدامك لهذا الموقع.'),
-        'seo' => SEO(tx('Terms of Use', 'شروط الاستخدام'), tx('Terms that apply to the use of the WAFA website.', 'الشروط التي تنطبق على استخدام موقع وفاء.')),
+        'seo' => SEO(tx('Terms of Use', 'شروط الاستخدام'), tx('Terms that apply to the use of the WAFA website.', 'الشروط التي تنطبق على استخدام موقع WAFA.')),
         'sections' => [B('rich_text', ['narrow' => true, 'body' => tx(
             '<p><em>'.$legalNote['en'].'</em></p>
 <h2>Information on this website</h2><p>The content of this website is provided for general information. It does not constitute insurance, legal or professional advice for any specific situation. Insurance cover is always subject to the terms, conditions and exclusions of the policy issued by the insurer.</p>
@@ -135,7 +184,7 @@ return [
             '<p><em>'.$legalNote['ar'].'</em></p>
 <h2>المعلومات الواردة في الموقع</h2><p>يُقدّم محتوى هذا الموقع لأغراض المعلومات العامة، ولا يُعد استشارة تأمينية أو قانونية أو مهنية لأي حالة بعينها. وتخضع التغطية التأمينية دائمًا لأحكام الوثيقة الصادرة عن شركة التأمين وشروطها واستثناءاتها.</p>
 <h2>استخدام الموقع</h2><p>توافق على استخدام هذا الموقع بصورة مشروعة وعدم التدخل في تشغيله أو أمنه.</p>
-<h2>الملكية الفكرية</h2><p>ما لم يُذكر خلاف ذلك، فإن المحتوى والتصميم والعلامة التجارية في هذا الموقع مملوكة لوفاء ولا يجوز نسخها دون إذن.</p>
+<h2>الملكية الفكرية</h2><p>ما لم يُذكر خلاف ذلك، فإن المحتوى والتصميم والعلامة التجارية في هذا الموقع مملوكة لـ WAFA ولا يجوز نسخها دون إذن.</p>
 <h2>روابط المواقع الأخرى</h2><p>قد يتضمن هذا الموقع روابط لمواقع خارجية، ولسنا مسؤولين عن محتواها أو ممارساتها المتعلقة بالخصوصية.</p>
 <h2>التعديلات</h2><p>قد نحدّث هذه الشروط من وقت لآخر، وستكون أحدث نسخة متاحة دائمًا في هذه الصفحة.</p>'
         )])],
@@ -144,7 +193,7 @@ return [
         'key' => 'cookies', 'slug' => 'cookie-policy', 'template' => 'legal', 'sort' => 12,
         'title' => tx('Cookie policy', 'سياسة ملفات تعريف الارتباط'),
         'intro' => tx('How this website uses cookies and how you can control them.', 'كيف يستخدم هذا الموقع ملفات تعريف الارتباط وكيف يمكنك التحكم فيها.'),
-        'seo' => SEO(tx('Cookie Policy', 'سياسة ملفات تعريف الارتباط'), tx('How the WAFA website uses cookies and how you can manage your preferences.', 'كيف يستخدم موقع وفاء ملفات تعريف الارتباط وكيف يمكنك إدارة تفضيلاتك.')),
+        'seo' => SEO(tx('Cookie Policy', 'سياسة ملفات تعريف الارتباط'), tx('How the WAFA website uses cookies and how you can manage your preferences.', 'كيف يستخدم موقع WAFA ملفات تعريف الارتباط وكيف يمكنك إدارة تفضيلاتك.')),
         'sections' => [B('rich_text', ['narrow' => true, 'body' => tx(
             '<p><em>'.$legalNote['en'].'</em></p>
 <h2>Necessary cookies</h2><p>These cookies are required for the website to work securely — for example, to protect forms against misuse and to remember your cookie choices. They cannot be switched off.</p>

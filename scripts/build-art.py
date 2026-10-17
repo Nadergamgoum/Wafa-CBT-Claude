@@ -9,8 +9,8 @@ from pathlib import Path
 OUT = Path(__file__).resolve().parent.parent / 'public' / 'images' / 'art'
 OUT.mkdir(parents=True, exist_ok=True)
 
-NAVY, TEAL, GOLD = '#0d3150', '#0f7a76', '#c79a3e'
-IVORY, MIST, TEAL_L, SKY, DEEP = '#f6f3ec', '#eef3f3', '#cfe6e4', '#dcebf6', '#08131d'
+NAVY, TEAL, GOLD = '#1b2023', '#0e7f75', '#19baab'
+IVORY, MIST, TEAL_L, SKY, DEEP = '#f6f5f1', '#eef5f4', '#cdeae6', '#e4e9eb', '#0c0f11'
 WHITE = '#ffffff'
 
 
@@ -52,11 +52,11 @@ def card(x, y, w, h, kind='lines', accent=TEAL):
 
 def defs(bg1, bg2):
     return (f'<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{bg1}"/><stop offset="1" stop-color="{bg2}"/></linearGradient>'
-            f'<linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b9a94"/><stop offset="1" stop-color="{TEAL}"/></linearGradient>'
-            f'<linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4a72"/><stop offset="1" stop-color="{NAVY}"/></linearGradient>'
-            f'<linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2bd6c"/><stop offset="1" stop-color="{GOLD}"/></linearGradient>'
-            '<pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#0d3150" opacity=".14"/></pattern>'
-            '<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0d3150" flood-opacity=".14"/></filter>'
+            f'<linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19baab"/><stop offset="1" stop-color="{TEAL}"/></linearGradient>'
+            f'<linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#30373b"/><stop offset="1" stop-color="{NAVY}"/></linearGradient>'
+            f'<linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fd6cc"/><stop offset="1" stop-color="{GOLD}"/></linearGradient>'
+            '<pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#1b2023" opacity=".14"/></pattern>'
+            '<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1b2023" flood-opacity=".14"/></filter>'
             '</defs>')
 
 
@@ -76,29 +76,29 @@ def s_medical():
 
 def s_people(n=3):
     xs = [180, 300, 420] if n == 3 else [130, 250, 370, 490]
-    cols = [TEAL, NAVY, GOLD, '#1f6fa8']
+    cols = [TEAL, NAVY, GOLD, '#5b6670']
     return ''.join(bust(x, 470 - (40 if i % 2 else 0), 1.25, cols[i % 4]) for i, x in enumerate(xs))
 
 
 def s_life():
     return ('<path d="M60 300C60 160 170 70 300 70s240 90 240 230c-40-30-80-30-120 0-40-30-80-30-120 0-40-30-80-30-120 0-40-30-80-30-120 0z" fill="url(#gg)"/>'
-            '<path d="M300 70v380c0 40-60 40-60 0" fill="none" stroke="#0d3150" stroke-width="16" stroke-linecap="round"/>'
-            + bust(205, 540, 1.05, NAVY) + bust(395, 540, 1.05, TEAL) + bust(300, 560, .72, GOLD, '#e2bd6c'))
+            '<path d="M300 70v380c0 40-60 40-60 0" fill="none" stroke="#1b2023" stroke-width="16" stroke-linecap="round"/>'
+            + bust(205, 540, 1.05, NAVY) + bust(395, 540, 1.05, TEAL) + bust(300, 560, .72, GOLD, '#6fd6cc'))
 
 
 def s_auto():
-    return ('<path d="M40 560L240 300h120l200 260z" fill="#0d3150" opacity=".9"/>'
+    return ('<path d="M40 560L240 300h120l200 260z" fill="#1b2023" opacity=".9"/>'
             '<path d="M300 320v40M300 400v50M300 490v60" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".7"/>'
             '<g transform="translate(70 120)"><path d="M20 190c0-30 18-44 50-50l60-60c18-18 40-26 66-26h120c26 0 48 10 64 28l46 54c40 6 64 22 64 54v40c0 10-8 18-18 18H38c-10 0-18-8-18-18z" fill="url(#tg)"/>'
             '<path d="M150 96c10-10 24-16 40-16h56v66H96z" fill="#fff" opacity=".85"/><path d="M262 80h52c16 0 30 6 40 18l40 48H262z" fill="#fff" opacity=".85"/>'
-            '<circle cx="120" cy="234" r="44" fill="#0d3150"/><circle cx="120" cy="234" r="18" fill="#cfe6e4"/><circle cx="370" cy="234" r="44" fill="#0d3150"/><circle cx="370" cy="234" r="18" fill="#cfe6e4"/></g>'
+            '<circle cx="120" cy="234" r="44" fill="#1b2023"/><circle cx="120" cy="234" r="18" fill="#cfe6e4"/><circle cx="370" cy="234" r="44" fill="#1b2023"/><circle cx="370" cy="234" r="18" fill="#cfe6e4"/></g>'
             f'<g transform="translate(470 80)"><path d="M0-50l46 16v34c0 32-20 54-46 66C-26 54-46 32-46 0v-34z" fill="{GOLD}"/><path d="M-18 4l12 12 26-28" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>')
 
 
 def s_property():
     out = ['<rect x="60" y="200" width="150" height="340" rx="8" fill="url(#ng)"/>',
            '<rect x="230" y="90" width="170" height="450" rx="8" fill="url(#tg)"/>',
-           '<rect x="420" y="260" width="130" height="280" rx="8" fill="#1f6fa8"/>']
+           '<rect x="420" y="260" width="130" height="280" rx="8" fill="#5b6670"/>']
     for bx, by, cols, rows, w in [(60, 200, 3, 7, 150), (230, 90, 3, 9, 170), (420, 260, 2, 5, 130)]:
         cw = (w - 30) / cols
         for r in range(rows):
@@ -110,7 +110,7 @@ def s_property():
 
 
 def s_network():
-    nodes = [(300, 150, NAVY), (150, 330, TEAL), (450, 330, TEAL), (90, 520, GOLD), (240, 520, '#1f6fa8'), (360, 520, GOLD), (510, 520, '#1f6fa8')]
+    nodes = [(300, 150, NAVY), (150, 330, TEAL), (450, 330, TEAL), (90, 520, GOLD), (240, 520, '#5b6670'), (360, 520, GOLD), (510, 520, '#5b6670')]
     links = [(0, 1), (0, 2), (1, 3), (1, 4), (2, 5), (2, 6), (1, 2)]
     out = [f'<line x1="{nodes[a][0]}" y1="{nodes[a][1]-30}" x2="{nodes[b][0]}" y2="{nodes[b][1]-30}" stroke="{NAVY}" stroke-width="5" opacity=".25"/>' for a, b in links]
     for i, (x, y, c) in enumerate(nodes):
@@ -137,9 +137,9 @@ def s_training():
     return ('<rect x="90" y="70" width="420" height="270" rx="18" fill="url(#ng)"/>'
             '<rect x="120" y="100" width="360" height="210" rx="10" fill="#fff" opacity=".1"/>'
             f'<path d="M150 270l70-60 60 40 80-90 70 50" fill="none" stroke="{GOLD}" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>'
-            '<rect x="290" y="340" width="20" height="60" fill="#0d3150"/>'
-            + bust(150, 560, .9, TEAL) + bust(300, 575, .9, NAVY) + bust(450, 560, .9, '#1f6fa8')
-            + f'<g transform="translate(470 420) rotate(-8)"><path d="M0 0c40-18 80-18 110 0v90c-30-18-70-18-110 0z" fill="{GOLD}"/><path d="M110 0c30-18 70-18 110 0v90c-40-18-80-18-110 0z" fill="#e2bd6c"/></g>')
+            '<rect x="290" y="340" width="20" height="60" fill="#1b2023"/>'
+            + bust(150, 560, .9, TEAL) + bust(300, 575, .9, NAVY) + bust(450, 560, .9, '#5b6670')
+            + f'<g transform="translate(470 420) rotate(-8)"><path d="M0 0c40-18 80-18 110 0v90c-30-18-70-18-110 0z" fill="{GOLD}"/><path d="M110 0c30-18 70-18 110 0v90c-40-18-80-18-110 0z" fill="#6fd6cc"/></g>')
 
 
 def s_growth():
@@ -154,20 +154,20 @@ def s_growth():
 
 
 def s_exec():
-    return ('<path d="M80 560L260 260l80 110 70-90 150 280z" fill="#132a3d"/>'
+    return ('<path d="M80 560L260 260l80 110 70-90 150 280z" fill="#1a2023"/>'
             f'<path d="M260 260l40 55-30 18-20-30-30 40z" fill="{GOLD}" opacity=".8"/>'
             f'<g transform="translate(330 70)"><path d="M70 0v40M50 20h40" stroke="{GOLD}" stroke-width="12" stroke-linecap="round"/>'
             f'<path d="M30 70c0-20 18-30 40-30s40 10 40 30c0 18-14 26-14 40h-52c0-14-14-22-14-40z" fill="{GOLD}"/>'
-            f'<path d="M20 130h100l-12 140H32z" fill="url(#gg)"/><rect x="0" y="270" width="140" height="34" rx="8" fill="{GOLD}"/><rect x="-14" y="304" width="168" height="28" rx="8" fill="#e2bd6c"/></g>'
-            '<circle cx="140" cy="140" r="80" fill="none" stroke="#c79a3e" stroke-width="3" opacity=".5"/><circle cx="140" cy="140" r="50" fill="none" stroke="#c79a3e" stroke-width="2" opacity=".35"/>')
+            f'<path d="M20 130h100l-12 140H32z" fill="url(#gg)"/><rect x="0" y="270" width="140" height="34" rx="8" fill="{GOLD}"/><rect x="-14" y="304" width="168" height="28" rx="8" fill="#6fd6cc"/></g>'
+            '<circle cx="140" cy="140" r="80" fill="none" stroke="#19baab" stroke-width="3" opacity=".5"/><circle cx="140" cy="140" r="50" fill="none" stroke="#19baab" stroke-width="2" opacity=".35"/>')
 
 
 def s_hub():
     out = [f'<circle cx="300" cy="300" r="230" fill="none" stroke="{TEAL}" stroke-width="3" stroke-dasharray="6 12" opacity=".6"/>',
            '<circle cx="300" cy="300" r="150" fill="#fff" filter="url(#sh)"/>',
-           bust(250, 360, .85, TEAL), bust(350, 360, .85, NAVY), bust(300, 390, .62, GOLD, '#e2bd6c')]
+           bust(250, 360, .85, TEAL), bust(350, 360, .85, NAVY), bust(300, 390, .62, GOLD, '#6fd6cc')]
     icons = [(300, 70, TEAL, 'M-16-4h12v-12h8v12h12v8H4v12h-8V4h-12z'), (530, 300, NAVY, 'M0-18l16 6v12c0 12-7 20-16 24-9-4-16-12-16-24v-12z'),
-             (300, 530, GOLD, 'M-18-8h36v22h-36zM-8-8v-6h16v6'), (70, 300, '#1f6fa8', 'M-18-2l18-10 18 10-18 10zM-10 4v8c6 6 14 6 20 0V4')]
+             (300, 530, GOLD, 'M-18-8h36v22h-36zM-8-8v-6h16v6'), (70, 300, '#5b6670', 'M-18-2l18-10 18 10-18 10zM-10 4v8c6 6 14 6 20 0V4')]
     for x, y, c, d in icons:
         out.append(f'<g transform="translate({x} {y})"><circle r="44" fill="{c}"/><path d="{d}" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>')
     return ''.join(out)
@@ -201,14 +201,14 @@ def write(name, content):
 
 themes = {
     'medical': (MIST, '#e3f0ef', TEAL_L, SKY, [('stat', TEAL), ('check', TEAL)]),
-    'life': (IVORY, '#f3ead9', '#f1dfb8', TEAL_L, [('avatar', GOLD), ('lines', GOLD)]),
-    'auto': ('#e9eef3', SKY, SKY, TEAL_L, [('check', TEAL), ('stat', NAVY)]),
-    'property': ('#eef1f4', MIST, SKY, '#f1dfb8', [('stat', GOLD), ('bars', TEAL)]),
-    'hr': ('#eef2f7', '#e6eef6', SKY, TEAL_L, [('avatar', TEAL), ('bars', NAVY)]),
-    'od': (IVORY, MIST, TEAL_L, '#f1dfb8', [('bars', TEAL), ('check', TEAL)]),
-    'training': ('#f7f1e6', IVORY, '#f1dfb8', TEAL_L, [('check', GOLD), ('avatar', TEAL)]),
-    'business_coaching': ('#eef4f1', MIST, TEAL_L, '#f1dfb8', [('bars', TEAL), ('stat', GOLD)]),
-    'executive_coaching': (DEEP, '#132a3d', '#1d3a52', '#2a3f2f', [('lines', GOLD), ('stat', GOLD)]),
+    'life': (IVORY, '#eef0ee', '#e6ecea', TEAL_L, [('avatar', GOLD), ('lines', GOLD)]),
+    'auto': ('#eceff0', SKY, SKY, TEAL_L, [('check', TEAL), ('stat', NAVY)]),
+    'property': ('#eff1f1', MIST, SKY, '#e6ecea', [('stat', GOLD), ('bars', TEAL)]),
+    'hr': ('#eef1f2', '#e7ecee', SKY, TEAL_L, [('avatar', TEAL), ('bars', NAVY)]),
+    'od': (IVORY, MIST, TEAL_L, '#e6ecea', [('bars', TEAL), ('check', TEAL)]),
+    'training': ('#f3f4f2', IVORY, '#e6ecea', TEAL_L, [('check', GOLD), ('avatar', TEAL)]),
+    'business_coaching': ('#eef4f1', MIST, TEAL_L, '#e6ecea', [('bars', TEAL), ('stat', GOLD)]),
+    'executive_coaching': (DEEP, '#1a2023', '#232a2e', '#14322f', [('lines', GOLD), ('stat', GOLD)]),
 }
 
 for key, (b1, b2, c1, c2, cards) in themes.items():
@@ -226,23 +226,23 @@ for key, (b1, b2, c1, c2, cards) in themes.items():
     write(f'{key}-detail', svg(1000, 1200, body, b2, b1))
 
 # Homepage hero, categories and generic scenes
-write('home-hero', svg(1100, 1200, blobs(1100, 1200, TEAL_L, '#f1dfb8') + place(s_hub(), 120, 260, 1.45)
+write('home-hero', svg(1100, 1200, blobs(1100, 1200, TEAL_L, '#e6ecea') + place(s_hub(), 120, 260, 1.45)
                       + card(60, 120, 340, 96, 'stat', TEAL) + card(660, 980, 380, 120, 'check', TEAL), IVORY, MIST))
 write('cat-insurance', svg(1200, 900, blobs(1200, 900, TEAL_L, SKY) + place(s_medical(), 330, 120, 1.05) + card(820, 640, 300, 96, 'stat', TEAL), MIST, '#e3f0ef'))
-write('cat-people', svg(1200, 900, blobs(1200, 900, SKY, TEAL_L) + place(s_network(), 300, 100, 1.1) + card(60, 660, 320, 96, 'avatar', NAVY), '#eef2f7', MIST))
-write('cat-learning', svg(1200, 900, blobs(1200, 900, '#f1dfb8', TEAL_L) + place(s_training(), 300, 110, 1.05) + card(830, 120, 300, 96, 'check', GOLD), '#f7f1e6', IVORY))
-write('beyond', svg(1200, 900, blobs(1200, 900, SKY, '#f1dfb8') + place(s_network(), 300, 90, 1.1), '#eef2f7', IVORY))
-write('people', svg(1000, 1200, blobs(1000, 1200, SKY, TEAL_L) + place(s_network(), 100, 260, 1.35) + card(540, 120, 380, 110, 'bars', TEAL), '#eef2f7', MIST))
-write('about', svg(1200, 900, blobs(1200, 900, TEAL_L, '#f1dfb8') + place(s_hub(), 330, 60, 1.3), IVORY, MIST))
+write('cat-people', svg(1200, 900, blobs(1200, 900, SKY, TEAL_L) + place(s_network(), 300, 100, 1.1) + card(60, 660, 320, 96, 'avatar', NAVY), '#eef1f2', MIST))
+write('cat-learning', svg(1200, 900, blobs(1200, 900, '#e6ecea', TEAL_L) + place(s_training(), 300, 110, 1.05) + card(830, 120, 300, 96, 'check', GOLD), '#f3f4f2', IVORY))
+write('beyond', svg(1200, 900, blobs(1200, 900, SKY, '#e6ecea') + place(s_network(), 300, 90, 1.1), '#eef1f2', IVORY))
+write('people', svg(1000, 1200, blobs(1000, 1200, SKY, TEAL_L) + place(s_network(), 100, 260, 1.35) + card(540, 120, 380, 110, 'bars', TEAL), '#eef1f2', MIST))
+write('about', svg(1200, 900, blobs(1200, 900, TEAL_L, '#e6ecea') + place(s_hub(), 330, 60, 1.3), IVORY, MIST))
 write('cta', svg(1600, 800, f'<circle cx="1250" cy="200" r="420" fill="{TEAL}" opacity=".35"/><circle cx="300" cy="800" r="380" fill="{GOLD}" opacity=".18"/>'
                  + place(s_people(4), 900, 140, 1.15), DEEP, NAVY))
 write('abstract', svg(1200, 900, blobs(1200, 900, TEAL_L, SKY), MIST, IVORY))
 write('person', svg(800, 1000, f'<circle cx="400" cy="1000" r="420" fill="{TEAL_L}"/>' + bust(400, 900, 4.2, NAVY), MIST, '#e3f0ef'))
-for i, (c1, c2) in enumerate([(TEAL_L, SKY), ('#f1dfb8', TEAL_L), (SKY, '#f1dfb8')], start=1):
+for i, (c1, c2) in enumerate([(TEAL_L, SKY), ('#e6ecea', TEAL_L), (SKY, '#e6ecea')], start=1):
     sub = [s_document, s_growth, s_medical][i - 1]()
     write(f'insight-{i}', svg(1200, 800, blobs(1200, 800, c1, c2) + place(sub, 350, 90, 1.05), IVORY, MIST))
 for i, sub in enumerate([s_training, s_network, s_growth, s_exec], start=1):
-    bg = (DEEP, '#132a3d') if i == 4 else ('#f7f1e6', IVORY)
-    write(f'program-{i}', svg(1200, 800, blobs(1200, 800, '#f1dfb8', TEAL_L) + place(sub(), 350, 90, 1.05), *bg))
+    bg = (DEEP, '#1a2023') if i == 4 else ('#f3f4f2', IVORY)
+    write(f'program-{i}', svg(1200, 800, blobs(1200, 800, '#e6ecea', TEAL_L) + place(sub(), 350, 90, 1.05), *bg))
 
 print('art:', len(list(OUT.glob('*.svg'))), 'files')

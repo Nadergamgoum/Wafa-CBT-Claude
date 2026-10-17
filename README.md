@@ -13,7 +13,7 @@ hosting with no Node.js, Redis, workers or root access.
 | [`docs/PROJECT-OVERVIEW.md`](docs/PROJECT-OVERVIEW.md) | Sitemap, design direction, service-page differentiation, mobile UX, CMS, SEO, security, QA, open items |
 | [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Step-by-step Hostinger deployment, SMTP, cron, backups, local preview |
 | [`docs/ADMIN-GUIDE.md`](docs/ADMIN-GUIDE.md) | How to use the CMS |
-| [`docs/CONTENT-NOTES.md`](docs/CONTENT-NOTES.md) | Audit status and provisional content to confirm |
+| [`docs/CONTENT-NOTES.md`](docs/CONTENT-NOTES.md) | Reconciliation with wafa-cbt.com: verified facts, pending claims, redirect map, content to confirm |
 | [`docs/IMAGE-BRIEF.md`](docs/IMAGE-BRIEF.md) | Photography brief per image slot |
 
 ## Local development

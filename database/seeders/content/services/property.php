@@ -10,23 +10,23 @@ return [
     'hero_variant' => 'overlay',
     'title' => tx('Property Insurance', 'تأمين الممتلكات'),
     'summary' => tx(
-        'Protection for buildings, equipment, stock and the operations that depend on them — arranged with a clear view of your assets.',
-        'حماية للمباني والمعدات والمخزون والعمليات التي تعتمد عليها، مرتّبة بناءً على رؤية واضحة لأصولك.'
+        'Safeguarding your home and assets from unexpected risks — from homes and contents to business premises, equipment and stock.',
+        'حماية منزلك وأصولك من المخاطر غير المتوقعة، من المنازل ومحتوياتها إلى المنشآت التجارية والمعدات والمخزون.'
     ),
     'hero' => [
-        'eyebrow' => tx('Insurance · Assets & business continuity', 'التأمين · الأصول واستمرارية الأعمال'),
-        'title' => tx('Protect the assets your business is *built on*', 'احمِ الأصول التي *يقوم عليها* عملك'),
+        'eyebrow' => tx('Insurance · Homes, property & assets', 'التأمين · المنازل والممتلكات والأصول'),
+        'title' => tx('Safeguarding your home and assets from *unexpected risks*', 'حماية منزلك وأصولك من *المخاطر غير المتوقعة*'),
         'lead' => tx(
-            'Offices, warehouses, equipment and stock represent years of investment. We help you identify what needs protection and arrange cover that reflects real values and risks.',
-            'تمثل المكاتب والمستودعات والمعدات والمخزون سنوات من الاستثمار. نساعدك على تحديد ما يحتاج إلى حماية وترتيب تغطية تعكس القيم والمخاطر الحقيقية.'
+            'Whether it is your home or your business premises, property represents years of investment. We help you identify what needs protection and arrange cover that reflects real values and risks.',
+            'سواء كان منزلك أو مقر عملك، تمثل الممتلكات سنوات من الاستثمار. نساعدك على تحديد ما يحتاج إلى حماية وترتيب تغطية تعكس القيم والمخاطر الحقيقية.'
         ),
         'cta_label' => tx('Review your property cover', 'راجع تأمين ممتلكاتك'),
         'cta_link' => '/contact#contact-form',
         'highlights' => [
+            ['icon' => 'house', 'label' => tx('Homes', 'المنازل')],
             ['icon' => 'building', 'label' => tx('Buildings', 'المباني')],
             ['icon' => 'monitor', 'label' => tx('Equipment & contents', 'المعدات والمحتويات')],
             ['icon' => 'package', 'label' => tx('Stock', 'المخزون')],
-            ['icon' => 'activity', 'label' => tx('Business continuity', 'استمرارية الأعمال')],
         ],
     ],
     'sections' => [
@@ -37,6 +37,7 @@ return [
             'title' => tx('Start with a clear picture of *your assets*', 'ابدأ بصورة واضحة *لأصولك*'),
             'lead' => tx('Good property insurance begins with knowing what you own, where it is and what it would cost to replace.', 'يبدأ تأمين الممتلكات الجيد بمعرفة ما تملكه وأين يوجد وكم ستكلّف إعادته.'),
             'items' => [
+                I('house', tx('Homes & contents', 'المنازل ومحتوياتها'), tx('Your home, its contents and personal belongings.', 'منزلك ومحتوياته وممتلكاتك الشخصية.')),
                 I('building-2', tx('Buildings & premises', 'المباني والمنشآت'), tx('Offices, branches, warehouses and other owned or leased premises.', 'المكاتب والفروع والمستودعات وغيرها من المنشآت المملوكة أو المستأجرة.')),
                 I('monitor', tx('Contents & equipment', 'المحتويات والمعدات'), tx('Furniture, IT equipment, machinery and fit-out.', 'الأثاث وأجهزة تقنية المعلومات والآلات والتجهيزات.')),
                 I('package', tx('Stock & inventory', 'المخزون والبضائع'), tx('Goods held for sale or production.', 'البضائع المحتفظ بها للبيع أو الإنتاج.')),
@@ -48,8 +49,8 @@ return [
             'layout' => 'tiles',
             'background' => 'dark',
             'eyebrow' => tx('Risks to consider', 'مخاطر يجب أخذها في الاعتبار'),
-            'title' => tx('The events that can *disrupt* a business', 'الأحداث التي قد *تعطّل* الأعمال'),
-            'lead' => tx('Each property and activity has its own risk profile. We help you think through the ones that matter for you.', 'لكل منشأة ونشاط طبيعة مخاطر خاصة، ونساعدك على دراسة المخاطر الأهم بالنسبة إليك.'),
+            'title' => tx('The unexpected events *property cover* is built for', 'الأحداث غير المتوقعة التي *يُصمَّم لها* تأمين الممتلكات'),
+            'lead' => tx('Every home, building and activity has its own risk profile. We help you think through the ones that matter for you.', 'لكل منزل ومبنى ونشاط طبيعة مخاطر خاصة، ونساعدك على دراسة المخاطر الأهم بالنسبة إليك.'),
             'items' => [
                 ['icon' => 'flame', 'title' => tx('Fire', 'الحريق'), 'text' => tx('Including smoke damage', 'بما في ذلك أضرار الدخان')],
                 ['icon' => 'droplets', 'title' => tx('Water damage', 'أضرار المياه'), 'text' => tx('Leaks and burst pipes', 'التسربات وانفجار الأنابيب')],
@@ -93,7 +94,7 @@ return [
             'layout' => 'image',
             'art' => 'property',
             'eyebrow' => tx('Property insurance', 'تأمين الممتلكات'),
-            'title' => tx('Make sure your cover keeps up with *your business*', 'تأكد من أن تغطيتك تواكب *نمو أعمالك*'),
+            'title' => tx('Make sure your cover keeps up with *what you own*', 'تأكد من أن تغطيتك تواكب *ما تملكه*'),
             'lead' => tx('We can review your current property policy and highlight possible gaps.', 'يمكننا مراجعة وثيقة تأمين ممتلكاتك الحالية وتوضيح الفجوات المحتملة.'),
             'cta_label' => tx('Request a review', 'اطلب مراجعة'),
             'cta_link' => '/contact#contact-form',
@@ -103,12 +104,13 @@ return [
         [tx('What is under-insurance?', 'ما المقصود بنقص قيمة التأمين؟'), tx('It happens when the sum insured is lower than the real value of the property. In that case a claim may not be paid in full, so values should be reviewed regularly.', 'يحدث عندما يكون مبلغ التأمين أقل من القيمة الحقيقية للممتلكات، وفي هذه الحالة قد لا تُدفع المطالبة كاملة، لذا ينبغي مراجعة القيم بانتظام.')],
         [tx('Does property insurance cover lost income?', 'هل يغطي تأمين الممتلكات خسارة الدخل؟'), tx('Loss of income is usually covered under business interruption cover, which may be added to a property policy depending on the insurer and terms.', 'تُغطى خسارة الدخل عادةً من خلال تغطية توقف الأعمال، والتي يمكن إضافتها إلى وثيقة الممتلكات حسب شركة التأمين والشروط.')],
         [tx('Can you insure leased premises?', 'هل يمكن تأمين المنشآت المستأجرة؟'), tx('Yes. Tenants commonly insure their contents, equipment, fit-out and liability. Responsibilities in the lease should be checked when designing cover.', 'نعم. يؤمّن المستأجرون عادةً المحتويات والمعدات والتجهيزات والمسؤولية، ويجب مراجعة المسؤوليات الواردة في عقد الإيجار عند تصميم التغطية.')],
+        [tx('Do you arrange home insurance as well as business property?', 'هل ترتّبون تأمين المنازل إلى جانب ممتلكات الشركات؟'), tx('Yes. Property insurance covers homes and personal assets as well as business premises, equipment and stock. Tell us what you would like to protect and we will discuss suitable options.', 'نعم. يشمل تأمين الممتلكات المنازل والأصول الشخصية إلى جانب المنشآت التجارية والمعدات والمخزون. أخبرنا بما تودّ حمايته وسنناقش معك الخيارات المناسبة.')],
         [tx('How often should we review our property policy?', 'كم مرة يجب مراجعة وثيقة الممتلكات؟'), tx('At least at every renewal, and whenever you add locations, buy significant equipment or change your activities.', 'عند كل تجديد على الأقل، وكلما أضفت مواقع جديدة أو اشتريت معدات مهمة أو غيّرت طبيعة نشاطك.')],
     ],
     'seo' => SEO(
-        tx('Property Insurance for Businesses', 'تأمين الممتلكات للشركات'),
-        tx('Commercial property insurance for buildings, equipment, stock and business interruption. Review values, understand risks and compare options with WAFA.', 'تأمين الممتلكات التجارية للمباني والمعدات والمخزون وتوقف الأعمال. راجع القيم وافهم المخاطر وقارن الخيارات مع وفاء.'),
+        tx('Property Insurance for Homes & Businesses', 'تأمين الممتلكات للمنازل والشركات'),
+        tx('Property insurance that safeguards your home and assets from unexpected risks: homes and contents, buildings, equipment, stock and business interruption — arranged with WAFA.', 'تأمين ممتلكات يحمي منزلك وأصولك من المخاطر غير المتوقعة: المنازل ومحتوياتها والمباني والمعدات والمخزون وتوقف الأعمال، مع WAFA.'),
         tx('property insurance', 'تأمين الممتلكات'),
-        tx('commercial property insurance, business interruption insurance, office insurance', 'تأمين الممتلكات التجارية, تأمين توقف الأعمال, تأمين المكاتب'),
+        tx('home insurance, property insurance, commercial property insurance, business interruption insurance', 'تأمين المنازل, تأمين الممتلكات, تأمين الممتلكات التجارية, تأمين توقف الأعمال'),
     ),
 ];

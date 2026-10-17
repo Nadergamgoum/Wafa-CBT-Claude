@@ -11,12 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
     <title>@yield('code') — {{ config('app.name', 'WAFA') }}</title>
+    <link rel="icon" href="{{ asset('images/brand/favicon-32.png') }}" sizes="32x32">
     @vite(['resources/css/app.css'])
 </head>
 <body class="no-quickbar">
     <main class="errpage">
         <div class="errpage__card">
-            <a class="brand" href="{{ $home }}"><span class="brand__word">{{ config('app.name', 'WAFA') }}</span></a>
+            <a class="brand" href="{{ $home }}"><img src="{{ asset('images/brand/wafa-logo.png') }}" alt="WAFA" width="210" height="44"></a>
             <p class="errpage__code">@yield('code')</p>
             <h1 class="h2">@yield('title')</h1>
             <p class="lead">@yield('message')</p>

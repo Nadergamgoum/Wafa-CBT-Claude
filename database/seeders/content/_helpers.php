@@ -48,3 +48,11 @@ if (! function_exists('SEO')) {
         ], fn ($v) => $v !== null);
     }
 }
+
+if (! function_exists('M')) {
+    /** Media id of an asset imported by ContentSeeder::importAssets() (null when not imported). */
+    function M(string $key): ?int
+    {
+        return \Database\Seeders\ContentSeeder::$media[$key] ?? null;
+    }
+}

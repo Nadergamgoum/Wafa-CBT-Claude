@@ -1,5 +1,5 @@
 @php $items = $b['items'] ?? []; $bg = $b['background'] ?? 'dark'; @endphp
-<section class="section themes {{ $bg === 'dark' ? 'on-dark' : 'bg-'.$bg }}" id="{{ $bid }}" aria-labelledby="{{ $bid }}-title" data-accent="gold">
+<section class="section themes {{ $bg === 'dark' ? 'on-dark' : 'bg-'.$bg }}" id="{{ $bid }}" aria-labelledby="{{ $bid }}-title" data-accent="teal">
     <div class="container">
         @include('partials.shead', ['b' => $b])
         <ol class="themes__grid" data-more>

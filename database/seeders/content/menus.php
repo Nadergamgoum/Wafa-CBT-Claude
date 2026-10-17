@@ -9,9 +9,11 @@ return [
         ['type' => 'route', 'target' => 'insights.index', 'label' => tx('Insights', 'رؤى ومقالات'), 'enabled' => true],
         ['type' => 'route', 'target' => 'contact', 'label' => tx('Contact', 'تواصل معنا'), 'enabled' => true],
     ]],
+    'mobile' => ['name' => 'Mobile menu — extra links', 'items' => []],
     'footer_company' => ['name' => 'Footer — Company', 'items' => [
-        ['type' => 'route', 'target' => 'about', 'label' => tx('About WAFA', 'عن وفاء'), 'enabled' => true],
+        ['type' => 'route', 'target' => 'about', 'label' => tx('About WAFA', 'عن WAFA'), 'enabled' => true],
         ['type' => 'route', 'target' => 'programs.index', 'label' => tx('Training programs', 'البرامج التدريبية'), 'enabled' => true],
+        ['type' => 'route', 'target' => 'engagements.index', 'label' => tx('Corporate engagements', 'فعاليات الشركات'), 'enabled' => true],
         ['type' => 'route', 'target' => 'insights.index', 'label' => tx('Insights', 'رؤى ومقالات'), 'enabled' => true],
         ['type' => 'route', 'target' => 'contact', 'label' => tx('Contact', 'تواصل معنا'), 'enabled' => true],
     ]],

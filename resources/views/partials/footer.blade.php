@@ -10,6 +10,12 @@
 @endphp
 <footer class="site-footer on-dark">
     <div class="container">
+        @if (setting('footer.cta_enabled') && ($ctaTitle = t(setting('footer.cta_title'))))
+            <div class="footer__cta">
+                <p class="h3">{{ $ctaTitle }}</p>
+                <a class="btn btn--light" href="{{ link_url(setting('footer.cta_link') ?: '/contact#contact-form') }}" data-event="consultation_click">{{ t(setting('footer.cta_label')) ?: __('site.talk_to_experts') }} {!! icon('arrow-right', 'icon flip-rtl') !!}</a>
+            </div>
+        @endif
         <div class="footer__grid">
             <div class="footer__brand">
                 @include('partials.brand', ['light' => true])
@@ -23,7 +29,7 @@
                 @endif
             </div>
             <div class="footer__cols-mobile">
-                @foreach ($categories as $cat)
+                @foreach ((setting('footer.show_services') ?? true) ? $categories : [] as $cat)
                     <div>
                         <p class="footer__title">{{ $cat->navLabel() }}</p>
                         <ul class="footer__links">
@@ -45,11 +51,13 @@
                     </div>
                 @endif
             </div>
-            @if (Contact::phone() || Contact::email() || $address || $hours)
+            @php $waUrl = Contact::whatsappUrl(); @endphp
+            @if (Contact::phone() || Contact::email() || $waUrl || $address || $hours)
                 <div>
                     <p class="footer__title">{{ __('site.contact') }}</p>
                     <div class="footer__contact">
                         @if ($p = Contact::phone())<a href="{{ Contact::phoneHref() }}" data-event="phone_click" dir="ltr">{!! icon('phone') !!}<span>{{ $p }}</span></a>@endif
+                        @if ($waUrl)<a href="{{ $waUrl }}" target="_blank" rel="noopener" data-event="whatsapp_click">{!! icon('b-whatsapp') !!}<span>{{ __('site.whatsapp') }}</span></a>@endif
                         @if ($e = Contact::email())<a href="mailto:{{ $e }}" data-event="email_click">{!! icon('mail') !!}<span>{{ $e }}</span></a>@endif
                         @if ($address)<span>{!! icon('map-pin') !!}<span>{!! nl2br(e($address)) !!}</span></span>@endif
                         @if ($hours)<span>{!! icon('clock') !!}<span>{!! nl2br(e($hours)) !!}</span></span>@endif

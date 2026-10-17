@@ -41,5 +41,6 @@ return [
         'online' => 'Live online',
         'blended' => 'Blended',
         'in_house' => 'In-house',
+        'in_house_online' => 'In-house or online workshops',
     ],
 ];

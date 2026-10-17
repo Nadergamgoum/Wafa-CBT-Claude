@@ -63,7 +63,7 @@ class BlockBuilder
                     $out[] = Repeater::make($name)->label($label)
                         ->schema(static::fields($config))
                         ->collapsible()->collapsed()->cloneable()->reorderableWithButtons()
-                        ->itemLabel(fn (array $state) => Str::limit(trim(str_replace('*', '', (string) ($state['title']['en'] ?? $state['label']['en'] ?? $state['q']['en'] ?? 'Item'))), 70))
+                        ->itemLabel(fn (array $state) => Str::limit(trim(str_replace('*', '', (string) ($state['title']['en'] ?? $state['label']['en'] ?? $state['q']['en'] ?? $state['name']['en'] ?? $state['caption']['en'] ?? $state['value']['en'] ?? ''))) ?: 'Item', 70))
                         ->addActionLabel('Add item')
                         ->columnSpanFull();
                 }
@@ -153,6 +153,12 @@ class BlockBuilder
             'cta_band' => 'heroicon-o-megaphone',
             'process', 'roadmap', 'transformation', 'engagement' => 'heroicon-o-arrow-trending-up',
             'rich_text' => 'heroicon-o-document-text',
+            'founder', 'team' => 'heroicon-o-user-circle',
+            'gallery', 'engagements' => 'heroicon-o-photo',
+            'stats', 'reporting' => 'heroicon-o-chart-bar',
+            'quote', 'testimonials' => 'heroicon-o-chat-bubble-left-right',
+            'accordion' => 'heroicon-o-bars-3-bottom-left',
+            'logos' => 'heroicon-o-building-office-2',
             'programs', 'program_categories', 'formats' => 'heroicon-o-academic-cap',
             'insights' => 'heroicon-o-newspaper',
             'ecosystem', 'model', 'dimensions' => 'heroicon-o-squares-2x2',

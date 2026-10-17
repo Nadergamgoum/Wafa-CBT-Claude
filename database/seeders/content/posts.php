@@ -62,7 +62,7 @@ return [
 <h2>3. Has our workforce changed?</h2>
 <p>New locations, a different age profile, new job categories or growth in headcount may all affect what the program should look like.</p>
 <h2>4. Are our categories and limits still right?</h2>
-<p>Categories designed years ago may no longer reflect your grading structure or HR policies. This is a good time to check alignment.</p>
+<p>Categories designed years ago may no longer reflect your current structure or HR policies. This is a good time to check alignment.</p>
 <h2>5. What alternatives are available?</h2>
 <p>Comparing options on a like-for-like basis — benefits, networks, limits, conditions and price — gives you a clearer view of value, not just cost.</p>
 <h2>6. How will we communicate any changes?</h2>
@@ -76,7 +76,7 @@ return [
 <h2>٣. هل تغيّرت قواك العاملة؟</h2>
 <p>قد تؤثر المواقع الجديدة أو تغيّر الفئات العمرية أو الفئات الوظيفية الجديدة أو نمو عدد الموظفين في الشكل الأمثل للبرنامج.</p>
 <h2>٤. هل لا تزال فئاتنا وحدودنا مناسبة؟</h2>
-<p>قد لا تعكس الفئات التي صُمّمت منذ سنوات هيكل الدرجات أو سياسات الموارد البشرية الحالية، والتجديد وقت مناسب للتحقق من المواءمة.</p>
+<p>قد لا تعكس الفئات التي صُمّمت منذ سنوات الهيكل التنظيمي أو سياسات الموارد البشرية الحالية، والتجديد وقت مناسب للتحقق من المواءمة.</p>
 <h2>٥. ما البدائل المتاحة؟</h2>
 <p>تمنحك مقارنة الخيارات على أسس متكافئة من حيث المزايا والشبكات والحدود والشروط والسعر رؤية أوضح للقيمة لا للتكلفة فقط.</p>
 <h2>٦. كيف سنبلغ الموظفين بأي تغييرات؟</h2>
@@ -86,33 +86,33 @@ return [
         ],
         [
             'category' => 'hr-organization', 'slug' => 'building-hr-foundations-that-scale', 'days_ago' => 22,
-            'title' => tx('From Job Descriptions to Performance: Building HR Foundations That Scale', 'من الأوصاف الوظيفية إلى الأداء: بناء أسس موارد بشرية قابلة للتوسع'),
+            'title' => tx('From Structure to Engagement: Building HR Foundations That Scale', 'من الهيكل إلى الانتماء: بناء أسس موارد بشرية قابلة للتوسع'),
             'excerpt' => tx('Growing organizations often outgrow informal HR practices. These building blocks create clarity and fairness as you scale.', 'كثيرًا ما تتجاوز المؤسسات النامية الممارسات غير الرسمية في الموارد البشرية. هذه اللبنات الأساسية تحقق الوضوح والعدالة مع التوسع.'),
-            'tags' => ['en' => ['HR consulting', 'Performance'], 'ar' => ['استشارات الموارد البشرية', 'الأداء']],
+            'tags' => ['en' => ['HR consulting', 'Compliance', 'Engagement'], 'ar' => ['استشارات الموارد البشرية', 'الالتزام', 'الانتماء']],
             'body' => tx(
 '<p>In the early days of an organization, HR often runs on goodwill and personal relationships. As the team grows, that approach starts to show its limits: roles overlap, decisions feel inconsistent and managers spend time solving the same problems repeatedly.</p>
 <h2>1. A clear organization structure</h2>
 <p>Everything else builds on structure. A clear organization chart shows reporting lines and accountabilities, and helps you see where new roles are needed.</p>
-<h2>2. Job descriptions that are actually used</h2>
-<p>Good job descriptions describe the purpose of a role, its key responsibilities and the competencies required. They support recruitment, onboarding and performance conversations.</p>
+<h2>2. Compliance with labor law and social insurance</h2>
+<p>HR practices should reflect labor law and social insurance requirements. Reviewing contracts, policies and records against these requirements reduces risk as the organization grows.</p>
 <h2>3. Core HR policies</h2>
 <p>Policies on working hours, leave, conduct and other essentials help managers handle similar situations in the same way — which is the foundation of fairness.</p>
 <h2>4. A simple performance cycle</h2>
 <p>Objectives at the start of the year, regular check-ins and a structured review create a rhythm for feedback and development. Simplicity matters more than sophistication.</p>
-<h2>5. A consistent approach to grades and pay</h2>
-<p>As headcount grows, a grading framework helps you make pay decisions that are consistent and explainable.</p>
+<h2>5. Engagement, retention and efficient HR processes</h2>
+<p>Listening to employees and acting on what you hear helps you keep the people you value. At the same time, documenting and — where useful — automating routine HR processes frees time for that work.</p>
 <p>These foundations do not need to be built all at once. The right sequence depends on your priorities — and the most important step is to start.</p>',
 '<p>في بدايات المؤسسة، كثيرًا ما تُدار الموارد البشرية بحسن النية والعلاقات الشخصية. ومع نمو الفريق تظهر حدود هذا الأسلوب: تتداخل الأدوار، وتبدو القرارات غير متسقة، ويقضي المديرون وقتهم في حل المشكلات نفسها مرارًا.</p>
 <h2>١. هيكل تنظيمي واضح</h2>
 <p>يُبنى كل شيء على الهيكل. فالهيكل التنظيمي الواضح يبيّن خطوط التبعية والمسؤوليات، ويساعدك على معرفة الأدوار الجديدة المطلوبة.</p>
-<h2>٢. أوصاف وظيفية تُستخدم فعلًا</h2>
-<p>تصف الأوصاف الوظيفية الجيدة الغرض من الدور ومسؤولياته الرئيسية والجدارات المطلوبة، وتدعم التوظيف والتهيئة ومحادثات الأداء.</p>
+<h2>٢. الالتزام بقانون العمل والتأمينات الاجتماعية</h2>
+<p>ينبغي أن تعكس ممارسات الموارد البشرية متطلبات قانون العمل والتأمينات الاجتماعية، ومراجعة العقود والسياسات والسجلات وفق هذه المتطلبات تقلّل المخاطر مع نمو المؤسسة.</p>
 <h2>٣. سياسات أساسية للموارد البشرية</h2>
 <p>تساعد السياسات المتعلقة بساعات العمل والإجازات والسلوك وغيرها من الأساسيات المديرين على التعامل مع المواقف المتشابهة بالطريقة نفسها، وهذا هو أساس العدالة.</p>
 <h2>٤. دورة أداء بسيطة</h2>
 <p>تخلق الأهداف في بداية العام ولقاءات المتابعة المنتظمة والمراجعة المنظّمة إيقاعًا للتغذية الراجعة والتطوير، والبساطة هنا أهم من التعقيد.</p>
-<h2>٥. منهج متسق للدرجات والرواتب</h2>
-<p>مع زيادة عدد الموظفين، يساعدك إطار الدرجات الوظيفية على اتخاذ قرارات رواتب متسقة وقابلة للتفسير.</p>
+<h2>٥. الانتماء والاحتفاظ بالموظفين وكفاءة العمليات</h2>
+<p>يساعدك الاستماع إلى الموظفين والتصرف بناءً على ملاحظاتهم على الاحتفاظ بالكفاءات التي تقدّرها، كما أن توثيق عمليات الموارد البشرية الروتينية وأتمتتها حيثما كان ذلك مفيدًا يوفّر الوقت لهذا العمل.</p>
 <p>لا حاجة إلى بناء هذه الأسس دفعة واحدة، فالتسلسل المناسب يعتمد على أولوياتك، والأهم هو أن تبدأ.</p>'
             ),
         ],

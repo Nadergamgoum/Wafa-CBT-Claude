@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use App\Models\Engagement;
 use App\Models\Post;
 use App\Models\Service;
 use App\Models\TrainingProgram;
@@ -13,7 +14,7 @@ class Schema
     public static function organization(): array
     {
         $node = [
-            '@type' => ['Organization', 'ProfessionalService'],
+            '@type' => array_values(array_unique(['Organization', in_array(setting('seo.schema_type'), ['ProfessionalService', 'InsuranceAgency', 'Organization'], true) ? setting('seo.schema_type') : 'ProfessionalService'])),
             '@id' => url('/').'#organization',
             'name' => t(setting('general.site_name')) ?: 'WAFA',
             'url' => url('/'),
@@ -132,6 +133,27 @@ class Schema
         }
 
         return $course;
+    }
+
+    /** A corporate engagement write-up with its photo gallery (no event date is invented). */
+    public static function engagement(Engagement $engagement, Collection $gallery): array
+    {
+        $images = $gallery->map(fn ($g) => $g['media']->url(1200))->all();
+        if ($engagement->image) {
+            array_unshift($images, $engagement->image->url(1200));
+        }
+
+        return array_filter([
+            '@type' => 'Article',
+            'headline' => t($engagement->title),
+            'description' => t($engagement->summary) ?: null,
+            'url' => $engagement->url(),
+            'image' => array_values(array_unique($images)) ?: null,
+            'dateCreated' => $engagement->event_date?->toDateString(),
+            'inLanguage' => app()->getLocale(),
+            'publisher' => ['@id' => url('/').'#organization'],
+            'about' => 'Corporate team engagement',
+        ]);
     }
 
     public static function breadcrumbs(array $crumbs): ?array

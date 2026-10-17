@@ -73,13 +73,13 @@ return [
             'image_side' => 'end',
             'art' => 'executive_coaching-detail',
             'eyebrow' => tx('Decision-making & performance development', 'اتخاذ القرار وتطوير الأداء'),
-            'title' => tx('Sharper judgement. *Stronger impact.*', 'حكم أدق. *وأثر أقوى.*'),
-            'body' => tx('Coaching helps leaders slow down their thinking when it matters, see situations from more angles and act with intention — improving both their own performance and that of the people around them.', 'يساعد الكوتشينغ القادة على التأني في التفكير حين يلزم ذلك، ورؤية المواقف من زوايا متعددة، والتصرف عن قصد، ما يحسّن أداءهم وأداء من حولهم.'),
+            'title' => tx('Room to think. *Space to lead deliberately.*', 'مساحة للتفكير. *وقيادة عن وعي.*'),
+            'body' => tx('Coaching gives leaders time to slow down their thinking when it matters, look at situations from more angles and decide how they want to act.', 'يمنح الكوتشينغ القادة وقتًا للتأني في التفكير حين يلزم ذلك، والنظر إلى المواقف من زوايا متعددة، وتحديد الطريقة التي يريدون التصرف بها.'),
             'points' => L(
-                ['Frameworks for complex decisions', 'Feedback on leadership impact', 'Practical experiments between sessions', 'Strategies for focus and resilience'],
-                ['أطر للقرارات المعقدة', 'تغذية راجعة حول الأثر القيادي', 'تجارب عملية بين الجلسات', 'استراتيجيات للتركيز والمرونة']
+                ['Thinking through complex decisions', 'Reflection on leadership style', 'Practical actions between sessions', 'Focus and resilience'],
+                ['التفكير في القرارات المعقدة', 'التأمل في أسلوب القيادة', 'خطوات عملية بين الجلسات', 'التركيز والمرونة']
             ),
-            'aside_title' => tx('Fully confidential', 'سرية تامة'),
+            'aside_title' => tx('Confidentiality agreed upfront', 'اتفاق مسبق على السرية'),
             'aside_text' => tx('What is discussed in coaching stays in coaching unless agreed otherwise.', 'ما يُناقش في جلسات الكوتشينغ يبقى ضمنها ما لم يُتفق على غير ذلك.'),
         ]),
         B('faq', ['source' => 'auto', 'background' => 'white', 'eyebrow' => tx('FAQ', 'الأسئلة الشائعة'), 'title' => tx('Executive coaching questions', 'أسئلة حول الكوتشينغ التنفيذي')]),
@@ -95,12 +95,12 @@ return [
     'faqs' => [
         [tx('Who is executive coaching for?', 'لمن يُقدَّم الكوتشينغ التنفيذي؟'), tx('Senior leaders, executives and high-potential managers stepping into larger roles or leading through significant change.', 'للقادة والتنفيذيين والمديرين الواعدين الذين ينتقلون إلى أدوار أكبر أو يقودون مراحل تغيير مهمة.')],
         [tx('Is executive coaching confidential?', 'هل الكوتشينغ التنفيذي سري؟'), tx('Yes. Confidentiality is agreed at the start. When an organization sponsors the coaching, the scope of any progress updates is agreed with the leader in advance.', 'نعم. يُتفق على السرية منذ البداية، وعندما تكون المؤسسة هي الجهة الراعية يُتفق مسبقًا مع القائد على نطاق أي تحديثات حول التقدّم.')],
-        [tx('How long does an executive coaching engagement last?', 'كم تستمر علاقة الكوتشينغ التنفيذي؟'), tx('Duration and frequency are agreed based on the leader’s goals. Engagements typically run over several months to allow for real change.', 'تُحدد المدة وعدد الجلسات بناءً على أهداف القائد، وعادةً تمتد لعدة أشهر لإتاحة تغيير حقيقي.')],
+        [tx('How long does an executive coaching engagement last?', 'كم تستمر علاقة الكوتشينغ التنفيذي؟'), tx('Duration and frequency are agreed based on the leader’s goals. The length of the engagement is agreed with you at the start.', 'تُحدد المدة وعدد الجلسات بناءً على أهداف القائد، ويُتفق معك على مدة العلاقة في البداية.')],
         [tx('Can sessions be held online?', 'هل يمكن عقد الجلسات عبر الإنترنت؟'), tx('Yes. Sessions can be held in person or online, depending on the leader’s preference and schedule.', 'نعم. يمكن عقد الجلسات حضوريًا أو عبر الإنترنت حسب تفضيل القائد وجدوله.')],
     ],
     'seo' => SEO(
         tx('Executive Coaching for Senior Leaders', 'الكوتشينغ التنفيذي للقادة'),
-        tx('Confidential one-to-one executive coaching for senior leaders: strategic thinking, decision-making, influence and leading change with WAFA.', 'كوتشينغ تنفيذي فردي وسري للقادة: التفكير الاستراتيجي واتخاذ القرار والتأثير وقيادة التغيير مع وفاء.'),
+        tx('Confidential one-to-one executive coaching for senior leaders: strategic thinking, decision-making, influence and leading change with WAFA.', 'كوتشينغ تنفيذي فردي وسري للقادة: التفكير الاستراتيجي واتخاذ القرار والتأثير وقيادة التغيير مع WAFA.'),
         tx('executive coaching', 'الكوتشينغ التنفيذي'),
         tx('leadership coaching, coaching for senior leaders, one-to-one coaching', 'كوتشينغ القيادة, كوتشينغ القادة, الكوتشينغ الفردي'),
     ),

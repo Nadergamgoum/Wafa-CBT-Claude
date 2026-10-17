@@ -63,7 +63,7 @@
 .shero__slant { position: absolute; inset-block: 0; inset-inline-end: 0; inline-size: 54%; border-radius: 0; clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%); }
 [dir='rtl'] .shero__slant { clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%); }
 .shero__slant img { inline-size: 100%; block-size: 100%; object-fit: cover; }
-.shero__ticks { list-style: none; display: grid; gap: 10px; margin-block-start: 26px; color: #e4ebf0; }
+.shero__ticks { list-style: none; display: grid; gap: 10px; margin-block-start: 26px; color: #e3e9ea; }
 .shero__ticks li { display: flex; gap: 10px; align-items: center; }
 .shero__ticks .icon { color: var(--c-accent); }
 @media (max-width: 1023.98px) {
@@ -77,15 +77,15 @@
 .shero--overlay { min-block-size: clamp(480px, 62vh, 640px); display: grid; align-items: end; padding-block: 40px; }
 .shero__cover { position: absolute; inset: 0; z-index: -2; }
 .shero__cover img { inline-size: 100%; block-size: 100%; object-fit: cover; }
-.shero--overlay::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgb(6 22 36 / 70%) 0%, transparent 40%), linear-gradient(90deg, rgb(6 22 36 / 92%) 0%, rgb(6 22 36 / 80%) 45%, rgb(6 22 36 / 25%) 100%); }
-[dir='rtl'] .shero--overlay::before { background: linear-gradient(0deg, rgb(6 22 36 / 70%) 0%, transparent 40%), linear-gradient(270deg, rgb(6 22 36 / 92%) 0%, rgb(6 22 36 / 80%) 45%, rgb(6 22 36 / 25%) 100%); }
-@media (max-width: 767.98px) { .shero--overlay::before { background: rgb(6 22 36 / 82%); } }
+.shero--overlay::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgb(12 14 16 / 70%) 0%, transparent 40%), linear-gradient(90deg, rgb(12 14 16 / 92%) 0%, rgb(12 14 16 / 80%) 45%, rgb(12 14 16 / 25%) 100%); }
+[dir='rtl'] .shero--overlay::before { background: linear-gradient(0deg, rgb(12 14 16 / 70%) 0%, transparent 40%), linear-gradient(270deg, rgb(12 14 16 / 92%) 0%, rgb(12 14 16 / 80%) 45%, rgb(12 14 16 / 25%) 100%); }
+@media (max-width: 767.98px) { .shero--overlay::before { background: rgb(12 14 16 / 82%); } }
 .shero--overlay { isolation: isolate; }
 .shero--overlay .shero__copy { max-inline-size: 720px; }
 .shero--overlay .shero__title { color: #fff; }
-.shero--overlay .lead { color: #dbe4ea; }
+.shero--overlay .lead { color: #dde4e5; }
 .shero__strip { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; margin-block-start: 36px; background: rgb(255 255 255 / 14%); border-radius: var(--radius-lg); overflow: hidden; }
-.shero__strip li { display: flex; gap: 12px; align-items: center; padding: 18px 20px; background: rgb(6 22 36 / 55%); backdrop-filter: blur(8px); font-weight: 600; color: #fff; }
+.shero__strip li { display: flex; gap: 12px; align-items: center; padding: 18px 20px; background: rgb(12 14 16 / 55%); backdrop-filter: blur(8px); font-weight: 600; color: #fff; }
 .shero__strip-ico { color: var(--c-accent); }
 @media (max-width: 767.98px) {
   .shero--overlay { min-block-size: 0; padding-block: 120px 28px; }
@@ -155,17 +155,17 @@
 @media (max-width: 767.98px) { .shero--growth .shero__frame { aspect-ratio: 16 / 10; } .shero__kpis li { font-size: .8rem; padding: 6px 10px; } .shero__kpis li:nth-child(3) { display: none; } }
 
 /* Dark — executive coaching */
-.shero--dark { background: radial-gradient(80% 90% at 85% 10%, color-mix(in oklab, var(--c-accent) 18%, transparent), transparent 60%), #08131d; }
+.shero--dark { background: radial-gradient(80% 90% at 85% 10%, color-mix(in oklab, var(--c-accent) 18%, transparent), transparent 60%), #0c0f11; }
 .shero__lines { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 88px, rgb(255 255 255 / 4%) 88px 89px); }
 .shero--dark .eyebrow { color: var(--c-accent); }
 .shero--dark .shero__title { color: #fff; font-weight: 400; font-variation-settings: 'opsz' 144; }
 [dir='rtl'] .shero--dark .shero__title { font-weight: 600; }
 .shero--dark .shero__title .hl { color: var(--c-accent); }
-.shero--dark .lead { color: #c6d0d8; }
+.shero--dark .lead { color: #c4cdce; }
 .shero--dark .btn:not(.btn--outline-light) { --btn-bg: var(--c-accent); --btn-fg: #111; --btn-bd: var(--c-accent); }
 .shero--dark .btn:not(.btn--outline-light):hover { --btn-bg: #fff; }
 .shero__arch { aspect-ratio: 4 / 5; border-radius: 999px 999px 24px 24px; max-inline-size: 460px; justify-self: center; inline-size: 100%; outline: 1px solid color-mix(in oklab, var(--c-accent) 50%, transparent); outline-offset: 12px; }
-.shero__themes { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; margin-block-start: 28px; color: #d9e1e7; font-size: .96rem; }
+.shero__themes { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; margin-block-start: 28px; color: #d8dfe0; font-size: .96rem; }
 .shero__themes li::before { content: '—'; color: var(--c-accent); margin-inline-end: 8px; }
 @media (max-width: 767.98px) { .shero__arch { aspect-ratio: 16 / 10; border-radius: 160px 160px 18px 18px; max-inline-size: none; outline-offset: 6px; } .shero__themes { display: none; } }
 
@@ -495,7 +495,7 @@
 @media (max-width: 767.98px) { .acct__ring { display: none; } }
 
 /* Leadership themes */
-.themes { background: linear-gradient(180deg, #08131d, var(--c-dark)); }
+.themes { background: linear-gradient(180deg, #0c0f11, var(--c-dark)); }
 .themes__grid { list-style: none; display: grid; border-block-start: 1px solid color-mix(in oklab, var(--c-accent) 40%, transparent); }
 @media (min-width: 768px) { .themes__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .themes__grid { grid-template-columns: repeat(3, 1fr); } }
@@ -518,6 +518,6 @@
 .team__in { position: absolute; inset-inline-end: 12px; top: 12px; display: grid; place-items: center; inline-size: 40px; block-size: 40px; border-radius: 50%; background: #fff; color: #0a66c2; }
 
 /* Family-specific rhythm adjustments */
-.svc--executive_coaching .section.bg-white { background: #fbfaf7; }
+.svc--executive_coaching .section.bg-white { background: #f9faf9; }
 .svc--executive_coaching .h2 { font-weight: 400; }
 .svc--training .chal__card { background: #fff; border-style: dashed; }

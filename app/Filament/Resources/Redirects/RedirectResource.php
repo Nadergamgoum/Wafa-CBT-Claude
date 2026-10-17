@@ -27,7 +27,7 @@ class RedirectResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = 'Site';
 
-    protected static ?string $navigationLabel = 'Redirects (301)';
+    protected static ?string $navigationLabel = 'Redirects & 410';
 
     protected static ?int $navigationSort = 3;
 
@@ -35,9 +35,12 @@ class RedirectResource extends Resource
     {
         return $schema->components([
             TextInput::make('from_path')->label('Old path')->required()->maxLength(300)->unique(ignoreRecord: true)
-                ->helperText('e.g. /about-us or /?page_id=12 (old WordPress URL).'),
-            TextInput::make('to_url')->label('New URL')->required()->maxLength(500)->helperText('A site path like /about or a full https:// URL.'),
-            Select::make('status_code')->options([301 => '301 — permanent', 302 => '302 — temporary'])->default(301)->native(false),
+                ->helperText('e.g. /about-us or /?page_id=12 (old WordPress URL). End with * to match everything below a path, e.g. /portfolio*.'),
+            Select::make('status_code')->label('Response')->options(Redirect::CODES)->default(301)->native(false)->live(),
+            TextInput::make('to_url')->label('New URL')->maxLength(500)
+                ->required(fn ($get) => (int) $get('status_code') !== 410)
+                ->hidden(fn ($get) => (int) $get('status_code') === 410)
+                ->helperText('A site path like /about or a full https:// URL.'),
             Toggle::make('is_active')->label('Active')->default(true),
             TextInput::make('note')->maxLength(190),
         ]);
@@ -47,11 +50,13 @@ class RedirectResource extends Resource
     {
         return $table->columns([
             TextColumn::make('from_path')->searchable(),
-            TextColumn::make('to_url')->searchable(),
+            TextColumn::make('to_url')->searchable()->placeholder('— (410 Gone)'),
             TextColumn::make('status_code')->badge(),
             TextColumn::make('hits')->sortable(),
             TextColumn::make('last_hit_at')->since()->placeholder('Never'),
             IconColumn::make('is_active')->label('Active')->boolean(),
+        ])->filters([
+            \Filament\Tables\Filters\SelectFilter::make('status_code')->label('Response')->options(Redirect::CODES),
         ])->defaultSort('from_path')->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 

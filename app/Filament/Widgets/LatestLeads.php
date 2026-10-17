@@ -11,6 +11,12 @@ use Filament\Widgets\TableWidget;
 
 class LatestLeads extends TableWidget
 {
+    // Analytics and leads are Super Admin information.
+    public static function canView(): bool
+    {
+        return (bool) auth()->user()?->isSuperAdmin();
+    }
+
     protected static ?int $sort = 4;
 
     protected int|string|array $columnSpan = 'full';

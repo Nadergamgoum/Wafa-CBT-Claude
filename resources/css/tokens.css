@@ -4,9 +4,9 @@
 ------------------------------------------------------------------- */
 :root {
   /* Brand */
-  --brand-primary: #0d3150;      /* deep navy — trust, protection */
-  --brand-secondary: #0f7a76;    /* clinical teal — health, care */
-  --brand-accent: #c79a3e;       /* warm gold — premium details */
+  --brand-primary: #16191c;      /* WAFA ink — near-black from the official logo */
+  --brand-secondary: #0e7f75;    /* WAFA teal, accessible shade for white text (≥ 4.5:1) */
+  --brand-accent: #19baab;       /* official WAFA teal (logo dot) — accents, dark backgrounds */
 
   --c-primary: var(--brand-primary);
   --c-primary-700: color-mix(in oklab, var(--brand-primary) 82%, black);
@@ -23,30 +23,30 @@
   --c-accent-100: color-mix(in oklab, var(--brand-accent) 16%, white);
 
   /* Surfaces */
-  --c-dark: color-mix(in oklab, var(--brand-primary) 70%, #020a12);
-  --c-dark-2: color-mix(in oklab, var(--brand-primary) 85%, #020a12);
-  --c-ivory: #f6f3ec;
-  --c-mist: #eef3f3;
+  --c-dark: color-mix(in oklab, var(--brand-primary) 88%, #000);
+  --c-dark-2: color-mix(in oklab, var(--brand-primary) 92%, var(--brand-secondary));
+  --c-ivory: #f6f5f1;
+  --c-mist: #eef5f4;
   --c-white: #ffffff;
 
   /* Text */
-  --c-ink: #0e1f2d;
-  --c-ink-2: #2b3c4a;
-  --c-muted: #4a5b69;
+  --c-ink: #15191c;
+  --c-ink-2: #30373b;
+  --c-muted: #525c61;
   --c-on-dark: #f3f6f8;
-  --c-on-dark-muted: #b7c4ce;
+  --c-on-dark-muted: #b8c2c3;
 
   /* Neutral scale */
-  --n-50: #f7f9fa;
-  --n-100: #eef2f4;
-  --n-200: #dfe5e9;
-  --n-300: #c7d0d6;
-  --n-400: #9aa7b1;
-  --n-500: #6b7a86;
-  --n-600: #4a5b69;
-  --n-700: #33424e;
-  --n-800: #1f2c37;
-  --n-900: #0e1f2d;
+  --n-50: #f7f9f9;
+  --n-100: #eef1f1;
+  --n-200: #dee3e4;
+  --n-300: #c6ced0;
+  --n-400: #99a4a7;
+  --n-500: #6a767a;
+  --n-600: #525c61;
+  --n-700: #3a4246;
+  --n-800: #232a2e;
+  --n-900: #15191c;
 
   /* States */
   --c-success: #17734a;
@@ -58,6 +58,8 @@
 
   /* Accent used by an individual service page (set via data-accent) */
   --svc: var(--c-secondary);
+  /* Darker variant of the service colour for small text on tinted backgrounds (WCAG AA). */
+  --svc-ink: color-mix(in oklab, var(--svc) 80%, #000);
   --svc-soft: var(--c-secondary-50);
   --svc-tint: var(--c-secondary-100);
 
@@ -89,9 +91,9 @@
   --radius: 14px;
   --radius-lg: 22px;
   --radius-xl: 32px;
-  --shadow-sm: 0 1px 2px rgb(14 31 45 / 6%), 0 2px 8px rgb(14 31 45 / 5%);
-  --shadow: 0 2px 6px rgb(14 31 45 / 6%), 0 12px 32px rgb(14 31 45 / 9%);
-  --shadow-lg: 0 8px 24px rgb(14 31 45 / 10%), 0 30px 70px rgb(14 31 45 / 16%);
+  --shadow-sm: 0 1px 2px rgb(16 22 24 / 6%), 0 2px 8px rgb(16 22 24 / 5%);
+  --shadow: 0 2px 6px rgb(16 22 24 / 6%), 0 12px 32px rgb(16 22 24 / 9%);
+  --shadow-lg: 0 8px 24px rgb(16 22 24 / 10%), 0 30px 70px rgb(16 22 24 / 16%);
   --ease: cubic-bezier(.22, .61, .36, 1);
 
   --header-h: 76px;
@@ -113,11 +115,12 @@
   --lh-snug: 1.45;
 }
 
-/* Service accents */
+/* Service accents — subtle variations within the WAFA ink/teal family */
 [data-accent='teal'] { --svc: var(--c-secondary); --svc-soft: var(--c-secondary-50); --svc-tint: var(--c-secondary-100); }
 [data-accent='navy'] { --svc: var(--c-primary); --svc-soft: var(--c-primary-50); --svc-tint: var(--c-primary-100); }
-[data-accent='sky'] { --svc: #1f6fa8; --svc-soft: #eef5fb; --svc-tint: #dcebf6; }
-[data-accent='amber'] { --svc: #8a5212; --svc-soft: #fdf6ec; --svc-tint: #f7e6cc; }
-[data-accent='sage'] { --svc: #4c7a5b; --svc-soft: #f1f6f2; --svc-tint: #dde9e0; }
-[data-accent='plum'] { --svc: #6b4a7a; --svc-soft: #f6f1f8; --svc-tint: #e8dcee; }
-[data-accent='gold'] { --svc: var(--c-accent-700); --svc-soft: #fbf7ee; --svc-tint: var(--c-accent-100); }
+[data-accent='sky'] { --svc: #2f6670; --svc-soft: #eef4f5; --svc-tint: #d9e7e9; }
+[data-accent='amber'] { --svc: #0a5f58; --svc-soft: #edf5f4; --svc-tint: #d3e8e5; }
+[data-accent='sage'] { --svc: #3f7564; --svc-soft: #eff5f2; --svc-tint: #dbe9e3; }
+[data-accent='plum'] { --svc: #4a5157; --svc-soft: #f3f4f5; --svc-tint: #e2e5e7; }
+[data-accent='gold'] { --svc: var(--c-secondary); --svc-soft: var(--c-secondary-50); --svc-tint: var(--c-secondary-100); }
+[data-accent] { --svc-ink: color-mix(in oklab, var(--svc) 80%, #000); }

@@ -3,10 +3,11 @@
     $bg = $b['background'] ?? 'white';
 @endphp
 @if ($programs->isNotEmpty())
-<section class="section progs {{ $bg === 'dark' ? 'on-dark' : 'bg-'.$bg }}" id="{{ $bid }}" aria-labelledby="{{ $bid }}-title" data-accent="amber">
+<section class="section progs {{ $bg === 'dark' ? 'on-dark' : 'bg-'.$bg }}" id="{{ $bid }}" aria-labelledby="{{ $bid }}-title" data-accent="teal">
     <div class="container">
         @include('partials.shead', ['b' => $b, 'align' => 'split'])
-        <div class="rail" data-rail style="--rail-item: min(82%, 360px); --rail-item-md: 46%">
+        {{-- Few programs: a static grid on desktop; more: a scrolling rail. --}}
+        <div class="rail {{ $programs->count() <= 4 ? 'rail--grid' : '' }}" data-rail style="--rail-item: min(82%, 360px); --rail-item-md: 46%; --cols: {{ min(4, max(2, $programs->count())) }}">
             <ul class="rail__track" data-rail-track tabindex="0" aria-label="{{ plain_title(t($b['title'] ?? null)) }}">
                 @foreach ($programs as $p)
                     <li>@include('programs.card', ['program' => $p])</li>

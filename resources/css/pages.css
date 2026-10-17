@@ -25,9 +25,9 @@
 .catfeat__media { border-radius: 0; min-block-size: 260px; }
 .catfeat__body { display: grid; gap: 16px; padding: clamp(24px, 4vw, 56px); align-content: center; justify-items: start; background: linear-gradient(150deg, var(--c-dark), color-mix(in oklab, var(--c-secondary) 40%, var(--c-dark))); }
 .catfeat__body .h2 { color: #fff; }
-.catfeat__body .lead { color: #dbe5ea; }
+.catfeat__body .lead { color: #dde4e5; }
 .catfeat__body .pill { background: rgb(255 255 255 / 12%); color: var(--c-accent); }
-.catfeat .checks li::before { background-color: rgb(255 255 255 / 12%); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e7c27a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E"); }
+.catfeat .checks li::before { background-color: rgb(255 255 255 / 12%); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2319baab' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E"); }
 .catlist { list-style: none; display: grid; gap: 20px; }
 @media (min-width: 768px) { .catlist { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .catlist { grid-template-columns: repeat(3, 1fr); gap: 24px; } .catlist--2 { grid-template-columns: repeat(2, 1fr); } }
@@ -47,7 +47,7 @@
 .contact__channels a { display: flex; align-items: center; gap: 14px; padding: 12px; border-radius: var(--radius); background: #fff; text-decoration: none; color: var(--c-ink); border: 1px solid var(--n-200); }
 .contact__channels a:hover { border-color: var(--c-secondary); color: var(--c-ink); }
 .contact__channels .ico { display: grid; place-items: center; inline-size: 44px; block-size: 44px; border-radius: 12px; background: var(--c-primary-50); color: var(--c-primary); flex: none; }
-.contact__channels .ico--wa { background: #e5f5ec; color: #1f8f4d; }
+.contact__channels .ico--wa { background: #e5f5ec; color: #157a3f; }
 .contact__channels small { display: block; color: var(--c-muted); font-size: .92rem; }
 .contact__addr { display: flex; gap: 10px; color: var(--c-ink-2); }
 .contact__addr .icon { margin-block-start: 4px; color: var(--c-secondary); }
@@ -137,3 +137,38 @@
 .errpage__code { font-family: var(--font-display); font-size: clamp(3.5rem, 2.5rem + 5vw, 6rem); line-height: 1; color: var(--c-secondary); margin: 8px 0 0; }
 .install { inline-size: min(100%, 720px); }
 .install .form { inline-size: 100%; }
+
+/* ===================== Corporate engagements ===================== */
+.eng-facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 0; }
+.eng-facts div { display: grid; gap: 2px; }
+.eng-facts dt { font-size: var(--fs-small); color: var(--c-muted); }
+.eng-facts dd { margin: 0; font-weight: 600; }
+.eng__grid { display: grid; gap: 32px; }
+@media (min-width: 1024px) { .eng__grid { grid-template-columns: 1.4fr .9fr; gap: 64px; align-items: start; } .eng__aside { position: sticky; top: calc(var(--header-h) + 24px); } }
+.eng__aside { padding: 26px; border-radius: var(--radius-lg); background: var(--c-ivory); display: grid; gap: 16px; }
+
+/* ===================== Gallery + lightbox ===================== */
+.gallery__grid { list-style: none; display: grid; gap: 16px; }
+.gallery--grid .gallery__grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.gallery--carousel .gallery__grid { --rail-item: min(82%, 380px); }
+.gallery__item figure { margin: 0; display: grid; gap: 8px; }
+.gallery__link { display: block; border-radius: var(--radius-lg); cursor: zoom-in; }
+.gallery__link img { transition: transform .5s var(--ease); }
+.gallery__link:hover img { transform: scale(1.03); }
+.gallery__link:focus-visible { outline: 3px solid var(--c-accent); outline-offset: 3px; }
+.gallery__item figcaption { color: var(--c-muted); font-size: var(--fs-small); }
+.lightbox { padding: 0; border: 0; inline-size: 100vw; block-size: 100dvh; max-inline-size: none; max-block-size: none; background: rgb(10 12 14 / 94%); color: #fff; }
+.lightbox::backdrop { background: rgb(10 12 14 / 80%); }
+.lightbox__inner { position: relative; display: grid; place-items: center; block-size: 100%; padding: 64px 16px 24px; }
+.lightbox__fig { margin: 0; display: grid; gap: 12px; justify-items: center; max-inline-size: min(1200px, 100%); }
+.lightbox__fig img { max-block-size: calc(100dvh - 150px); inline-size: auto; border-radius: 12px; }
+.lightbox__fig figcaption { color: rgb(255 255 255 / 80%); font-size: var(--fs-small); text-align: center; }
+.lightbox__count { opacity: .7; margin-inline-start: 8px; }
+.lightbox__close, .lightbox__nav { position: absolute; display: grid; place-items: center; inline-size: 48px; block-size: 48px; border-radius: 50%; border: 1px solid rgb(255 255 255 / 30%); background: rgb(255 255 255 / 8%); color: #fff; }
+.lightbox__close:hover, .lightbox__nav:hover { background: rgb(255 255 255 / 18%); }
+.lightbox__close { top: 12px; inset-inline-end: 12px; }
+.lightbox__nav { top: 50%; transform: translateY(-50%); }
+.lightbox__nav--prev { inset-inline-start: 12px; }
+.lightbox__nav--next { inset-inline-end: 12px; }
+@media (max-width: 767.98px) { .lightbox__nav { top: auto; bottom: 16px; transform: none; } }
+html.has-lightbox { overflow: hidden; }

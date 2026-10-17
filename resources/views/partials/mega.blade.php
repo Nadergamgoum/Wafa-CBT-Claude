@@ -36,6 +36,9 @@
         <a class="link-arrow" href="{{ $cat->url() }}">{{ __('site.view_all') }} {!! icon('arrow-right', 'icon flip-rtl') !!}</a>
         @if ($cat->key === 'learning')
             <a class="link-arrow" href="{{ lroute('programs.index') }}">{{ __('site.training_programs') }} {!! icon('arrow-right', 'icon flip-rtl') !!}</a>
+            @if (\App\Support\Content::engagements(1)->isNotEmpty())
+                <a class="link-arrow" href="{{ lroute('engagements.index') }}">{{ __('site.engagements') }} {!! icon('arrow-right', 'icon flip-rtl') !!}</a>
+            @endif
         @endif
         <a class="btn btn--sm btn--ghost" href="{{ lroute('contact') }}#contact-form" data-event="consultation_click">{{ __('site.request_consultation') }}</a>
     </div>

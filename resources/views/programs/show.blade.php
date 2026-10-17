@@ -8,7 +8,7 @@
     $agenda = collect($p->agenda ?? [])->filter(fn ($a) => t($a['title'] ?? null) !== '');
     $statusClass = match ($p->registration_status) { 'open' => 'pill--ok', 'upcoming' => 'pill--warn', 'full', 'closed' => 'pill--neutral', default => '' };
 @endphp
-<div data-accent="amber">
+<div data-accent="teal">
 <section class="phero phero--ivory prog-hero">
     <div class="container phero__grid has-media">
         <div class="phero__copy">

@@ -12,7 +12,8 @@
 @foreach ($seo->alternates as $l => $href)
 <link rel="alternate" hreflang="{{ $l }}" href="{{ $href }}">
 @endforeach
-@if (isset($seo->alternates['en']))<link rel="alternate" hreflang="x-default" href="{{ $seo->alternates['en'] }}">@endif
+@php $xd = setting('seo.x_default') === 'ar' ? 'ar' : 'en'; @endphp
+@if (isset($seo->alternates[$xd]))<link rel="alternate" hreflang="x-default" href="{{ $seo->alternates[$xd] }}">@endif
 <meta property="og:site_name" content="{{ $siteName }}">
 <meta property="og:type" content="{{ $seo->ogType }}">
 <meta property="og:title" content="{{ $seo->ogTitle ?: $full }}">

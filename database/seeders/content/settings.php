@@ -1,44 +1,52 @@
 <?php
 
-// Every factual business detail (phone, WhatsApp, email, address, social links,
-// analytics IDs) is intentionally left EMPTY — fill them in Admin → Settings.
+// Verified contact details only (phone, WhatsApp, email). Address, hours, map,
+// social profiles and analytics IDs stay EMPTY until verified values are supplied
+// — fill them in Admin → Settings; empty values are hidden on the site.
 return [
     'general' => [
-        'site_name' => tx('WAFA', 'وفاء'),
+        'site_name' => tx('WAFA', 'WAFA'),
         'legal_name' => tx('', ''),
         'tagline' => tx('Protecting People. Strengthening Businesses.', 'نحمي الأفراد. ونمكّن المؤسسات.'),
         'header_cta' => tx('Talk to Our Experts', 'تحدّث إلى خبرائنا'),
+        'header_cta_link' => '/contact#contact-form',
+        'language_switcher' => true,
+        'maintenance' => false,
+        'maintenance_title' => tx('', ''),
+        'maintenance_message' => tx('', ''),
     ],
     'brand' => [
         'logo' => null,
         'logo_light' => null,
         'favicon' => null,
         'og_image' => null,
-        // Provisional palette — replace with the official WAFA brand values.
-        'color_primary' => '#0d3150',
-        'color_secondary' => '#0f7a76',
-        'color_accent' => '#c79a3e',
+        // Official WAFA palette: near-black ink, accessible deep teal (white text
+        // passes WCAG AA on it) and the official logo teal #19BAAB as accent.
+        'color_primary' => '#16191c',
+        'color_secondary' => '#0e7f75',
+        'color_accent' => '#19baab',
+        'heading_font' => 'serif',
     ],
     'contact' => [
-        'phone' => '',
-        'email' => '',
+        'phone' => '+20 10 33300023',
+        'email' => 'info@wafa-cbt.com',
         'address' => tx('', ''),
         'hours' => tx('', ''),
         'street' => tx('', ''),
         'city' => tx('', ''),
         'region' => tx('', ''),
         'postal_code' => '',
-        'country_code' => '',
-        'area_served' => '',
+        'country_code' => 'EG',
+        'area_served' => 'Egypt',
         'map_embed_url' => '',
         'messenger_url' => '',
         'telegram_url' => '',
     ],
     'whatsapp' => [
-        'enabled' => false,
-        'country_code' => '',
-        'number' => '',
-        'message' => tx('Hello WAFA, I would like to learn more about your services.', 'مرحبًا وفاء، أودّ معرفة المزيد عن خدماتكم.'),
+        'enabled' => true,
+        'country_code' => '20',
+        'number' => '1033300023',
+        'message' => tx('Hello WAFA, I would like to learn more about your services.', 'مرحبًا WAFA، أودّ معرفة المزيد عن خدماتكم.'),
     ],
     'channels' => [
         'widget_enabled' => true,
@@ -54,12 +62,24 @@ return [
             ['key' => 'telegram', 'enabled' => false],
         ],
     ],
+    'quickbar' => [
+        'enabled' => true,
+        'consult_link' => '/contact#contact-form',
+        'items' => [
+            ['key' => 'phone', 'enabled' => true],
+            ['key' => 'whatsapp', 'enabled' => true],
+            ['key' => 'consult', 'enabled' => false],
+            ['key' => 'email', 'enabled' => false],
+        ],
+        'label_phone' => tx('', ''), 'label_whatsapp' => tx('', ''), 'label_consult' => tx('', ''), 'label_email' => tx('', ''),
+    ],
     'social' => [
         'items' => collect(['linkedin', 'facebook', 'instagram', 'x', 'youtube', 'tiktok', 'telegram', 'snapchat', 'threads', 'whatsapp'])
             ->map(fn ($p) => ['platform' => $p, 'url' => '', 'enabled' => false])->all(),
     ],
     'analytics' => [
         'first_party' => true,
+        'ga4_enabled' => true, 'gtm_enabled' => true, 'meta_enabled' => true, 'linkedin_enabled' => true, 'tiktok_enabled' => true,
         'ga4_id' => '', 'gtm_id' => '', 'meta_pixel_id' => '', 'linkedin_partner_id' => '', 'tiktok_pixel_id' => '',
         'google_verification' => '', 'bing_verification' => '',
         'ga4_property_id' => '',
@@ -67,12 +87,15 @@ return [
     'seo' => [
         'title_pattern' => tx('%title% | %site%', '%title% | %site%'),
         'default_description' => tx(
-            'WAFA brings together corporate medical insurance, employee health benefits, insurance brokerage and people solutions — HR consulting, organizational development, training and coaching.',
-            'تجمع وفاء بين التأمين الطبي للشركات ومزايا الموظفين الصحية والوساطة التأمينية وحلول الموارد البشرية، من الاستشارات والتطوير المؤسسي إلى التدريب والكوتشينغ.'
+            'WAFA is a professional consultancy firm in Egypt specializing in insurance brokerage and corporate medical insurance management, HR consulting and organizational development, training, and business and executive coaching.',
+            'WAFA مؤسسة استشارية في مصر متخصصة في الوساطة التأمينية وإدارة التأمين الطبي للشركات، واستشارات الموارد البشرية والتطوير المؤسسي، والتدريب، وكوتشينغ الأعمال والكوتشينغ التنفيذي.'
         ),
         'allow_indexing' => true,
         'twitter_handle' => '',
         'robots_extra' => '',
+        'x_default' => 'en',
+        'schema_type' => 'ProfessionalService',
+        'sitemap_programs' => true, 'sitemap_engagements' => true, 'sitemap_posts' => true, 'sitemap_post_categories' => true,
     ],
     'footer' => [
         'tagline' => tx(
@@ -80,9 +103,16 @@ return [
             'حلول متكاملة في التأمين الطبي ومزايا الموظفين والموارد البشرية، مصمّمة حول احتياجات مؤسستك.'
         ),
         'copyright' => tx('All rights reserved.', 'جميع الحقوق محفوظة.'),
+        'show_services' => true,
+        'cta_enabled' => false,
+        'cta_title' => tx('', ''),
+        'cta_label' => tx('', ''),
+        'cta_link' => '',
     ],
     'cookies' => [
         'require_consent' => true,
+        'category_analytics' => true,
+        'category_marketing' => true,
         'version' => '1',
         'title' => tx('Your privacy choices', 'خيارات الخصوصية'),
         'text' => tx(

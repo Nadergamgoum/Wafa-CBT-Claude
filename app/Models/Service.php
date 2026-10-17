@@ -37,13 +37,13 @@ class Service extends Model
     ];
 
     public const ACCENTS = [
-        'teal' => 'Teal (health)',
-        'navy' => 'Navy',
-        'sky' => 'Sky',
-        'amber' => 'Amber',
-        'sage' => 'Sage',
-        'plum' => 'Plum',
-        'gold' => 'Gold',
+        'teal' => 'WAFA teal',
+        'navy' => 'WAFA ink (near-black)',
+        'sky' => 'Slate teal',
+        'amber' => 'Deep teal',
+        'sage' => 'Sage teal',
+        'plum' => 'Graphite',
+        'gold' => 'Bright teal (dark pages)',
     ];
 
     protected $fillable = ['service_category_id', 'family', 'slug', 'title', 'nav_title', 'summary', 'hero', 'hero_variant',

@@ -37,8 +37,9 @@ and the active section are shown on every inner page.
 
 ## 2. Design direction
 
-**“Editorial healthcare-grade corporate.”** Calm, premium and human: a deep navy for trust, a clinical
-teal for health and care, a warm gold for premium details, warm ivory and mist neutrals. Display
+**“Editorial healthcare-grade corporate.”** Calm, premium and human, built on the official WAFA
+identity: near-black ink (`#16191C`) for authority, an accessible deep teal (`#0E7F75`) for actions and
+the official logo teal (`#19BAAB`) for highlights, with warm ivory and mist neutrals. Display
 headings use **Fraunces** (an editorial serif, with italic highlights), body text **Inter**, and Arabic
 **IBM Plex Sans Arabic**, all self-hosted. Layouts are asymmetric and editorial rather than card grids:
 numbered indexes, sticky section heads, diagrams, timelines and dark “spotlight” bands.
@@ -71,7 +72,7 @@ channels. Every section is editable, re-orderable and hideable in the CMS.
 | Organizational development | Premium minimal, centred, with **current→future journey line** | **Four-stage transformation flow** (grey → brand) → Challenge grid → **Radar diagnosis** of six dimensions → Capability split → **Gantt-style roadmap** → **Today vs future-state** comparison → FAQ |
 | Training | Learning split on notebook-grid background, program counter, format chips | Thin-line principles grid → Program categories → Outcomes → Delivery formats → Featured programs rail → **Learning cycle** → FAQ → Image CTA |
 | Business coaching | Growth split with chart motif and KPI chips | Light challenge tiles → **Focus tag cloud** → **Goals & accountability ring** → **Ascending stairs roadmap** → Related → FAQ |
-| Executive coaching | Dark, gold-accented, serif-light, **arched portrait** frame | Statement rows → **Roman-numeral leadership themes** (dark) → Vertical one-to-one journey → Decision-making split → FAQ → Dark CTA |
+| Executive coaching | Dark, bright-teal-accented, serif-light, **arched portrait** frame | Statement rows → **Roman-numeral leadership themes** (dark) → Vertical one-to-one journey → Decision-making split → FAQ → Dark CTA |
 
 Each family uses a unique hero layout (verified by an automated test) and distinct section types,
 so pages remain recognisably different even with titles and images hidden.
@@ -153,14 +154,17 @@ application code outside the web root, persistent cache refuses to unserialize P
 
 ## 11. External values still needed from WAFA
 
-1. Official **logo** files (light and dark versions; PNG/WebP) and favicon.
-2. Official **brand colours** (hex).
-3. **Phone**, **WhatsApp number**, **email**, **address**, **business hours**, map location.
-4. **Social media** profile URLs.
-5. Official **Arabic company name** and legal company name.
-6. Confirmation of services/products and the provisional texts listed in `CONTENT-NOTES.md`.
-7. Real **training programs** (dates, facilitators, durations, certificates) if any.
-8. **Professional photography** (see `IMAGE-BRIEF.md`).
-9. Legacy **URL list** of the old site for 301 redirects.
+Already verified and in place: official logo and favicon, brand colours, phone, WhatsApp, email,
+About / founder / vision / mission / values, service scope (see `CONTENT-NOTES.md`).
+
+1. **Address**, **business hours**, map location and **social media** profile URLs.
+2. Legal company name.
+3. Approval (or removal) of the pending claims: 24/7 client support, fast turnaround, certified
+   trainers and coaches.
+4. Review of the provisional supporting copy and the Arabic translations listed in `CONTENT-NOTES.md`.
+5. Real **training courses** (dates, facilitators, durations, certificates) if any, and the date /
+   approved client name for the corporate engagement.
+6. **Professional photography** (see `IMAGE-BRIEF.md`).
+7. Any genuine testimonials, team members, statistics or client logos — with permission.
 10. Hosting values at deployment: domain, MySQL credentials, SMTP mailbox, notification email,
     and (optional) GA4/GTM/Meta/LinkedIn/TikTok IDs and Search Console/Bing verification codes.

@@ -33,9 +33,12 @@ class HandleRedirects
             }
         }
         foreach ($candidates as $candidate) {
-            if (isset($map[$candidate])) {
-                [$to, $code, $id] = $map[$candidate];
+            if ($rule = Redirect::match($map, $candidate)) {
+                [$to, $code, $id] = $rule;
                 Redirect::query()->whereKey($id)->update(['hits' => \DB::raw('hits + 1'), 'last_hit_at' => now()]);
+                if ($code === 410 || ! $to) {
+                    abort(410);
+                }
                 $target = preg_match('#^https?://#', $to) ? $to : url($to);
 
                 return redirect()->to($target, in_array($code, [301, 302, 307, 308], true) ? $code : 301);

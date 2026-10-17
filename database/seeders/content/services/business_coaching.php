@@ -15,7 +15,7 @@ return [
     ),
     'hero' => [
         'eyebrow' => tx('Learning & Leadership · Business Coaching', 'التعلّم والقيادة · كوتشينغ الأعمال'),
-        'title' => tx('Turn ambition into *focused, measurable progress*', 'حوّل الطموح إلى *تقدّم مركّز وقابل للقياس*'),
+        'title' => tx('Turn ambition into *focused action*', 'حوّل الطموح إلى *عمل مركّز*'),
         'lead' => tx(
             'Business coaching gives you dedicated time, structure and an objective partner to work on your business — not only in it.',
             'يمنحك كوتشينغ الأعمال وقتًا مخصّصًا وإطارًا منظّمًا وشريكًا موضوعيًا للعمل على تطوير عملك، لا مجرد الانشغال بتفاصيله اليومية.'
@@ -25,7 +25,7 @@ return [
         'highlights' => [
             ['icon' => 'target', 'label' => tx('Clear goals', 'أهداف واضحة')],
             ['icon' => 'calendar-check', 'label' => tx('Regular accountability', 'متابعة منتظمة')],
-            ['icon' => 'trending-up', 'label' => tx('Sustained growth', 'نمو مستدام')],
+            ['icon' => 'messages-square', 'label' => tx('An objective thinking partner', 'شريك تفكير موضوعي')],
         ],
     ],
     'sections' => [
@@ -83,7 +83,7 @@ return [
                 ['title' => tx('Focus', 'التركيز'), 'text' => tx('Agree the few priorities that will move the business.', 'الاتفاق على الأولويات القليلة التي تدفع العمل للأمام.')],
                 ['title' => tx('Action', 'العمل'), 'text' => tx('Regular sessions to plan, act and review.', 'جلسات منتظمة للتخطيط والتنفيذ والمراجعة.')],
                 ['title' => tx('Review', 'التقييم'), 'text' => tx('Assess progress against the goals set.', 'تقييم التقدّم مقارنة بالأهداف المحددة.')],
-                ['title' => tx('Sustain', 'الاستدامة'), 'text' => tx('Embed habits and systems that keep growth going.', 'ترسيخ العادات والأنظمة التي تحافظ على النمو.')],
+                ['title' => tx('Sustain', 'الاستدامة'), 'text' => tx('Embed the habits and systems you want to keep.', 'ترسيخ العادات والأنظمة التي تودّ الحفاظ عليها.')],
             ],
         ]),
         B('related', ['background' => 'white', 'eyebrow' => tx('Works well with', 'يتكامل مع'), 'title' => tx('Related services', 'خدمات ذات صلة')]),
@@ -105,7 +105,7 @@ return [
     ],
     'seo' => SEO(
         tx('Business Coaching for Owners & Managers', 'كوتشينغ الأعمال لأصحاب الأعمال والمديرين'),
-        tx('Business coaching that turns ambition into progress: clear goals, regular accountability and a growth roadmap for business owners and managers with WAFA.', 'كوتشينغ أعمال يحوّل الطموح إلى تقدّم: أهداف واضحة ومتابعة منتظمة وخارطة نمو لأصحاب الأعمال والمديرين مع وفاء.'),
+        tx('Business coaching for owners and managers with WAFA: clear goals, regular accountability and an objective thinking partner to work on the business, not only in it.', 'كوتشينغ أعمال يحوّل الطموح إلى تقدّم: أهداف واضحة ومتابعة منتظمة وخارطة نمو لأصحاب الأعمال والمديرين مع WAFA.'),
         tx('business coaching', 'كوتشينغ الأعمال'),
         tx('business growth coaching, coaching for business owners, management coaching', 'كوتشينغ النمو, كوتشينغ أصحاب الأعمال, كوتشينغ الإدارة'),
     ),

@@ -10,8 +10,8 @@ return [
     'hero_variant' => 'editorial',
     'title' => tx('Life Insurance', 'التأمين على الحياة'),
     'summary' => tx(
-        'Life protection for employees, business owners and families — explained clearly and arranged with the right insurer.',
-        'حماية تأمينية على الحياة للموظفين وأصحاب الأعمال والأسر، نشرحها بوضوح ونرتّبها مع شركة التأمين المناسبة.'
+        'Financial protection that secures your family’s future — life cover for employees, business owners and families, explained clearly and arranged with the right insurer.',
+        'حماية مالية تؤمّن مستقبل أسرتك: تأمين على الحياة للموظفين وأصحاب الأعمال والأسر، نشرحه بوضوح ونرتّبه مع شركة التأمين المناسبة.'
     ),
     'hero' => [
         'eyebrow' => tx('Insurance · Life protection', 'التأمين · الحماية على الحياة'),
@@ -117,7 +117,7 @@ return [
     ],
     'seo' => SEO(
         tx('Life Insurance for Employees, Businesses & Families', 'التأمين على الحياة للموظفين والشركات والأسر'),
-        tx('Group and individual life insurance arranged with clear advice: compare options, understand cover and get support from enrolment to claims with WAFA.', 'تأمين جماعي وفردي على الحياة مع استشارة واضحة: قارن الخيارات وافهم التغطية واحصل على الدعم من التسجيل حتى المطالبات مع وفاء.'),
+        tx('Group and individual life insurance arranged with clear advice: compare options, understand cover and get support from enrolment to claims with WAFA.', 'تأمين جماعي وفردي على الحياة مع استشارة واضحة: قارن الخيارات وافهم التغطية واحصل على الدعم من التسجيل حتى المطالبات مع WAFA.'),
         tx('life insurance', 'التأمين على الحياة'),
         tx('group life insurance, employee life insurance, individual life cover', 'التأمين الجماعي على الحياة, التأمين على حياة الموظفين, التأمين الفردي على الحياة'),
     ),

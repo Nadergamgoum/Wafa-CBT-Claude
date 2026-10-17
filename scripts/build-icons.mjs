@@ -10,7 +10,8 @@ cloud-lightning wrench truck package factory landmark wallet receipt headset lif
 heart-handshake baby hand-heart chart-no-axes-combined gauge eye messages-square calendar-check list-checks user-check shield
 sun-medium leaf circle-dollar-sign file-search git-branch milestone rocket mic library video message-square-text send
 external-link download info triangle-alert cookie log-in hand-coins scan-search shield-plus user-cog users-round building door-open
-warehouse car-front siren clipboard-list notebook-pen chart-pie handshake zap`.split(/\s+/).filter(Boolean);
+warehouse car-front siren clipboard-list notebook-pen chart-pie handshake zap
+file-check chart-column camera images image award calendar-days user-round-check`.split(/\s+/).filter(Boolean);
 
 const brands = { whatsapp: 'whatsapp', facebook: 'facebook', instagram: 'instagram', x: 'x', youtube: 'youtube', tiktok: 'tiktok',
   telegram: 'telegram', snapchat: 'snapchat', threads: 'threads', messenger: 'messenger' };

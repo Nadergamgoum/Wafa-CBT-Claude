@@ -127,7 +127,7 @@ return [
     ],
     'seo' => SEO(
         tx('Organizational Development & Transformation', 'التطوير المؤسسي والتحوّل'),
-        tx('Organizational development consulting: diagnose the current state, design the future organization, build capabilities and sustain change with WAFA.', 'استشارات التطوير المؤسسي: تشخيص الوضع الحالي وتصميم المؤسسة المستقبلية وبناء القدرات واستدامة التغيير مع وفاء.'),
+        tx('Organizational development consulting: diagnose the current state, design the future organization, build capabilities and sustain change with WAFA.', 'استشارات التطوير المؤسسي: تشخيص الوضع الحالي وتصميم المؤسسة المستقبلية وبناء القدرات واستدامة التغيير مع WAFA.'),
         tx('organizational development', 'التطوير المؤسسي'),
         tx('organizational transformation, change management, organizational diagnosis', 'التحول المؤسسي, إدارة التغيير, التشخيص المؤسسي'),
     ),

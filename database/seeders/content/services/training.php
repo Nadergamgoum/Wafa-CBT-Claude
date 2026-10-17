@@ -11,25 +11,24 @@ return [
     'title' => tx('Training & Professional Development', 'التدريب والتطوير المهني'),
     'nav_title' => tx('Training', 'التدريب'),
     'summary' => tx(
-        'Practical, needs-based training programs that build skills your teams can apply at work — delivered in person, online or in-house.',
-        'برامج تدريبية عملية مبنية على الاحتياجات، تبني مهارات يطبقها فريقك في العمل، وتُقدَّم حضوريًا أو عبر الإنترنت أو داخل المؤسسة.'
+        'Developing skills that drive growth: impactful training programs that inspire change, build confidence and strengthen team performance — as customized in-house or online workshops.',
+        'تطوير مهارات تدفع النمو: برامج تدريبية مؤثرة تُلهم التغيير وتبني الثقة وتعزّز أداء الفرق، وتُقدَّم كورش عمل مخصّصة داخل المؤسسة أو عبر الإنترنت.'
     ),
     'hero' => [
         'eyebrow' => tx('Learning & Leadership · Training', 'التعلّم والقيادة · التدريب'),
-        'title' => tx('Learning that changes *how work gets done*', 'تعلّم يغيّر *طريقة إنجاز العمل*'),
+        'title' => tx('Developing skills that *drive growth*', 'تطوير مهارات *تدفع النمو*'),
         'lead' => tx(
-            'We design and deliver training around real workplace challenges, so participants leave with skills, tools and confidence they can use the next day.',
-            'نصمّم البرامج التدريبية ونقدّمها حول تحديات العمل الحقيقية، ليغادر المشاركون بمهارات وأدوات وثقة يستخدمونها في اليوم التالي.'
+            'We design impactful training programs that inspire change, build confidence and strengthen team performance.',
+            'نصمّم برامج تدريبية مؤثرة تُلهم التغيير وتبني الثقة وتعزّز أداء الفرق.'
         ),
-        'cta_label' => tx('Browse programs', 'تصفّح البرامج'),
-        'cta_link' => '/training-programs',
-        'cta2_label' => tx('Request in-house training', 'اطلب تدريبًا داخل مؤسستك'),
-        'cta2_link' => '/contact#contact-form',
+        'cta_label' => tx('Request a training proposal', 'اطلب عرضًا تدريبيًا'),
+        'cta_link' => '/contact#contact-form',
+        'cta2_label' => tx('Explore program areas', 'استكشف مجالات البرامج'),
+        'cta2_link' => '/training-programs',
         'highlights' => [
-            ['icon' => 'presentation', 'label' => tx('In person', 'حضوري')],
-            ['icon' => 'monitor', 'label' => tx('Live online', 'مباشر عبر الإنترنت')],
-            ['icon' => 'building-2', 'label' => tx('In-house', 'داخل المؤسسة')],
-            ['icon' => 'layers', 'label' => tx('Blended', 'مدمج')],
+            ['icon' => 'building-2', 'label' => tx('Customized in-house workshops', 'ورش عمل مخصّصة داخل المؤسسة')],
+            ['icon' => 'monitor', 'label' => tx('Online workshops', 'ورش عمل عبر الإنترنت')],
+            ['icon' => 'users', 'label' => tx('Leadership & team building', 'القيادة وبناء الفرق')],
         ],
     ],
     'sections' => [
@@ -37,12 +36,12 @@ return [
             'layout' => 'lines',
             'background' => 'white',
             'eyebrow' => tx('Our training approach', 'منهجيتنا في التدريب'),
-            'title' => tx('Four principles behind *every program*', 'أربعة مبادئ وراء *كل برنامج*'),
+            'title' => tx('The principles behind *every program*', 'المبادئ التي يقوم عليها *كل برنامج*'),
             'items' => [
                 I('scan-search', tx('Needs-based', 'مبني على الاحتياجات'), tx('Programs start from a clear understanding of the skills your teams need.', 'تنطلق البرامج من فهم واضح للمهارات التي يحتاجها فريقك.')),
                 I('wrench', tx('Practical', 'عملي'), tx('Real cases, tools and exercises from the participants’ own context.', 'حالات وأدوات وتمارين واقعية من بيئة عمل المشاركين.')),
                 I('messages-square', tx('Interactive', 'تفاعلي'), tx('Discussion, practice and feedback rather than one-way lectures.', 'حوار وممارسة وتغذية راجعة بدلًا من المحاضرات أحادية الاتجاه.')),
-                I('gauge', tx('Measurable', 'قابل للقياس'), tx('Clear learning objectives and follow-up to support application.', 'أهداف تعلّم واضحة ومتابعة تدعم التطبيق.')),
+                I('refresh-cw', tx('Followed up', 'متابعة بعد التدريب'), tx('Clear learning objectives and follow-up to support application at work.', 'أهداف تعلّم واضحة ومتابعة تدعم التطبيق في العمل.')),
             ],
         ]),
         B('program_categories', [
@@ -57,10 +56,10 @@ return [
             'eyebrow' => tx('Learning outcomes', 'نتائج التعلّم'),
             'title' => tx('What participants *take back to work*', 'ما يعود به المشاركون *إلى العمل*'),
             'items' => [
-                ['title' => tx('Practical skills', 'مهارات عملية'), 'text' => tx('Techniques they can apply immediately.', 'أساليب يمكن تطبيقها فورًا.')],
-                ['title' => tx('Shared language', 'لغة مشتركة'), 'text' => tx('Common frameworks that help teams work together.', 'أطر مشتركة تساعد الفرق على العمل معًا.')],
+                ['title' => tx('Change', 'التغيير'), 'text' => tx('Programs designed to inspire change in how people work.', 'برامج مصمّمة لإلهام التغيير في طريقة العمل.')],
                 ['title' => tx('Confidence', 'الثقة'), 'text' => tx('Practice in a safe environment before real situations.', 'ممارسة في بيئة آمنة قبل المواقف الحقيقية.')],
-                ['title' => tx('Action plans', 'خطط عمل'), 'text' => tx('Personal commitments to apply what they learned.', 'التزامات شخصية لتطبيق ما تعلموه.')],
+                ['title' => tx('Team performance', 'أداء الفريق'), 'text' => tx('Shared skills and language that strengthen how teams perform.', 'مهارات ولغة مشتركة تعزّز أداء الفرق.')],
+                ['title' => tx('Practical skills', 'مهارات عملية'), 'text' => tx('Techniques participants can apply at work.', 'أساليب يمكن للمشاركين تطبيقها في العمل.')],
             ],
         ]),
         B('formats', [
@@ -68,16 +67,14 @@ return [
             'eyebrow' => tx('Delivery formats', 'أساليب التقديم'),
             'title' => tx('Flexible formats for *different teams*', 'أساليب مرنة *لفرق مختلفة*'),
             'items' => [
-                I('presentation', tx('In person', 'حضوري'), tx('Workshops that maximize interaction and practice.', 'ورش عمل تعزّز التفاعل والممارسة.')),
-                I('monitor', tx('Live online', 'مباشر عبر الإنترنت'), tx('Interactive virtual sessions for distributed teams.', 'جلسات افتراضية تفاعلية للفرق الموزعة.')),
-                I('building-2', tx('In-house', 'داخل المؤسسة'), tx('Programs tailored and delivered for your organization only.', 'برامج مخصّصة تُقدَّم لمؤسستك وحدها.')),
-                I('layers', tx('Blended', 'مدمج'), tx('A mix of sessions, practice and follow-up over time.', 'مزيج من الجلسات والممارسة والمتابعة على مدى زمني.')),
+                I('building-2', tx('Customized in-house workshops', 'ورش عمل مخصّصة داخل المؤسسة'), tx('Workshops tailored to your objectives and delivered for your organization.', 'ورش عمل مصمّمة وفق أهدافك وتُقدَّم لمؤسستك.')),
+                I('monitor', tx('Online workshops', 'ورش عمل عبر الإنترنت'), tx('Interactive online sessions for teams wherever they work.', 'جلسات تفاعلية عبر الإنترنت للفرق أينما كانت.')),
             ],
         ]),
         B('programs', [
             'background' => 'mist',
-            'eyebrow' => tx('Featured programs', 'برامج مميزة'),
-            'title' => tx('Selected *training programs*', 'برامج تدريبية *مختارة*'),
+            'eyebrow' => tx('Program areas', 'مجالات البرامج'),
+            'title' => tx('Our *training program* areas', 'مجالات *برامجنا التدريبية*'),
             'limit' => 6,
             'cta_label' => tx('View all programs', 'عرض جميع البرامج'),
             'cta_link' => '/training-programs',
@@ -91,10 +88,17 @@ return [
             'items' => [
                 ['icon' => 'scan-search', 'title' => tx('Needs analysis', 'تحليل الاحتياجات'), 'text' => tx('Identify skills gaps and priorities with you.', 'تحديد فجوات المهارات والأولويات بالتعاون معك.')],
                 ['icon' => 'notebook-pen', 'title' => tx('Program design', 'تصميم البرنامج'), 'text' => tx('Objectives, content and activities tailored to your context.', 'أهداف ومحتوى وأنشطة مصمّمة لواقعك.')],
-                ['icon' => 'presentation', 'title' => tx('Delivery', 'التقديم'), 'text' => tx('Engaging sessions led by experienced facilitators.', 'جلسات تفاعلية يقدّمها مدرّبون متمرسون.')],
+                ['icon' => 'presentation', 'title' => tx('Delivery', 'التقديم'), 'text' => tx('Interactive sessions focused on discussion and practice.', 'جلسات تفاعلية تركّز على الحوار والممارسة.')],
                 ['icon' => 'clipboard-check', 'title' => tx('Evaluation', 'التقييم'), 'text' => tx('Participant feedback and learning checks.', 'ملاحظات المشاركين واختبارات التعلّم.')],
                 ['icon' => 'refresh-cw', 'title' => tx('Reinforcement', 'الترسيخ'), 'text' => tx('Follow-up that supports application at work.', 'متابعة تدعم التطبيق في العمل.')],
             ],
+        ]),
+        B('engagements', [
+            'background' => 'ivory',
+            'eyebrow' => tx('Corporate engagements', 'فعاليات الشركات'),
+            'title' => tx('Team engagement *in practice*', 'التفاعل المؤسسي *على أرض الواقع*'),
+            'lead' => tx('Interactive corporate sessions that strengthen participation, communication and trust within teams.', 'جلسات مؤسسية تفاعلية تعزّز المشاركة والتواصل والثقة داخل الفرق.'),
+            'limit' => 3,
         ]),
         B('faq', ['source' => 'auto', 'background' => 'mist', 'eyebrow' => tx('FAQ', 'الأسئلة الشائعة'), 'title' => tx('Training questions', 'أسئلة حول التدريب')]),
         B('cta_band', [
@@ -117,7 +121,7 @@ return [
     ],
     'seo' => SEO(
         tx('Corporate Training & Professional Development Programs', 'برامج التدريب المؤسسي والتطوير المهني'),
-        tx('Practical corporate training programs in leadership, HR, communication and professional skills — delivered in person, online or in-house by WAFA.', 'برامج تدريب مؤسسي عملية في القيادة والموارد البشرية والتواصل والمهارات المهنية، تُقدَّم حضوريًا أو عبر الإنترنت أو داخل المؤسسة من وفاء.'),
+        tx('Corporate training by WAFA: strategic human resources management, leadership and team building, and soft skills — as customized in-house or online workshops.', 'التدريب المؤسسي من WAFA: الإدارة الاستراتيجية للموارد البشرية، والقيادة وبناء الفرق، والمهارات الشخصية، كورش عمل مخصّصة داخل المؤسسة أو عبر الإنترنت.'),
         tx('corporate training', 'التدريب المؤسسي'),
         tx('professional development, in-house training, leadership training, soft skills training', 'التطوير المهني, التدريب الداخلي, التدريب القيادي, تدريب المهارات الشخصية'),
     ),

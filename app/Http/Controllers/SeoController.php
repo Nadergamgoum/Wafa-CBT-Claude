@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Engagement;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\PostCategory;
@@ -37,14 +38,27 @@ class SeoController extends Controller
                 }
                 $add(fn ($l) => $s->url($l), $s->updated_at, $s->seo, 'monthly', $s->family === 'medical' ? '0.95' : '0.85');
             }
-            foreach (TrainingProgram::query()->where('is_published', true)->get() as $p) {
-                $add(fn ($l) => $p->url($l), $p->updated_at, $p->seo, 'weekly', '0.6');
+            // Content types can be left out of the sitemap in Settings → SEO.
+            $include = fn (string $type) => (bool) (setting('seo.sitemap_'.$type) ?? true);
+            if ($include('programs')) {
+                foreach (TrainingProgram::query()->where('is_published', true)->get() as $p) {
+                    $add(fn ($l) => $p->url($l), $p->updated_at, $p->seo, 'weekly', '0.6');
+                }
             }
-            foreach (Post::query()->live()->get() as $p) {
-                $add(fn ($l) => $p->url($l), $p->updated_at, $p->seo, 'monthly', '0.6');
+            if ($include('engagements')) {
+                foreach (Engagement::query()->where('is_published', true)->get() as $e) {
+                    $add(fn ($l) => $e->url($l), $e->updated_at, $e->seo, 'monthly', '0.5');
+                }
             }
-            foreach (PostCategory::query()->whereHas('posts', fn ($q) => $q->live())->get() as $c) {
-                $add(fn ($l) => $c->url($l), $c->updated_at, null, 'weekly', '0.4');
+            if ($include('posts')) {
+                foreach (Post::query()->live()->get() as $p) {
+                    $add(fn ($l) => $p->url($l), $p->updated_at, $p->seo, 'monthly', '0.6');
+                }
+            }
+            if ($include('post_categories')) {
+                foreach (PostCategory::query()->whereHas('posts', fn ($q) => $q->live())->get() as $c) {
+                    $add(fn ($l) => $c->url($l), $c->updated_at, null, 'weekly', '0.4');
+                }
             }
 
             return view('seo.sitemap', ['entries' => $entries])->render();

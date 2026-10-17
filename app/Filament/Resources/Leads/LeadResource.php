@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Leads;
 
+use App\Filament\Concerns\SuperAdminOnly;
 use App\Models\Lead;
 use BackedEnum;
 use Filament\Actions\Action;
@@ -24,6 +25,9 @@ use UnitEnum;
 
 class LeadResource extends Resource
 {
+    // Form submissions contain personal data: Super Admins only.
+    use SuperAdminOnly;
+
     protected static ?string $model = Lead::class;
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-inbox-arrow-down';
@@ -72,6 +76,7 @@ class LeadResource extends Resource
             TextColumn::make('created_at')->label('Received')->dateTime('Y-m-d H:i')->sortable(),
             TextColumn::make('name')->searchable()->description(fn (Lead $r) => $r->company),
             TextColumn::make('email')->searchable()->copyable(),
+            TextColumn::make('phone')->searchable()->placeholder('—')->toggleable(),
             TextColumn::make('service')->label('Interest')->limit(30)->placeholder('—'),
             TextColumn::make('type')->formatStateUsing(fn ($state) => Lead::TYPES[$state] ?? $state)->badge()
                 ->color(fn ($state) => $state === 'medical' ? 'success' : 'gray'),
@@ -83,17 +88,36 @@ class LeadResource extends Resource
             ->filters([
                 SelectFilter::make('status')->options(Lead::STATUSES),
                 SelectFilter::make('type')->options(Lead::TYPES),
+                \Filament\Tables\Filters\Filter::make('received')->schema([
+                    \Filament\Forms\Components\DatePicker::make('from')->label('Received from'),
+                    \Filament\Forms\Components\DatePicker::make('until')->label('Received until'),
+                ])->query(fn ($query, array $data) => $query
+                    ->when($data['from'] ?? null, fn ($q, $d) => $q->whereDate('created_at', '>=', $d))
+                    ->when($data['until'] ?? null, fn ($q, $d) => $q->whereDate('created_at', '<=', $d))),
             ])
             ->headerActions([
                 Action::make('export')->label('Export CSV')->icon('heroicon-o-arrow-down-tray')->color('gray')
-                    ->action(fn () => static::export(Lead::query()->latest()->get())),
+                    ->action(fn ($livewire) => static::export($livewire->getFilteredTableQuery()->latest()->get())),
             ])
-            ->recordActions([EditAction::make()->label('Open'), DeleteAction::make()])
+            ->recordActions([
+                Action::make('contacted')->label('Contacted')->icon('heroicon-o-phone-arrow-up-right')->color('gray')
+                    ->visible(fn (Lead $record) => $record->status === 'new')
+                    ->action(fn (Lead $record) => $record->update(['status' => 'contacted'])),
+                Action::make('close')->label('Close')->icon('heroicon-o-check-circle')->color('gray')
+                    ->visible(fn (Lead $record) => ! in_array($record->status, ['closed', 'spam'], true))
+                    ->action(fn (Lead $record) => $record->update(['status' => 'closed'])),
+                EditAction::make()->label('Open'),
+                DeleteAction::make(),
+            ])
             ->toolbarActions([BulkActionGroup::make([
                 BulkAction::make('exportSelected')->label('Export selected')->icon('heroicon-o-arrow-down-tray')
                     ->action(fn (Collection $records) => static::export($records)),
                 BulkAction::make('markContacted')->label('Mark as contacted')->icon('heroicon-o-check')
                     ->action(fn (Collection $records) => $records->each->update(['status' => 'contacted'])),
+                BulkAction::make('markClosed')->label('Mark as closed')->icon('heroicon-o-check-circle')
+                    ->action(fn (Collection $records) => $records->each->update(['status' => 'closed'])),
+                BulkAction::make('markSpam')->label('Mark as spam')->icon('heroicon-o-no-symbol')->color('danger')
+                    ->action(fn (Collection $records) => $records->each->update(['status' => 'spam'])),
                 DeleteBulkAction::make(),
             ])]);
     }

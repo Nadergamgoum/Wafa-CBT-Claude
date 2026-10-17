@@ -53,4 +53,19 @@ class User extends Authenticatable implements FilamentUser
             ->when($exceptSessionId, fn ($q) => $q->where('id', '!=', $exceptSessionId))
             ->delete();
     }
+
+    /** Recent sessions of this user (database session driver), newest first. */
+    public function activeSessions(): \Illuminate\Support\Collection
+    {
+        if (config('session.driver') !== 'database') {
+            return collect();
+        }
+        try {
+            return DB::table(config('session.table', 'sessions'))->where('user_id', $this->getKey())
+                ->where('last_activity', '>=', now()->subMinutes((int) config('session.lifetime', 120))->getTimestamp())
+                ->orderByDesc('last_activity')->get(['id', 'ip_address', 'user_agent', 'last_activity']);
+        } catch (\Throwable) {
+            return collect();
+        }
+    }
 }

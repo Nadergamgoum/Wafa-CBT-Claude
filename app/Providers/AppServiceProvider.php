@@ -78,7 +78,7 @@ class AppServiceProvider extends ServiceProvider
 
         // Any content change invalidates the public read cache.
         foreach ([Page::class, Service::class, ServiceCategory::class, Faq::class, Post::class, PostCategory::class,
-            TrainingProgram::class, ProgramCategory::class, TeamMember::class, Testimonial::class, Media::class, Menu::class, Setting::class] as $model) {
+            TrainingProgram::class, ProgramCategory::class, TeamMember::class, Testimonial::class, Media::class, Menu::class, Setting::class, \App\Models\Engagement::class] as $model) {
             $model::saved(fn () => Content::bust());
             $model::deleted(fn () => Content::bust());
         }

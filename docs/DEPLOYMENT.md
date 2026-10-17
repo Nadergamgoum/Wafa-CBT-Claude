@@ -20,7 +20,7 @@ wafa-hostinger-deploy-YYYYMMDD.zip
 │   ├── .env.example   → copy to .env and fill in
 │   └── .htaccess      denies all web access (safety net)
 ├── public_html/       Web root contents (index.php points to ../wafa-app)
-│   ├── index.php  .htaccess  favicon.svg
+│   ├── index.php  .htaccess  favicon.ico
 │   ├── build/         compiled CSS/JS/fonts
 │   ├── css/ js/ fonts/ (admin panel assets)
 │   ├── images/        icons sprite + built-in illustrations

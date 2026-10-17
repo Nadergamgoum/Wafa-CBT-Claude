@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\HandleRedirects;
+use App\Http\Middleware\MaintenanceMode;
 use App\Http\Middleware\SecurityHeaders;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Foundation\Application;
@@ -17,7 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias(['locale' => SetLocale::class]);
         $middleware->prepend(SecurityHeaders::class);
-        $middleware->web(prepend: [HandleRedirects::class]);
+        $middleware->web(prepend: [HandleRedirects::class], append: [MaintenanceMode::class]);
         // The analytics beacon is anonymous, rate-limited and writes no user data.
         $middleware->validateCsrfTokens(except: ['t']);
     })

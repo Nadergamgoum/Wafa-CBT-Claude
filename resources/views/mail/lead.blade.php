@@ -19,7 +19,7 @@
 <p style="margin:18px 0 6px;color:#4a5b69;font-size:13px;text-transform:uppercase;letter-spacing:.08em">Message</p>
 <div style="white-space:pre-wrap;font-size:15px;line-height:1.6;background:#f7f9fa;border-radius:8px;padding:14px">{{ $lead->message }}</div>
 @endif
-<p style="margin:22px 0 0"><a href="{{ url('/admin/leads/'.$lead->id) }}" style="display:inline-block;background:#0f7a76;color:#fff;text-decoration:none;padding:10px 18px;border-radius:999px;font-weight:bold">Open in admin</a></p>
+<p style="margin:22px 0 0"><a href="{{ url('/admin/leads/'.$lead->id) }}" style="display:inline-block;background:#0e7f75;color:#fff;text-decoration:none;padding:10px 18px;border-radius:999px;font-weight:bold">Open in admin</a></p>
 </td></tr>
 </table>
 </body></html>

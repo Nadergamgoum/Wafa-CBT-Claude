@@ -228,12 +228,33 @@ return new class extends Migration
         Schema::create('redirects', function (Blueprint $table) {
             $table->id();
             $table->string('from_path', 300)->unique();
-            $table->string('to_url', 500);
+            $table->string('to_url', 500)->nullable(); // empty for 410 Gone
             $table->unsignedSmallInteger('status_code')->default(301);
             $table->boolean('is_active')->default(true);
             $table->unsignedInteger('hits')->default(0);
             $table->timestamp('last_hit_at')->nullable();
             $table->string('note')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('engagements', function (Blueprint $table) {
+            $table->id();
+            $table->string('slug', 160)->unique();
+            $table->json('title');
+            $table->date('event_date')->nullable();
+            $table->json('summary')->nullable();
+            $table->json('body')->nullable();
+            $table->json('highlights')->nullable();
+            $table->foreignId('image_id')->nullable()->constrained('media')->nullOnDelete();
+            $table->json('gallery')->nullable();
+            $table->json('client_name')->nullable();
+            $table->boolean('client_approved')->default(false);
+            $table->json('cta_label')->nullable();
+            $table->string('cta_link', 500)->nullable();
+            $table->json('seo')->nullable();
+            $table->boolean('is_featured')->default(false);
+            $table->boolean('is_published')->default(false)->index();
+            $table->unsignedInteger('sort')->default(0);
             $table->timestamps();
         });
 
@@ -252,7 +273,7 @@ return new class extends Migration
 
     public function down(): void
     {
-        foreach (['analytics_events', 'redirects', 'leads', 'menus', 'testimonials', 'posts', 'post_categories',
+        foreach (['analytics_events', 'engagements', 'redirects', 'leads', 'menus', 'testimonials', 'posts', 'post_categories',
             'team_members', 'training_programs', 'program_categories', 'faqs', 'services', 'service_categories',
             'pages', 'media', 'settings'] as $table) {
             Schema::dropIfExists($table);

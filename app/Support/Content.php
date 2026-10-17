@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use App\Models\Engagement;
 use App\Models\Faq;
 use App\Models\Post;
 use App\Models\Service;
@@ -112,5 +113,11 @@ class Content
     public static function team(): Collection
     {
         return static::remember('team', fn () => TeamMember::query()->where('is_published', true)->with('photo')->orderBy('sort')->get());
+    }
+
+    public static function engagements(int $limit = 6): Collection
+    {
+        return static::remember('engagements.'.$limit, fn () => Engagement::query()->where('is_published', true)
+            ->with('image')->orderByDesc('is_featured')->orderBy('sort')->orderByDesc('event_date')->limit($limit)->get());
     }
 }

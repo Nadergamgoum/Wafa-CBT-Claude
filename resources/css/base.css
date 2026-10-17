@@ -51,7 +51,7 @@ em.hl, .hl { font-style: italic; color: var(--svc); }
 .eyebrow {
   display: inline-flex; align-items: center; gap: .6em;
   font-size: var(--fs-eyebrow); font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--svc);
+  color: var(--svc-ink);
   margin-bottom: 1rem;
 }
 .eyebrow::before { content: ''; inline-size: 28px; block-size: 2px; background: currentColor; border-radius: 2px; }

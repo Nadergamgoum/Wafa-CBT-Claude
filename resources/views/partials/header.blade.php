@@ -5,16 +5,23 @@
     $categories = Content::categories();
     $activeKey = isset($service) ? $service->category?->key : (isset($category) && $category instanceof \App\Models\ServiceCategory ? $category->key : null);
     $routeName = preg_replace('/^ar\./', '', (string) optional(request()->route())->getName());
-    $resolve = function (array $item) use ($categories) {
+    $resolve = function (array $item) use ($categories, &$resolve) {
         $type = $item['type'] ?? 'url';
         $target = $item['target'] ?? '';
-        return match ($type) {
+        $entry = match ($type) {
             'category' => ($c = $categories->firstWhere('key', $target)) ? ['category' => $c, 'url' => $c->url(), 'label' => t($item['label'] ?? null) ?: $c->navLabel()] : null,
             'route' => \Illuminate\Support\Facades\Route::has($target) ? ['url' => lroute($target), 'label' => t($item['label'] ?? null), 'route' => $target] : null,
-            default => ['url' => link_url($target), 'label' => t($item['label'] ?? null)],
+            default => $target !== '' ? ['url' => link_url($target), 'label' => t($item['label'] ?? null)] : null,
         };
+        if ($entry && $type !== 'category') {
+            // Optional dropdown children (managed in Admin → Menus).
+            $entry['children'] = collect($item['children'] ?? [])->filter(fn ($ch) => ($ch['enabled'] ?? true))->map($resolve)->filter()->values();
+        }
+        return $entry;
     };
     $nav = collect($items)->filter(fn ($i) => ($i['enabled'] ?? true))->map($resolve)->filter()->values();
+    $mobileExtra = collect(\App\Models\Menu::items('mobile'))->filter(fn ($i) => ($i['enabled'] ?? true))->map($resolve)->filter()->values();
+    $showSwitch = (bool) (setting('general.language_switcher') ?? true);
     $other = Locales::other();
     $switch = $alternates[$other] ?? ($seo->alternates[$other] ?? Locales::switchUrl($other));
 @endphp
@@ -34,6 +41,19 @@
                             @include('partials.mega', ['cat' => $cat])
                         </div>
                     </div>
+                @elseif (($entry['children'] ?? collect())->isNotEmpty())
+                    @php $isActive = isset($entry['route']) && str_starts_with($routeName, explode('.', $entry['route'])[0]); @endphp
+                    <div class="nav__item nav__item--dd" data-mega>
+                        <button type="button" class="nav__link {{ $isActive ? 'is-active' : '' }}" aria-expanded="false" aria-controls="dd-{{ $i }}">
+                            {{ $entry['label'] }} {!! icon('chevron-down') !!}
+                        </button>
+                        <div class="nav__dd" id="dd-{{ $i }}" data-mega-panel>
+                            <a href="{{ $entry['url'] }}" class="nav__dd-main">{{ $entry['label'] }} {!! icon('arrow-right', 'icon flip-rtl') !!}</a>
+                            @foreach ($entry['children'] as $child)
+                                <a href="{{ $child['url'] }}">{{ $child['label'] }}</a>
+                            @endforeach
+                        </div>
+                    </div>
                 @else
                     @php $isActive = isset($entry['route']) && str_starts_with($routeName, explode('.', $entry['route'])[0]); @endphp
                     <a class="nav__link {{ $isActive ? 'is-active' : '' }}" href="{{ $entry['url'] }}" @if($isActive) aria-current="page" @endif>{{ $entry['label'] }}</a>
@@ -42,10 +62,12 @@
         </nav>
 
         <div class="header-actions">
+            @if ($showSwitch)
             <a class="lang-switch" href="{{ $switch }}" hreflang="{{ $other }}" lang="{{ $other }}" data-lang-switch>
                 {!! icon('globe') !!}<span>{{ Locales::meta()[$other]['native'] }}</span>
             </a>
-            <a class="btn btn--sm header-cta" href="{{ lroute('contact') }}#contact-form" data-event="consultation_click">{{ t(setting('general.header_cta')) ?: __('site.talk_to_experts') }}</a>
+            @endif
+            <a class="btn btn--sm header-cta" href="{{ link_url(setting('general.header_cta_link') ?: '/contact#contact-form') }}" data-event="consultation_click">{{ t(setting('general.header_cta')) ?: __('site.talk_to_experts') }}</a>
             <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="drawer" data-drawer-open>
                 {!! icon('menu') !!}<span class="sr-only">{{ __('site.open_menu') }}</span>
             </button>
@@ -77,13 +99,29 @@
                             <a href="{{ $cat->url() }}" class="all">{{ __('site.view_all') }} — {{ t($cat->title) }} {!! icon('arrow-right', 'icon flip-rtl') !!}</a>
                         </div>
                     </div>
+                @elseif (($entry['children'] ?? collect())->isNotEmpty())
+                    <div class="mnav__group">
+                        <button type="button" class="mnav__toggle" aria-expanded="false" aria-controls="mnav-dd-{{ $i }}" data-mnav>
+                            {{ $entry['label'] }} {!! icon('chevron-down') !!}
+                        </button>
+                        <div class="mnav__sub" id="mnav-dd-{{ $i }}" hidden>
+                            @foreach ($entry['children'] as $child)
+                                <a href="{{ $child['url'] }}">{{ $child['label'] }}</a>
+                            @endforeach
+                            <a href="{{ $entry['url'] }}" class="all">{{ $entry['label'] }} {!! icon('arrow-right', 'icon flip-rtl') !!}</a>
+                        </div>
+                    </div>
                 @else
                     <div class="mnav__group"><a class="mnav__link" href="{{ $entry['url'] }}">{{ $entry['label'] }} {!! icon('chevron-right', 'icon flip-rtl') !!}</a></div>
                 @endif
             @endforeach
+            @foreach ($mobileExtra as $entry)
+                @continue(isset($entry['category']))
+                <div class="mnav__group"><a class="mnav__link" href="{{ $entry['url'] }}">{{ $entry['label'] }} {!! icon('chevron-right', 'icon flip-rtl') !!}</a></div>
+            @endforeach
         </nav>
         <div class="drawer__foot">
-            <a class="btn btn--block" href="{{ lroute('contact') }}#contact-form" data-event="consultation_click">{{ t(setting('general.header_cta')) ?: __('site.talk_to_experts') }}</a>
+            <a class="btn btn--block" href="{{ link_url(setting('general.header_cta_link') ?: '/contact#contact-form') }}" data-event="consultation_click">{{ t(setting('general.header_cta')) ?: __('site.talk_to_experts') }}</a>
             @php $quick = collect(\App\Support\Contact::channels())->whereIn('key', ['phone', 'whatsapp']); @endphp
             @if ($quick->isNotEmpty())
                 <div class="drawer__contact">

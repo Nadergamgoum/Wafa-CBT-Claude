@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 class Menu extends Model
 {
-    public const LOCATIONS = ['header' => 'Header navigation', 'footer_company' => 'Footer — Company', 'footer_legal' => 'Footer — Legal'];
+    public const LOCATIONS = ['header' => 'Header navigation (desktop & mobile)', 'mobile' => 'Mobile menu — extra links', 'footer_company' => 'Footer — Company', 'footer_legal' => 'Footer — Legal'];
 
     protected $fillable = ['location', 'name', 'items'];
 

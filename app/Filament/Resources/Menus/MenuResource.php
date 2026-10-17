@@ -32,7 +32,7 @@ class MenuResource extends Resource
 
     public const ROUTES = [
         'home' => 'Home', 'about' => 'About', 'contact' => 'Contact', 'insights.index' => 'Insights',
-        'programs.index' => 'Training programs',
+        'programs.index' => 'Training programs', 'engagements.index' => 'Corporate engagements',
     ];
 
     public static function form(Schema $schema): Schema
@@ -58,6 +58,23 @@ class MenuResource extends Resource
                         Toggle::make('enabled')->label('Visible')->default(true)->inline(false),
                     ]),
                     Tr::text('label', 'Label', required: true, max: 60),
+                    Repeater::make('children')->label('Dropdown links (optional)')
+                        ->helperText('Header items that are not service categories can open a small dropdown with these links (an accordion on mobile).')
+                        ->visible(fn (Get $get) => $get('type') !== 'category')
+                        ->schema([
+                            Grid::make(3)->schema([
+                                Select::make('type')->options(['route' => 'Site page', 'url' => 'Custom link'])->required()->native(false)->live()->default('url'),
+                                Select::make('target')->label('Target')->native(false)->required()->options(self::ROUTES)
+                                    ->visible(fn (Get $get) => $get('type') === 'route'),
+                                TextInput::make('target')->label('Link')->required()->maxLength(500)
+                                    ->visible(fn (Get $get) => $get('type') !== 'route')->helperText('/corporate-engagements or https://…'),
+                                Toggle::make('enabled')->label('Visible')->default(true)->inline(false),
+                            ]),
+                            Tr::text('label', 'Label', required: true, max: 60),
+                        ])
+                        ->collapsible()->collapsed()->reorderableWithButtons()
+                        ->itemLabel(fn (array $state) => $state['label']['en'] ?? null)
+                        ->addActionLabel('Add dropdown link')->defaultItems(0),
                 ])
                 ->reorderableWithButtons()->collapsible()
                 ->itemLabel(fn (array $state) => $state['label']['en'] ?? null)

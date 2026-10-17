@@ -63,8 +63,15 @@ class UserResource extends Resource
             TextColumn::make('role')->badge()->formatStateUsing(fn ($state) => User::ROLES[$state] ?? $state)
                 ->color(fn ($state) => $state === User::ROLE_SUPER_ADMIN ? 'warning' : 'gray'),
             IconColumn::make('is_active')->label('Active')->boolean(),
-            TextColumn::make('last_login_at')->label('Last sign-in')->since()->placeholder('Never'),
+            TextColumn::make('last_login_at')->label('Last sign-in')->since()->placeholder('Never')
+                ->description(fn (User $r) => $r->last_login_ip),
+            TextColumn::make('active_sessions')->label('Sessions')
+                ->state(fn (User $r) => $r->activeSessions()->count())->badge()->color('gray'),
         ])->recordActions([
+            Action::make('sessions')->label('Sessions')->icon('heroicon-o-computer-desktop')->color('gray')
+                ->modalHeading(fn (User $r) => 'Active sessions — '.$r->name)
+                ->modalContent(fn (User $r) => view('filament.user-sessions', ['sessions' => $r->activeSessions()]))
+                ->modalSubmitAction(false)->modalCancelActionLabel('Close'),
             Action::make('reset')->label('Send reset link')->icon('heroicon-o-envelope')->color('gray')->requiresConfirmation()
                 ->action(function (User $r) {
                     $status = PasswordBroker::broker(config('filament.auth.passwords', 'users'))->sendResetLink(['email' => $r->email]);

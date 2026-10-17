@@ -3,7 +3,7 @@
 return [
     'title' => tx('Home', 'الرئيسية'),
     'seo' => SEO(
-        tx('WAFA — Corporate Medical Insurance, Employee Benefits & People Solutions', 'وفاء — التأمين الطبي للشركات ومزايا الموظفين وحلول الموارد البشرية'),
+        tx('WAFA — Corporate Medical Insurance, Employee Benefits & People Solutions', 'WAFA — التأمين الطبي للشركات ومزايا الموظفين وحلول الموارد البشرية'),
         tx('Corporate medical insurance and employee health benefits, insurance brokerage, HR consulting, organizational development, training and coaching — integrated around your organization.', 'التأمين الطبي للشركات ومزايا الموظفين الصحية والوساطة التأمينية والاستشارات في الموارد البشرية والتطوير المؤسسي والتدريب والكوتشينغ، في منظومة متكاملة حول مؤسستك.'),
         tx('corporate medical insurance', 'التأمين الطبي للشركات'),
         tx('employee health benefits, insurance brokerage, HR consulting, corporate training', 'مزايا الموظفين الصحية, الوساطة التأمينية, استشارات الموارد البشرية, التدريب المؤسسي'),
@@ -33,23 +33,23 @@ return [
             'eyebrow' => tx('Corporate Medical Insurance', 'التأمين الطبي للشركات'),
             'title' => tx("Better Coverage.\nBetter Care.\n*Better Employee Experience.*", "تغطية أفضل.\nرعاية أفضل.\n*وتجربة أفضل للموظفين.*"),
             'lead' => tx(
-                'Medical insurance is at the heart of what we do. We work alongside employers to design, place and manage employee medical insurance programs that people can rely on.',
-                'التأمين الطبي في صميم عملنا. نعمل جنبًا إلى جنب مع أصحاب العمل لتصميم برامج التأمين الصحي للموظفين وترتيبها وإدارتها، لتكون برامج يعتمد عليها الموظفون.'
+                'Corporate medical insurance management is at the heart of what we do. Our goal is to balance service quality and cost efficiency while maintaining a seamless experience for clients and employees.',
+                'إدارة التأمين الطبي للشركات في صميم عملنا. هدفنا تحقيق التوازن بين جودة الخدمة وكفاءة التكلفة، مع الحفاظ على تجربة سلسة للعملاء والموظفين.'
             ),
             'body' => tx(
-                'As your insurance broker, we represent your organization’s interests — from the first needs analysis to every renewal.',
-                'بصفتنا وسيط التأمين الخاص بك، نمثّل مصالح مؤسستك بدءًا من التحليل الأول للاحتياجات وحتى كل تجديد.'
+                'From program design and insurer negotiation to claims, approvals, reporting and renewals — one specialized team manages the program with you.',
+                'من تصميم البرنامج والتفاوض مع شركات التأمين إلى المطالبات والموافقات والتقارير والتجديدات، يدير فريق متخصص البرنامج معك.'
             ),
             'card_title' => tx('Medical insurance management', 'إدارة التأمين الطبي'),
-            'card_text' => tx('Ongoing support for HR teams and employees throughout the policy year.', 'دعم مستمر لفرق الموارد البشرية والموظفين طوال سنة الوثيقة.'),
+            'card_text' => tx('A dedicated Account Manager for day-to-day coordination and performance review.', 'مدير حساب مخصّص للتنسيق اليومي ومراجعة الأداء.'),
             'items' => [
-                I('scan-search', tx('Organizational needs', 'احتياجات المؤسسة'), tx('We start with your workforce, budget and the experience you want employees to have.', 'نبدأ بقواك العاملة وميزانيتك والتجربة التي تريدها لموظفيك.')),
-                I('briefcase', tx('Insurance brokerage', 'الوساطة التأمينية'), tx('We approach insurers on your behalf and present clear, comparable options.', 'نتواصل مع شركات التأمين نيابةً عنك ونعرض خيارات واضحة وقابلة للمقارنة.')),
-                I('layers', tx('Policy structuring', 'هيكلة الوثيقة'), tx('Categories, benefits, networks and limits designed to balance protection and cost.', 'فئات ومزايا وشبكات وحدود مصمّمة لتحقيق التوازن بين الحماية والتكلفة.')),
-                I('network', tx('Insurer coordination', 'التنسيق مع شركات التأمين'), tx('A single point of contact for approvals, service issues and follow-up.', 'جهة تواصل واحدة للموافقات ومشكلات الخدمة والمتابعة.')),
-                I('headset', tx('Employee support', 'دعم الموظفين'), tx('Guidance for employees on understanding and using their cover.', 'إرشاد الموظفين لفهم تغطيتهم والاستفادة منها.')),
-                I('settings-2', tx('Medical insurance management', 'إدارة التأمين الطبي'), tx('Day-to-day administration support for HR throughout the year.', 'دعم إداري يومي لفريق الموارد البشرية على مدار العام.')),
-                I('refresh-cw', tx('Program review', 'مراجعة البرنامج'), tx('Regular reviews and renewal preparation based on real usage.', 'مراجعات دورية واستعداد للتجديد بناءً على الاستخدام الفعلي.')),
+                I('scan-search', tx('Program design', 'تصميم البرنامج'), tx('Medical programs designed and tailored to each workforce.', 'برامج طبية مصمّمة ومفصّلة وفق كل قوة عاملة.')),
+                I('scale', tx('Negotiation & comparison', 'التفاوض والمقارنة'), tx('Negotiation and comparison with multiple insurance providers.', 'التفاوض والمقارنة مع عدة شركات تأمين.')),
+                I('refresh-cw', tx('Implementation & renewal', 'التنفيذ والتجديد'), tx('Policy implementation and renewal management.', 'تنفيذ الوثيقة وإدارة تجديدها.')),
+                I('file-check', tx('Claims & pre-approvals', 'المطالبات والموافقات المسبقة'), tx('Administration of claims and pre-approvals, coordinated with insurers and TPAs.', 'إدارة المطالبات والموافقات المسبقة بالتنسيق مع شركات التأمين وشركات إدارة النفقات الطبية.')),
+                I('chart-column', tx('Analytics & reporting', 'التحليلات والتقارير'), tx('Regular analytical and financial reporting on your program.', 'تقارير تحليلية ومالية دورية عن برنامجك.')),
+                I('sun-medium', tx('Wellness & awareness', 'الرفاه والتوعية'), tx('Prevention programs that promote a health-conscious workplace.', 'برامج وقائية تعزّز ثقافة صحية في بيئة العمل.')),
+                I('headset', tx('Account management', 'إدارة الحساب'), tx('Daily support via email, phone or WhatsApp and monthly reviews with your HR team.', 'دعم يومي عبر البريد الإلكتروني أو الهاتف أو واتساب، واجتماعات مراجعة شهرية مع فريق الموارد البشرية.')),
             ],
             'cta_label' => tx('Explore medical insurance', 'اكتشف التأمين الطبي'),
             'cta_link' => '/insurance/medical-insurance',
@@ -91,7 +91,7 @@ return [
             'background' => 'white',
             'eyebrow' => tx('Health & benefits ecosystem', 'منظومة الصحة والمزايا'),
             'title' => tx('Everything connects to *your people*', 'كل شيء يرتبط *بموظفيك*'),
-            'lead' => tx('Medical insurance, benefits, HR strategy and development all shape how people experience work. WAFA brings them together.', 'التأمين الطبي والمزايا واستراتيجية الموارد البشرية والتطوير كلها تشكّل تجربة الأفراد في العمل، ووفاء تجمعها في منظومة واحدة.'),
+            'lead' => tx('Medical insurance, benefits, HR strategy and development all shape how people experience work. WAFA brings them together.', 'التأمين الطبي والمزايا واستراتيجية الموارد البشرية والتطوير كلها تشكّل تجربة الأفراد في العمل، و WAFA تجمعها في منظومة واحدة.'),
             'center_label' => tx('Your people', 'موظفوك'),
             'items' => [
                 I('heart-pulse', tx('Medical insurance', 'التأمين الطبي'), tx('Reliable health protection for employees and their families.', 'حماية صحية موثوقة للموظفين وأسرهم.')),
@@ -123,33 +123,33 @@ return [
             'art' => 'people',
             'eyebrow' => tx('People & organization', 'الأفراد والمؤسسة'),
             'title' => tx('HR systems and structures that *support growth*', 'أنظمة وهياكل للموارد البشرية *تدعم النمو*'),
-            'body' => tx('Through HR consulting and organizational development, we help you clarify roles, put fair and consistent policies in place, manage performance and align your structure with your strategy.', 'من خلال الاستشارات في الموارد البشرية والتطوير المؤسسي، نساعدك على توضيح الأدوار ووضع سياسات عادلة ومتسقة وإدارة الأداء ومواءمة هيكلك مع استراتيجيتك.'),
+            'body' => tx('We help businesses create efficient, compliant and people-focused HR systems, aligning human capital strategies with business goals to enhance performance and engagement.', 'نساعد الشركات على بناء أنظمة موارد بشرية فعّالة وملتزمة بالأنظمة ومتمحورة حول الأفراد، ونواءم استراتيجيات رأس المال البشري مع أهداف العمل لتعزيز الأداء والانتماء.'),
             'points' => L(
-                ['HR policies, procedures and job descriptions', 'Performance management and grading frameworks', 'Organizational diagnosis and structure', 'Transformation roadmaps and capability building'],
-                ['سياسات وإجراءات الموارد البشرية والأوصاف الوظيفية', 'إدارة الأداء وأطر الدرجات الوظيفية', 'التشخيص المؤسسي والهيكل التنظيمي', 'خرائط طريق التحوّل وبناء القدرات']
+                ['Organizational structure & HR policies', 'Performance & reward management', 'Employee engagement & retention plans', 'Compliance with labor law & social insurance', 'HR process optimization & automation'],
+                ['الهيكل التنظيمي وسياسات الموارد البشرية', 'إدارة الأداء والمكافآت', 'خطط انتماء الموظفين والاحتفاظ بهم', 'الالتزام بقانون العمل والتأمينات الاجتماعية', 'تحسين عمليات الموارد البشرية وأتمتتها']
             ),
             'aside_title' => tx('Connected to your benefits', 'مرتبط بمزايا موظفيك'),
-            'aside_text' => tx('Benefits work best when they fit your grades, policies and people strategy.', 'تحقق المزايا أفضل النتائج عندما تتوافق مع درجاتك الوظيفية وسياساتك واستراتيجيتك للأفراد.'),
+            'aside_text' => tx('Benefits work best when they fit your structure, policies and people strategy.', 'تحقق المزايا أفضل النتائج عندما تتوافق مع هيكلك وسياساتك واستراتيجيتك للأفراد.'),
             'cta_label' => tx('Explore people & organization', 'اكتشف الأفراد والمؤسسة'),
             'cta_link' => '/people-organization',
         ]),
         B('programs', [
             'background' => 'mist',
             'eyebrow' => tx('Training & development', 'التدريب والتطوير'),
-            'title' => tx('Selected *training programs*', 'برامج تدريبية *مختارة*'),
-            'lead' => tx('Practical programs for managers and teams, available in different formats or tailored in-house.', 'برامج عملية للمديرين والفرق بأساليب تقديم متنوعة أو مخصّصة داخل المؤسسة.'),
+            'title' => tx('Developing skills that *drive growth*', 'تطوير مهارات *تدفع النمو*'),
+            'lead' => tx('We design impactful training programs that inspire change, build confidence and strengthen team performance — delivered as customized in-house or online workshops.', 'نصمّم برامج تدريبية مؤثرة تُلهم التغيير وتبني الثقة وتعزّز أداء الفرق، وتُقدَّم كورش عمل مخصّصة داخل المؤسسة أو عبر الإنترنت.'),
             'limit' => 4,
         ]),
         B('pillars', [
             'layout' => 'numbers',
             'background' => 'white',
-            'eyebrow' => tx('Why WAFA', 'لماذا وفاء'),
+            'eyebrow' => tx('Why WAFA', 'لماذا WAFA'),
             'title' => tx('A partner who sees the *whole picture*', 'شريك يرى *الصورة كاملة*'),
             'items' => [
-                I(null, tx('Expertise', 'الخبرة'), tx('Specialist knowledge in medical insurance, employee benefits and people development.', 'معرفة متخصصة في التأمين الطبي ومزايا الموظفين وتطوير الأفراد.')),
-                I(null, tx('Tailored solutions', 'حلول مخصّصة'), tx('Programs designed around your organization, not taken off the shelf.', 'برامج مصمّمة حول مؤسستك، لا حلول جاهزة.')),
-                I(null, tx('Partnership', 'الشراكة'), tx('We stay involved after the policy is placed or the project is delivered.', 'نبقى إلى جانبك بعد ترتيب الوثيقة أو تسليم المشروع.')),
-                I(null, tx('Integrated approach', 'منهجية متكاملة'), tx('Insurance, HR, training and coaching connected through one relationship.', 'التأمين والموارد البشرية والتدريب والكوتشينغ في علاقة واحدة متكاملة.')),
+                I(null, tx('Expertise', 'الخبرة'), tx('Deep understanding of HR, insurance and business operations.', 'فهم عميق للموارد البشرية والتأمين وعمليات الأعمال.')),
+                I(null, tx('Excellence', 'التميّز'), tx('Trainers and coaches with hands-on experience.', 'مدرّبون وكوتشز يتمتعون بخبرة عملية.')),
+                I(null, tx('Tailored solutions', 'حلول مخصّصة'), tx('Tailored solutions for every industry and organization size.', 'حلول مخصّصة لكل قطاع ولكل حجم مؤسسة.')),
+                I(null, tx('Partnership', 'الشراكة'), tx('Long-term partnerships built on trust and transparency.', 'شراكات طويلة الأمد مبنية على الثقة والشفافية.')),
             ],
         ]),
         B('process', [

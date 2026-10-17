@@ -104,14 +104,67 @@ class PublicSiteTest extends TestCase
     public function test_legacy_urls_redirect_permanently(): void
     {
         $this->get('/about-us')->assertStatus(301)->assertRedirect(url('/about'));
-        $this->get('/health-insurance/')->assertRedirect();
+        $this->get('/medical-insurance/')->assertStatus(301)->assertRedirect(url('/insurance/medical-insurance'));
+        $this->get('/events')->assertStatus(301)->assertRedirect(url('/corporate-engagements'));
     }
 
-    public function test_unconfigured_contact_channels_are_hidden(): void
+    public function test_theme_demo_urls_answer_410_gone_not_homepage(): void
     {
+        $this->get('/shop')->assertStatus(410);
+        $this->get('/portfolio/some-project')->assertStatus(410);
+        $this->get('/product-category/chairs/')->assertStatus(410);
+        $this->get('/the-big-design-wall-likes-pictures/')->assertStatus(410)->assertSee('This page has been removed');
+        $this->get('/shopping-guide')->assertNotFound(); // wildcard is prefix-based on the path, not substring
+    }
+
+    public function test_verified_contact_details_render_and_empty_ones_stay_hidden(): void
+    {
+        $html = $this->get('/contact')->getContent();
+        $this->assertStringContainsString('https://wa.me/201033300023', $html);
+        $this->assertStringContainsString('href="tel:+201033300023"', $html);
+        $this->assertStringContainsString('info@wafa-cbt.com', $html);
+        $this->assertStringNotContainsString('maps/embed', $html); // no map until a verified address is supplied
+
+        \App\Models\Setting::put('whatsapp', ['enabled' => false] + \App\Models\Setting::group('whatsapp'));
+        \App\Models\Setting::put('contact', ['phone' => ''] + \App\Models\Setting::group('contact'));
         $html = $this->get('/contact')->getContent();
         $this->assertStringNotContainsString('wa.me', $html);
         $this->assertStringNotContainsString('href="tel:', $html);
+    }
+
+    public function test_brand_name_is_latin_wafa_in_arabic_and_pending_claims_are_hidden(): void
+    {
+        foreach (['/ar', '/ar/about', '/ar/insurance/medical-insurance'] as $url) {
+            $html = $this->get($url)->assertOk()->getContent();
+            $this->assertStringNotContainsString('وفاء WAFA', $html);
+            $this->assertStringContainsString('WAFA', $html);
+        }
+        $this->assertStringNotContainsString('>وفاء<', $this->get('/ar')->getContent());
+        foreach (['/insurance/medical-insurance', '/', '/about', '/learning-leadership/training'] as $url) {
+            $html = $this->get($url)->getContent();
+            $this->assertStringNotContainsString('24/7', $html);
+            $this->assertStringNotContainsString('Fast turnaround', $html);
+            $this->assertStringNotContainsString('Certified trainers', $html);
+        }
+    }
+
+    public function test_corporate_engagement_pages_render_with_gallery(): void
+    {
+        $this->get('/corporate-engagements')->assertOk()->assertSee('Corporate Team Engagement &amp; Participation Activities', false);
+        $this->get('/corporate-engagements/corporate-team-engagement-participation-activities')->assertOk()
+            ->assertSee('data-gallery', false)->assertSee('Request a Corporate Engagement Program');
+        $this->get('/ar/corporate-engagements/corporate-team-engagement-participation-activities')->assertOk()->assertSee('أنشطة التفاعل والمشاركة المؤسسية للفرق');
+        $this->get('/sitemap.xml')->assertSee('/corporate-engagements/corporate-team-engagement-participation-activities');
+    }
+
+    public function test_maintenance_mode_shows_503_to_visitors_only(): void
+    {
+        \App\Models\Setting::put('general', ['maintenance' => true] + \App\Models\Setting::group('general'));
+        $this->get('/')->assertStatus(503)->assertSee('We will be back shortly');
+        $this->get('/ar')->assertStatus(503)->assertSee('سنعود قريبًا');
+        $this->get('/admin/login')->assertOk();
+        $admin = \App\Models\User::factory()->create(['role' => 'super_admin', 'is_active' => true]);
+        $this->actingAs($admin)->get('/')->assertOk();
     }
 
     public function test_configured_whatsapp_and_phone_render(): void

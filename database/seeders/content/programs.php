@@ -1,89 +1,37 @@
 <?php
 
-// Program outlines are editorial proposals within WAFA's training scope. Dates, facilitators,
-// durations and certificates are deliberately left empty until confirmed by WAFA.
+// WAFA's verified training scope (from the original website): Strategic Human Resources
+// Management programs, Leadership & Team Building, Soft Skills — delivered as customized
+// in-house or online workshops. These entries describe program AREAS, not scheduled
+// courses: no dates, facilitators, durations, agendas or certificates are published.
+// Add real courses in Admin → Training programs once they are confirmed.
 return [
     'categories' => [
-        ['slug' => 'leadership-management', 'name' => tx('Leadership & Management', 'القيادة والإدارة'), 'description' => tx('Programs for new and experienced managers.', 'برامج للمديرين الجدد وذوي الخبرة.')],
-        ['slug' => 'hr-people', 'name' => tx('HR & People Management', 'الموارد البشرية وإدارة الأفراد'), 'description' => tx('Practical HR skills for HR teams and line managers.', 'مهارات عملية في الموارد البشرية للفرق والمديرين المباشرين.')],
-        ['slug' => 'professional-skills', 'name' => tx('Professional Skills', 'المهارات المهنية'), 'description' => tx('Communication, service and personal effectiveness.', 'التواصل والخدمة والفاعلية الشخصية.')],
-        ['slug' => 'benefits-awareness', 'name' => tx('Insurance & Benefits Awareness', 'التوعية بالتأمين والمزايا'), 'description' => tx('Helping HR teams and employees understand their benefits.', 'مساعدة فرق الموارد البشرية والموظفين على فهم مزاياهم.')],
+        ['slug' => 'strategic-hr-management', 'name' => tx('Strategic HR Management', 'الإدارة الاستراتيجية للموارد البشرية'), 'description' => tx('Programs for HR professionals and managers.', 'برامج لمختصي الموارد البشرية والمديرين.')],
+        ['slug' => 'leadership-team-building', 'name' => tx('Leadership & Team Building', 'القيادة وبناء الفرق'), 'description' => tx('Programs that strengthen leaders and teams.', 'برامج تعزّز القادة والفرق.')],
+        ['slug' => 'soft-skills', 'name' => tx('Soft Skills', 'المهارات الشخصية'), 'description' => tx('Everyday skills that help people work well together.', 'مهارات يومية تساعد الأفراد على العمل معًا بفاعلية.')],
     ],
     'programs' => [
         [
-            'category' => 'benefits-awareness', 'slug' => 'managing-employee-medical-insurance', 'is_featured' => true, 'sort' => 1,
-            'delivery_mode' => 'in_house',
-            'title' => tx('Managing Employee Medical Insurance: A Practical Guide for HR Teams', 'إدارة التأمين الصحي للموظفين: دليل عملي لفرق الموارد البشرية'),
-            'summary' => tx('Equip HR teams to administer the medical insurance program confidently and to answer employees’ most common questions.', 'تمكين فرق الموارد البشرية من إدارة برنامج التأمين الطبي بثقة والإجابة عن أكثر أسئلة الموظفين شيوعًا.'),
-            'description' => tx('<p>Medical insurance is one of the benefits employees value most — and one that generates many questions for HR. This program gives HR professionals a practical understanding of how corporate medical insurance works and how to manage it day to day.</p>', '<p>يُعد التأمين الطبي من أكثر المزايا التي يقدّرها الموظفون، ومن أكثرها إثارةً للأسئلة لدى فرق الموارد البشرية. يمنح هذا البرنامج مختصي الموارد البشرية فهمًا عمليًا لطريقة عمل التأمين الطبي للشركات وكيفية إدارته يومًا بيوم.</p>'),
-            'audience' => tx('HR and administration teams responsible for employee benefits.', 'فرق الموارد البشرية والشؤون الإدارية المسؤولة عن مزايا الموظفين.'),
-            'outcomes' => L(['Explain key medical insurance terms in plain language', 'Manage additions, deletions and member changes accurately', 'Support employees with approvals and claims questions', 'Prepare useful information for renewal discussions'], ['شرح المصطلحات الأساسية للتأمين الطبي بلغة مبسّطة', 'إدارة الإضافات والحذف وتعديلات الأعضاء بدقة', 'دعم الموظفين في استفسارات الموافقات والمطالبات', 'إعداد معلومات مفيدة لمناقشات التجديد']),
-            'agenda' => [
-                ['title' => tx('How corporate medical insurance works', 'كيف يعمل التأمين الطبي للشركات'), 'text' => tx('Categories, networks, limits and co-payments.', 'الفئات والشبكات والحدود ونسب التحمّل.')],
-                ['title' => tx('Day-to-day administration', 'الإدارة اليومية'), 'text' => tx('Member data, changes and documentation.', 'بيانات الأعضاء والتعديلات والمستندات.')],
-                ['title' => tx('Supporting employees', 'دعم الموظفين'), 'text' => tx('Approvals, claims and communication.', 'الموافقات والمطالبات والتواصل.')],
-                ['title' => tx('Preparing for renewal', 'الاستعداد للتجديد'), 'text' => tx('What information matters and why.', 'ما المعلومات المهمة ولماذا.')],
-            ],
+            'category' => 'strategic-hr-management', 'slug' => 'strategic-human-resources-management', 'is_featured' => true, 'sort' => 1, 'delivery_mode' => 'in_house_online',
+            'title' => tx('Strategic Human Resources Management Programs', 'برامج الإدارة الاستراتيجية للموارد البشرية'),
+            'summary' => tx('Training programs in strategic human resources management, designed around your organization and delivered as customized in-house or online workshops.', 'برامج تدريبية في الإدارة الاستراتيجية للموارد البشرية، مصمّمة وفق مؤسستك وتُقدَّم كورش عمل مخصّصة داخل المؤسسة أو عبر الإنترنت.'),
+            'description' => tx('<p>Strategic human resources management connects people practices with business goals. We design these programs around your objectives and the level of your participants, and agree the content, format and schedule with you.</p>', '<p>تربط الإدارة الاستراتيجية للموارد البشرية ممارسات الأفراد بأهداف العمل. نصمّم هذه البرامج وفق أهدافك ومستوى المشاركين، ونتفق معك على المحتوى وأسلوب التقديم والجدول الزمني.</p>'),
+            'audience' => tx('HR professionals, managers and teams — tailored to your organization.', 'مختصو الموارد البشرية والمديرون والفرق، بما يناسب مؤسستك.'),
         ],
         [
-            'category' => 'leadership-management', 'slug' => 'leadership-essentials-new-managers', 'is_featured' => true, 'sort' => 2,
-            'delivery_mode' => 'blended',
-            'title' => tx('Leadership Essentials for New Managers', 'أساسيات القيادة للمديرين الجدد'),
-            'summary' => tx('Support first-time managers as they move from doing the work to leading the people who do it.', 'دعم المديرين الجدد في انتقالهم من أداء العمل بأنفسهم إلى قيادة من يؤدونه.'),
-            'description' => tx('<p>The transition into management is one of the most important — and challenging — steps in a career. This program focuses on the core habits that help new managers set direction, communicate expectations and build trust with their team.</p>', '<p>يُعد الانتقال إلى الإدارة من أهم المراحل المهنية وأكثرها تحديًا. يركّز هذا البرنامج على العادات الأساسية التي تساعد المديرين الجدد على تحديد التوجه وتوضيح التوقعات وبناء الثقة مع فرقهم.</p>'),
-            'audience' => tx('Newly appointed managers and team leaders.', 'المديرون وقادة الفرق المعيّنون حديثًا.'),
-            'outcomes' => L(['Understand the shift from individual contributor to manager', 'Set clear goals and expectations', 'Give constructive feedback', 'Delegate effectively'], ['فهم الانتقال من موظف فرد إلى مدير', 'تحديد أهداف وتوقعات واضحة', 'تقديم تغذية راجعة بنّاءة', 'التفويض بفاعلية']),
-            'agenda' => [
-                ['title' => tx('The manager’s role', 'دور المدير'), 'text' => tx('Responsibilities, mindset and priorities.', 'المسؤوليات والعقلية والأولويات.')],
-                ['title' => tx('Goals and expectations', 'الأهداف والتوقعات'), 'text' => tx('Translating objectives into team priorities.', 'تحويل الأهداف إلى أولويات للفريق.')],
-                ['title' => tx('Feedback conversations', 'محادثات التغذية الراجعة'), 'text' => tx('Practising constructive dialogue.', 'ممارسة الحوار البنّاء.')],
-                ['title' => tx('Delegation', 'التفويض'), 'text' => tx('Building capability and ownership.', 'بناء القدرات والشعور بالمسؤولية.')],
-            ],
+            'category' => 'leadership-team-building', 'slug' => 'leadership-team-building', 'is_featured' => true, 'sort' => 2, 'delivery_mode' => 'in_house_online',
+            'title' => tx('Leadership & Team Building', 'القيادة وبناء الفرق'),
+            'summary' => tx('Programs that build confidence and strengthen team performance, delivered as customized in-house or online workshops.', 'برامج تبني الثقة وتعزّز أداء الفرق، وتُقدَّم كورش عمل مخصّصة داخل المؤسسة أو عبر الإنترنت.'),
+            'description' => tx('<p>Leadership and team building programs designed to inspire change, build confidence and strengthen how teams work together. Content and format are tailored to your organization and agreed with you.</p>', '<p>برامج في القيادة وبناء الفرق مصمّمة لإلهام التغيير وبناء الثقة وتعزيز طريقة عمل الفرق معًا. ويُخصّص المحتوى وأسلوب التقديم وفق مؤسستك وبالاتفاق معك.</p>'),
+            'audience' => tx('Leaders, managers and teams — tailored to your organization.', 'القادة والمديرون والفرق، بما يناسب مؤسستك.'),
         ],
         [
-            'category' => 'hr-people', 'slug' => 'performance-management-in-practice', 'is_featured' => true, 'sort' => 3,
-            'delivery_mode' => 'in_house',
-            'title' => tx('Performance Management in Practice', 'إدارة الأداء في التطبيق العملي'),
-            'summary' => tx('Turn performance reviews into meaningful conversations that support development and results.', 'حوّل مراجعات الأداء إلى محادثات هادفة تدعم التطوير والنتائج.'),
-            'description' => tx('<p>A performance system only works if managers use it well. This program helps managers and HR teams set objectives, hold regular check-ins and conduct fair, constructive reviews.</p>', '<p>لا ينجح نظام إدارة الأداء إلا إذا أحسن المديرون استخدامه. يساعد هذا البرنامج المديرين وفرق الموارد البشرية على تحديد الأهداف وعقد لقاءات متابعة منتظمة وإجراء مراجعات عادلة وبنّاءة.</p>'),
-            'audience' => tx('Line managers and HR professionals.', 'المديرون المباشرون ومختصو الموارد البشرية.'),
-            'outcomes' => L(['Write clear, measurable objectives', 'Run effective check-ins', 'Conduct balanced performance reviews', 'Link performance to development plans'], ['صياغة أهداف واضحة وقابلة للقياس', 'إدارة لقاءات متابعة فعّالة', 'إجراء مراجعات أداء متوازنة', 'ربط الأداء بخطط التطوير']),
-            'agenda' => [
-                ['title' => tx('Setting objectives', 'تحديد الأهداف'), 'text' => null],
-                ['title' => tx('Ongoing check-ins', 'لقاءات المتابعة'), 'text' => null],
-                ['title' => tx('The review conversation', 'محادثة المراجعة'), 'text' => null],
-                ['title' => tx('Development planning', 'تخطيط التطوير'), 'text' => null],
-            ],
-        ],
-        [
-            'category' => 'professional-skills', 'slug' => 'effective-communication-presentation', 'is_featured' => true, 'sort' => 4,
-            'delivery_mode' => 'in_person',
-            'title' => tx('Effective Communication & Presentation Skills', 'مهارات التواصل والعرض الفعّال'),
-            'summary' => tx('Communicate ideas with clarity and confidence — in meetings, presentations and written messages.', 'إيصال الأفكار بوضوح وثقة في الاجتماعات والعروض والرسائل المكتوبة.'),
-            'description' => tx('<p>Clear communication saves time and builds credibility. Through practice and feedback, participants learn to structure messages, adapt to their audience and present with confidence.</p>', '<p>يوفّر التواصل الواضح الوقت ويعزّز المصداقية. ومن خلال الممارسة والتغذية الراجعة، يتعلّم المشاركون بناء رسائلهم والتكيّف مع جمهورهم والعرض بثقة.</p>'),
-            'audience' => tx('Professionals at all levels.', 'المهنيون في جميع المستويات.'),
-            'outcomes' => L(['Structure messages for clarity', 'Adapt communication to different audiences', 'Deliver presentations with confidence', 'Handle questions effectively'], ['بناء الرسائل بوضوح', 'تكييف التواصل مع مختلف الفئات', 'تقديم العروض بثقة', 'التعامل مع الأسئلة بفاعلية']),
-            'agenda' => [],
-        ],
-        [
-            'category' => 'hr-people', 'slug' => 'hr-fundamentals-line-managers', 'sort' => 5,
-            'delivery_mode' => 'online',
-            'title' => tx('HR Fundamentals for Line Managers', 'أساسيات الموارد البشرية للمديرين المباشرين'),
-            'summary' => tx('Give managers the HR knowledge they need to handle everyday people situations consistently.', 'تزويد المديرين بالمعرفة اللازمة في الموارد البشرية للتعامل مع مواقف الأفراد اليومية باتساق.'),
-            'description' => tx('<p>Line managers are often the first point of contact for HR matters. This program covers the essentials of policies, recruitment, onboarding, attendance and employee relations from a manager’s perspective.</p>', '<p>غالبًا ما يكون المدير المباشر نقطة التواصل الأولى في مسائل الموارد البشرية. يغطي هذا البرنامج أساسيات السياسات والتوظيف والتهيئة والحضور وعلاقات الموظفين من منظور المدير.</p>'),
-            'audience' => tx('Line managers and supervisors.', 'المديرون المباشرون والمشرفون.'),
-            'outcomes' => L(['Apply HR policies consistently', 'Contribute to effective recruitment and onboarding', 'Handle common employee relations situations'], ['تطبيق سياسات الموارد البشرية باتساق', 'الإسهام في توظيف وتهيئة فعّالين', 'التعامل مع مواقف علاقات الموظفين الشائعة']),
-            'agenda' => [],
-        ],
-        [
-            'category' => 'professional-skills', 'slug' => 'customer-service-excellence', 'sort' => 6,
-            'delivery_mode' => 'in_house',
-            'title' => tx('Customer Service Excellence', 'التميّز في خدمة العملاء'),
-            'summary' => tx('Build the attitudes and skills that create consistently positive customer experiences.', 'بناء التوجهات والمهارات التي تصنع تجربة إيجابية ومتسقة للعملاء.'),
-            'description' => tx('<p>Every interaction shapes how customers see your organization. This program helps front-line teams understand customer expectations, communicate with empathy and handle difficult situations professionally.</p>', '<p>يشكّل كل تواصل صورة مؤسستك لدى العملاء. يساعد هذا البرنامج فرق الخطوط الأمامية على فهم توقعات العملاء والتواصل بتعاطف والتعامل مع المواقف الصعبة باحترافية.</p>'),
-            'audience' => tx('Customer-facing teams.', 'الفرق التي تتعامل مباشرة مع العملاء.'),
-            'outcomes' => L(['Understand customer expectations', 'Communicate with empathy and clarity', 'Handle complaints professionally'], ['فهم توقعات العملاء', 'التواصل بتعاطف ووضوح', 'التعامل مع الشكاوى باحترافية']),
-            'agenda' => [],
+            'category' => 'soft-skills', 'slug' => 'soft-skills', 'is_featured' => true, 'sort' => 3, 'delivery_mode' => 'in_house_online',
+            'title' => tx('Soft Skills', 'المهارات الشخصية'),
+            'summary' => tx('Soft skills programs that help people communicate and work together effectively, delivered as customized in-house or online workshops.', 'برامج في المهارات الشخصية تساعد الأفراد على التواصل والعمل معًا بفاعلية، وتُقدَّم كورش عمل مخصّصة داخل المؤسسة أو عبر الإنترنت.'),
+            'description' => tx('<p>Soft skills shape how people communicate, collaborate and serve others every day. We tailor these workshops to your teams and agree the topics, format and schedule with you.</p>', '<p>تشكّل المهارات الشخصية طريقة تواصل الأفراد وتعاونهم وخدمتهم للآخرين يوميًا. نصمّم ورش العمل هذه وفق فرقك ونتفق معك على الموضوعات وأسلوب التقديم والجدول الزمني.</p>'),
+            'audience' => tx('Employees and teams — tailored to your organization.', 'الموظفون والفرق، بما يناسب مؤسستك.'),
         ],
     ],
 ];

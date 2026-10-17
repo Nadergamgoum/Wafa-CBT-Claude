@@ -10,15 +10,15 @@ return [
     'hero_variant' => 'diagram',
     'title' => tx('HR Consulting', 'الاستشارات في الموارد البشرية'),
     'summary' => tx(
-        'Practical HR frameworks — policies, structures, roles, performance and rewards — that help your people strategy work in day-to-day reality.',
-        'أطر عملية للموارد البشرية تشمل السياسات والهياكل والأدوار والأداء والمكافآت، لتنجح استراتيجيتك في الواقع اليومي.'
+        'Building stronger organizations: efficient, compliant and people-focused HR systems that align human capital strategies with business goals.',
+        'بناء مؤسسات أقوى: أنظمة موارد بشرية فعّالة وملتزمة ومتمحورة حول الأفراد، تواءم استراتيجيات رأس المال البشري مع أهداف العمل.'
     ),
     'hero' => [
         'eyebrow' => tx('People & Organization · HR Consulting', 'الأفراد والمؤسسة · الاستشارات في الموارد البشرية'),
-        'title' => tx('HR foundations that let your *people strategy* work', 'أسس موارد بشرية تُنجح *استراتيجيتك للأفراد*'),
+        'title' => tx('Building *stronger organizations*', 'بناء *مؤسسات أقوى*'),
         'lead' => tx(
-            'We help organizations put clear, fair and workable HR systems in place — designed around their size, culture and ambitions.',
-            'نساعد المؤسسات على بناء أنظمة موارد بشرية واضحة وعادلة وقابلة للتطبيق، مصمّمة وفق حجمها وثقافتها وطموحاتها.'
+            'We help businesses create efficient, compliant and people-focused HR systems. Our consulting solutions align human capital strategies with business goals to enhance performance and engagement.',
+            'نساعد الشركات على بناء أنظمة موارد بشرية فعّالة وملتزمة بالأنظمة ومتمحورة حول الأفراد. وتواءم حلولنا الاستشارية استراتيجيات رأس المال البشري مع أهداف العمل لتعزيز الأداء والانتماء.'
         ),
         'cta_label' => tx('Discuss your HR priorities', 'ناقش أولوياتك في الموارد البشرية'),
         'cta_link' => '/contact#contact-form',
@@ -41,7 +41,8 @@ return [
                 I(null, tx('Unclear roles and responsibilities', 'أدوار ومسؤوليات غير واضحة'), tx('Overlaps and gaps between roles slow decisions and create frustration.', 'التداخل والفجوات بين الأدوار يبطئان القرارات ويولّدان الإحباط.')),
                 I(null, tx('Policies that are missing or outdated', 'سياسات غائبة أو قديمة'), tx('Managers handle similar situations differently, which affects fairness and trust.', 'يتعامل المديرون مع المواقف المتشابهة بطرق مختلفة، ما يؤثر على العدالة والثقة.')),
                 I(null, tx('Performance that is hard to measure', 'أداء يصعب قياسه'), tx('Without clear objectives and reviews, it is difficult to recognize and develop people.', 'من دون أهداف ومراجعات واضحة يصعب تقدير الأفراد وتطويرهم.')),
-                I(null, tx('Inconsistent pay and grading', 'تفاوت في الرواتب والدرجات'), tx('Ad-hoc decisions on salaries and titles create internal equity issues.', 'القرارات المتفرقة بشأن الرواتب والمسميات تخلق مشكلات في العدالة الداخلية.')),
+                I(null, tx('Engagement and retention concerns', 'تحديات الانتماء والاحتفاظ بالموظفين'), tx('Valued people leave when engagement is not actively managed.', 'يغادر الموظفون المتميزون عندما لا تُدار مسألة الانتماء بصورة فاعلة.')),
+                I(null, tx('Compliance uncertainty', 'عدم اليقين بشأن الالتزام'), tx('Labor law and social insurance requirements are not always reflected in practice.', 'لا تنعكس متطلبات قانون العمل والتأمينات الاجتماعية دائمًا في الممارسة الفعلية.')),
                 I(null, tx('HR operations that depend on individuals', 'عمليات تعتمد على أفراد بعينهم'), tx('Key processes live in people’s heads rather than in documented workflows.', 'تبقى العمليات الأساسية في أذهان الأفراد بدلًا من أن تكون موثقة في إجراءات واضحة.')),
             ],
         ]),
@@ -52,9 +53,9 @@ return [
             'title' => tx('People. Process. *Performance.*', 'الأفراد. العمليات. *الأداء.*'),
             'lead' => tx('We look at HR through three connected lenses, so improvements in one area reinforce the others.', 'ننظر إلى الموارد البشرية من خلال ثلاث زوايا مترابطة، بحيث يعزّز التحسين في كل منها الزاويتين الأخريين.'),
             'items' => [
-                ['letter' => tx('P', '١'), 'title' => tx('People', 'الأفراد'), 'text' => tx('The structure, roles and capabilities your organization needs.', 'الهيكل والأدوار والقدرات التي تحتاجها مؤسستك.'), 'points' => L(['Organization structure', 'Job descriptions', 'Competency frameworks'], ['الهيكل التنظيمي', 'الأوصاف الوظيفية', 'أطر الجدارات'])],
-                ['letter' => tx('P', '٢'), 'title' => tx('Process', 'العمليات'), 'text' => tx('The policies and workflows that make HR consistent and efficient.', 'السياسات والإجراءات التي تجعل الموارد البشرية متسقة وفعالة.'), 'points' => L(['HR policies & procedures', 'Recruitment & onboarding', 'HR operations'], ['سياسات وإجراءات الموارد البشرية', 'الاستقطاب والتهيئة', 'عمليات الموارد البشرية'])],
-                ['letter' => tx('P', '٣'), 'title' => tx('Performance', 'الأداء'), 'text' => tx('The systems that set expectations, measure results and reward contribution.', 'الأنظمة التي تحدد التوقعات وتقيس النتائج وتكافئ الإسهام.'), 'points' => L(['Performance management', 'Grading & pay structures', 'Recognition approaches'], ['إدارة الأداء', 'الدرجات وهياكل الرواتب', 'أساليب التقدير'])],
+                ['letter' => tx('P', '١'), 'title' => tx('People', 'الأفراد'), 'text' => tx('The structure, roles and capabilities your organization needs.', 'الهيكل والأدوار والقدرات التي تحتاجها مؤسستك.'), 'points' => L(['Organizational structure', 'Employee engagement', 'Retention plans'], ['الهيكل التنظيمي', 'انتماء الموظفين', 'خطط الاحتفاظ بالموظفين'])],
+                ['letter' => tx('P', '٢'), 'title' => tx('Process', 'العمليات'), 'text' => tx('The policies and workflows that make HR consistent and efficient.', 'السياسات والإجراءات التي تجعل الموارد البشرية متسقة وفعالة.'), 'points' => L(['HR policies', 'Labor law & social insurance compliance', 'Process optimization & automation'], ['سياسات الموارد البشرية', 'الالتزام بقانون العمل والتأمينات الاجتماعية', 'تحسين العمليات وأتمتتها'])],
+                ['letter' => tx('P', '٣'), 'title' => tx('Performance', 'الأداء'), 'text' => tx('The systems that set expectations, measure results and reward contribution.', 'الأنظمة التي تحدد التوقعات وتقيس النتائج وتكافئ الإسهام.'), 'points' => L(['Performance management', 'Reward management', 'Recognition approaches'], ['إدارة الأداء', 'إدارة المكافآت', 'أساليب التقدير'])],
             ],
         ]),
         B('areas', [
@@ -63,14 +64,11 @@ return [
             'title' => tx('Where we can *help*', 'المجالات التي *نساعد فيها*'),
             'lead' => tx('Engagements can focus on a single area or combine several into one HR transformation program.', 'يمكن أن يركز المشروع على مجال واحد أو يجمع عدة مجالات في برنامج تطوير متكامل للموارد البشرية.'),
             'items' => [
-                ['title' => tx('HR policies & procedures', 'سياسات وإجراءات الموارد البشرية'), 'text' => tx('Clear, practical policies aligned with your context and applicable labour requirements.', 'سياسات واضحة وعملية تتوافق مع واقعك ومتطلبات العمل المعمول بها.')],
-                ['title' => tx('Organization structure', 'الهيكل التنظيمي'), 'text' => tx('Structures that clarify reporting lines, spans of control and accountabilities.', 'هياكل توضّح خطوط التبعية ونطاقات الإشراف والمسؤوليات.')],
-                ['title' => tx('Job descriptions & job design', 'الأوصاف الوظيفية وتصميم الوظائف'), 'text' => tx('Consistent role profiles that support hiring, performance and development.', 'ملفات أدوار متسقة تدعم التوظيف والأداء والتطوير.')],
-                ['title' => tx('Performance management', 'إدارة الأداء'), 'text' => tx('Objective-setting, review cycles and tools managers will actually use.', 'تحديد الأهداف ودورات المراجعة وأدوات يستخدمها المديرون فعليًا.')],
-                ['title' => tx('Grading & compensation frameworks', 'أطر الدرجات والتعويضات'), 'text' => tx('Job grading and pay structures that support internal fairness.', 'تصنيف الوظائف وهياكل رواتب تدعم العدالة الداخلية.')],
-                ['title' => tx('Recruitment & onboarding', 'الاستقطاب والتهيئة'), 'text' => tx('Processes that help you hire well and integrate new joiners quickly.', 'إجراءات تساعدك على التوظيف الجيد ودمج الموظفين الجدد بسرعة.')],
-                ['title' => tx('HR operations', 'عمليات الموارد البشرية'), 'text' => tx('Documented workflows, templates and controls for everyday HR tasks.', 'إجراءات ونماذج وضوابط موثقة لمهام الموارد البشرية اليومية.')],
-                ['title' => tx('Employee engagement', 'ارتباط الموظفين'), 'text' => tx('Ways to listen to employees and act on what you hear.', 'أساليب للاستماع إلى الموظفين والتصرف بناءً على ملاحظاتهم.')],
+                ['title' => tx('Organizational structure & HR policies', 'الهيكل التنظيمي وسياسات الموارد البشرية'), 'text' => tx('Clear structures, reporting lines and practical HR policies that fit your organization.', 'هياكل واضحة وخطوط تبعية وسياسات عملية للموارد البشرية تناسب مؤسستك.')],
+                ['title' => tx('Performance & reward management', 'إدارة الأداء والمكافآت'), 'text' => tx('Objective-setting, review cycles and reward approaches that recognize contribution.', 'تحديد الأهداف ودورات المراجعة وأساليب مكافأة تقدّر الإسهام.')],
+                ['title' => tx('Employee engagement & retention plans', 'خطط انتماء الموظفين والاحتفاظ بهم'), 'text' => tx('Plans that strengthen engagement and help you keep the people you value.', 'خطط تعزّز الانتماء وتساعدك على الاحتفاظ بالكفاءات التي تقدّرها.')],
+                ['title' => tx('Compliance with labor law & social insurance', 'الالتزام بقانون العمل والتأمينات الاجتماعية'), 'text' => tx('HR practices aligned with labor law and social insurance requirements.', 'ممارسات موارد بشرية متوافقة مع متطلبات قانون العمل والتأمينات الاجتماعية.')],
+                ['title' => tx('HR process optimization & automation', 'تحسين عمليات الموارد البشرية وأتمتتها'), 'text' => tx('Streamlined, documented and, where useful, automated HR processes.', 'عمليات موارد بشرية مبسّطة وموثقة ومؤتمتة حيثما كان ذلك مفيدًا.')],
             ],
         ]),
         B('engagement', [
@@ -109,14 +107,14 @@ return [
     ],
     'faqs' => [
         [tx('Do you work with organizations that have no HR department?', 'هل تعملون مع مؤسسات ليس لديها قسم للموارد البشرية؟'), tx('Yes. We often help growing organizations put their first HR policies, structures and processes in place, and we can support the person responsible for HR.', 'نعم. نساعد كثيرًا المؤسسات النامية على وضع أولى سياساتها وهياكلها وإجراءاتها في الموارد البشرية، ويمكننا دعم الشخص المسؤول عن هذا الملف.')],
-        [tx('Can you focus on just one area, such as job descriptions?', 'هل يمكن التركيز على مجال واحد فقط مثل الأوصاف الوظيفية؟'), tx('Yes. Engagements can be focused on a single deliverable or combine several areas, depending on your priorities.', 'نعم. يمكن أن يركّز المشروع على مخرج واحد أو يجمع عدة مجالات وفقًا لأولوياتك.')],
+        [tx('Can you focus on just one area, such as HR policies?', 'هل يمكن التركيز على مجال واحد فقط مثل سياسات الموارد البشرية؟'), tx('Yes. Engagements can be focused on a single deliverable or combine several areas, depending on your priorities.', 'نعم. يمكن أن يركّز المشروع على مخرج واحد أو يجمع عدة مجالات وفقًا لأولوياتك.')],
         [tx('How long does an HR consulting project take?', 'كم يستغرق مشروع الاستشارات في الموارد البشرية؟'), tx('It depends on scope and on how quickly decisions can be made. We agree a timeline with you at the start of each engagement.', 'يعتمد ذلك على النطاق وسرعة اتخاذ القرارات، ونتفق معك على جدول زمني في بداية كل مشروع.')],
         [tx('Will you help us implement the new frameworks?', 'هل تساعدوننا في تطبيق الأطر الجديدة؟'), tx('Yes. Implementation support — manager briefings, guides and training — is part of our engagement model, so the work does not stay on paper.', 'نعم. يُعد دعم التطبيق من إحاطات وأدلة وتدريب للمديرين جزءًا من نموذج عملنا، حتى لا يبقى العمل حبرًا على ورق.')],
     ],
     'seo' => SEO(
-        tx('HR Consulting: Policies, Structures, Performance & Rewards', 'الاستشارات في الموارد البشرية: السياسات والهياكل والأداء والمكافآت'),
-        tx('HR consulting for growing organizations: HR policies, organization structure, job descriptions, performance management and grading frameworks with WAFA.', 'استشارات الموارد البشرية للمؤسسات النامية: السياسات والهيكل التنظيمي والأوصاف الوظيفية وإدارة الأداء وأطر الدرجات مع وفاء.'),
-        tx('HR consulting', 'استشارات الموارد البشرية'),
-        tx('HR policies, organization structure, job descriptions, performance management', 'سياسات الموارد البشرية, الهيكل التنظيمي, الأوصاف الوظيفية, إدارة الأداء'),
+        tx('HR Consulting in Egypt: Structure, Policies, Performance & Compliance', 'استشارات الموارد البشرية في مصر: الهيكل والسياسات والأداء والالتزام'),
+        tx('HR consulting by WAFA: organizational structure and HR policies, performance and reward management, engagement and retention, labor law and social insurance compliance, and HR process automation.', 'استشارات الموارد البشرية من WAFA: الهيكل التنظيمي والسياسات، وإدارة الأداء والمكافآت، والانتماء والاحتفاظ بالموظفين، والالتزام بقانون العمل والتأمينات الاجتماعية، وأتمتة العمليات.'),
+        tx('HR consulting Egypt', 'استشارات الموارد البشرية في مصر'),
+        tx('HR policies, organizational structure, performance management, reward management, labor law compliance, HR automation', 'سياسات الموارد البشرية, الهيكل التنظيمي, إدارة الأداء, إدارة المكافآت, الالتزام بقانون العمل, أتمتة الموارد البشرية'),
     ),
 ];

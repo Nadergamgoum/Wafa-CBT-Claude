@@ -41,7 +41,7 @@ class SiteSettings extends Page
 
     protected static ?int $navigationSort = 0;
 
-    public const GROUPS = ['general', 'brand', 'contact', 'whatsapp', 'channels', 'social', 'seo', 'analytics', 'cookies', 'footer', 'forms'];
+    public const GROUPS = ['general', 'brand', 'contact', 'whatsapp', 'channels', 'quickbar', 'social', 'seo', 'analytics', 'cookies', 'footer', 'forms'];
 
     /** @var array<string, mixed> */
     public ?array $data = [];
@@ -58,17 +58,27 @@ class SiteSettings extends Page
                 Tab::make('General & brand')->icon('heroicon-o-building-office')->schema([
                     Tr::text('general.site_name', 'Site / brand name', required: true),
                     Tr::text('general.legal_name', 'Legal company name', help: 'Used in the footer copyright and structured data. Leave empty if not confirmed.'),
-                    Tr::text('general.header_cta', 'Header button text'),
-                    Section::make('Logo & icons')->description('Upload the official WAFA logo (PNG or WebP with transparent background works best).')->columns(2)->schema([
+                    Section::make('Header button')->columns(2)->schema([
+                        Tr::text('general.header_cta', 'Header button text'),
+                        TextInput::make('general.header_cta_link')->label('Header button link')->maxLength(500)->placeholder('/contact#contact-form')
+                            ->helperText('A site path, a full https:// URL or @whatsapp.'),
+                    ]),
+                    Section::make('Logo & icons')->description('The official WAFA logo and favicon are built in. Upload files here only to replace them (PNG, WebP or SVG with a transparent background).')->columns(2)->schema([
                         MediaPicker::make('brand.logo', 'Logo (for light backgrounds)'),
                         MediaPicker::make('brand.logo_light', 'Logo (for dark backgrounds, footer)'),
                         MediaPicker::make('brand.favicon', 'Favicon / app icon (square, at least 512 px)'),
                         MediaPicker::make('brand.og_image', 'Default social sharing image (1200 × 630)'),
                     ]),
-                    Section::make('Brand colours')->description('Defaults are provisional — set the official WAFA brand values. All tints and states are derived automatically.')->columns(3)->schema([
-                        ColorPicker::make('brand.color_primary')->label('Primary (deep / navy)')->regex('/^#[0-9a-fA-F]{6}$/'),
-                        ColorPicker::make('brand.color_secondary')->label('Secondary (buttons, health accent)')->regex('/^#[0-9a-fA-F]{6}$/'),
-                        ColorPicker::make('brand.color_accent')->label('Accent (premium details)')->regex('/^#[0-9a-fA-F]{6}$/'),
+                    Section::make('Brand colours')->description('Official WAFA palette: ink #16191C, accessible teal #0E7F75 and logo teal #19BAAB. All tints and states are derived automatically. Keep white text readable on the secondary colour.')->columns(3)->schema([
+                        ColorPicker::make('brand.color_primary')->label('Primary (ink — text, dark sections)')->regex('/^#[0-9a-fA-F]{6}$/'),
+                        ColorPicker::make('brand.color_secondary')->label('Secondary (buttons, links)')->regex('/^#[0-9a-fA-F]{6}$/'),
+                        ColorPicker::make('brand.color_accent')->label('Accent (logo teal, highlights)')->regex('/^#[0-9a-fA-F]{6}$/'),
+                    ]),
+                    Section::make('Typography')->columns(2)->schema([
+                        Select::make('brand.heading_font')->label('Heading style')->native(false)
+                            ->options(['serif' => 'Editorial serif headings (Fraunces) — default', 'sans' => 'Clean sans-serif headings (Inter)'])
+                            ->placeholder('Editorial serif headings (default)')
+                            ->helperText('Arabic always uses IBM Plex Sans Arabic.'),
                     ]),
                 ]),
                 Tab::make('Contact & WhatsApp')->icon('heroicon-o-phone')->schema([
@@ -99,9 +109,22 @@ class SiteSettings extends Page
                         TextInput::make('contact.messenger_url')->label('Facebook Messenger link (m.me/…)')->url()->maxLength(255),
                         TextInput::make('contact.telegram_url')->label('Telegram link (t.me/…)')->url()->maxLength(255),
                     ]),
-                    Section::make('Contact widget & mobile bar')->columns(2)->schema([
+                    Section::make('Mobile contact bar')->description('The sticky bar at the bottom of the screen on phones. Up to three buttons are shown, in this order; buttons whose channel is not configured are skipped.')->columns(2)->schema([
+                        Toggle::make('quickbar.enabled')->label('Show the mobile contact bar')->default(true)->inline(false),
+                        TextInput::make('quickbar.consult_link')->label('Consultation button link')->maxLength(500)->placeholder('/contact#contact-form'),
+                        Repeater::make('quickbar.items')->label('Buttons (drag to reorder)')->columnSpanFull()
+                            ->schema([
+                                Select::make('key')->options(['phone' => 'Call', 'whatsapp' => 'WhatsApp', 'consult' => 'Consultation', 'email' => 'Email'])->required()->native(false)->distinct(),
+                                Toggle::make('enabled')->default(true)->inline(false),
+                            ])->columns(2)->reorderableWithDragAndDrop()->reorderableWithButtons()->addable(false)->deletable(false)
+                            ->itemLabel(fn (array $state) => ['phone' => 'Call', 'whatsapp' => 'WhatsApp', 'consult' => 'Consultation', 'email' => 'Email'][$state['key'] ?? ''] ?? 'Button'),
+                        Tr::text('quickbar.label_phone', 'Call button label', help: 'Leave empty for the default “Call”.'),
+                        Tr::text('quickbar.label_whatsapp', 'WhatsApp button label'),
+                        Tr::text('quickbar.label_consult', 'Consultation button label'),
+                        Tr::text('quickbar.label_email', 'Email button label'),
+                    ]),
+                    Section::make('Contact widget')->columns(2)->schema([
                         Toggle::make('channels.widget_enabled')->label('Show the floating contact menu on desktop')->inline(false),
-                        Toggle::make('channels.quickbar_consult')->label('Always add “Consult” to the mobile bar')->inline(false),
                         Tr::text('channels.widget_title', 'Widget title'),
                         Tr::textarea('channels.widget_text', 'Widget text'),
                         Repeater::make('channels.items')->label('Channel order (drag to reorder)')->columnSpanFull()
@@ -135,15 +158,33 @@ class SiteSettings extends Page
                         TextInput::make('analytics.bing_verification')->label('Bing Webmaster verification code')->maxLength(300),
                         Textarea::make('seo.robots_extra')->label('Extra robots.txt rules')->rows(3)->columnSpanFull()
                             ->helperText('Advanced. Admin, installer and filtered listing pages are already excluded.'),
+                        Select::make('seo.x_default')->label('Default language for search engines (hreflang x-default)')->native(false)
+                            ->options(['en' => 'English', 'ar' => 'العربية'])->placeholder('English'),
+                        Select::make('seo.schema_type')->label('Organization type (structured data)')->native(false)
+                            ->options(['ProfessionalService' => 'Professional service (default)', 'InsuranceAgency' => 'Insurance agency / broker', 'Organization' => 'Organization'])
+                            ->placeholder('Professional service'),
+                    ]),
+                    Section::make('XML sitemap')->description('Pages, service categories and services are always included (unless set to “noindex”). Choose which other content types are listed.')->columns(4)->schema([
+                        Toggle::make('seo.sitemap_programs')->label('Training programs')->default(true)->inline(false),
+                        Toggle::make('seo.sitemap_engagements')->label('Corporate engagements')->default(true)->inline(false),
+                        Toggle::make('seo.sitemap_posts')->label('Insight articles')->default(true)->inline(false),
+                        Toggle::make('seo.sitemap_post_categories')->label('Insight categories')->default(true)->inline(false),
                     ]),
                 ]),
                 Tab::make('Analytics & tracking')->icon('heroicon-o-chart-bar')->schema([
-                    Section::make()->description('Scripts load only when an ID is set — and, when consent is required, only after the visitor agrees.')->columns(2)->schema([
-                        TextInput::make('analytics.ga4_id')->label('Google Analytics 4 measurement ID')->placeholder('G-XXXXXXXXXX')->regex('/^(G-[A-Z0-9]{4,})?$/'),
-                        TextInput::make('analytics.gtm_id')->label('Google Tag Manager container ID')->placeholder('GTM-XXXXXXX')->regex('/^(GTM-[A-Z0-9]{4,})?$/'),
-                        TextInput::make('analytics.meta_pixel_id')->label('Meta Pixel ID')->regex('/^(\d{6,20})?$/'),
-                        TextInput::make('analytics.linkedin_partner_id')->label('LinkedIn Insight Tag partner ID')->regex('/^(\d{3,12})?$/'),
-                        TextInput::make('analytics.tiktok_pixel_id')->label('TikTok Pixel ID')->regex('/^([A-Z0-9]{8,30})?$/'),
+                    Section::make()->description('A tool loads only when it is switched on and has a valid ID — and, when consent is required, only after the visitor agrees.')->columns(['default' => 1, 'md' => 4])->schema([
+                        Toggle::make('analytics.ga4_enabled')->label('Google Analytics 4')->default(true)->inline(false),
+                        TextInput::make('analytics.ga4_id')->label('Measurement ID')->placeholder('G-XXXXXXXXXX')->regex('/^(G-[A-Z0-9]{4,})?$/'),
+                        Toggle::make('analytics.gtm_enabled')->label('Google Tag Manager')->default(true)->inline(false),
+                        TextInput::make('analytics.gtm_id')->label('Container ID')->placeholder('GTM-XXXXXXX')->regex('/^(GTM-[A-Z0-9]{4,})?$/'),
+                        Toggle::make('analytics.meta_enabled')->label('Meta Pixel')->default(true)->inline(false),
+                        TextInput::make('analytics.meta_pixel_id')->label('Pixel ID')->regex('/^(\d{6,20})?$/'),
+                        Toggle::make('analytics.linkedin_enabled')->label('LinkedIn Insight Tag')->default(true)->inline(false),
+                        TextInput::make('analytics.linkedin_partner_id')->label('Partner ID')->regex('/^(\d{3,12})?$/'),
+                        Toggle::make('analytics.tiktok_enabled')->label('TikTok Pixel')->default(true)->inline(false),
+                        TextInput::make('analytics.tiktok_pixel_id')->label('Pixel ID')->regex('/^([A-Z0-9]{8,30})?$/'),
+                    ]),
+                    Section::make()->columns(2)->schema([
                         Toggle::make('analytics.first_party')->label('Built-in privacy-friendly statistics (no cookies)')->inline(false)
                             ->helperText('Powers the dashboard: visits, top pages, devices, languages, sources and conversions.'),
                         TextInput::make('analytics.ga4_property_id')->label('GA4 property ID (for future API reporting)')->maxLength(20)
@@ -154,15 +195,37 @@ class SiteSettings extends Page
                     Toggle::make('cookies.require_consent')->label('Ask for consent before loading analytics & marketing tags')->inline(false)
                         ->helperText('Recommended. Necessary cookies always load.'),
                     TextInput::make('cookies.version')->label('Consent version')->maxLength(10)->helperText('Change this value to ask all visitors for consent again (e.g. after adding a new tracking tool).'),
+                    Section::make('Cookie categories')->description('Necessary cookies are always on. Switching a category off removes it from the banner and stops its tools from loading.')->columns(2)->schema([
+                        Toggle::make('cookies.category_analytics')->label('Analytics (Google Analytics, Tag Manager)')->default(true)->inline(false),
+                        Toggle::make('cookies.category_marketing')->label('Marketing (Meta, LinkedIn, TikTok)')->default(true)->inline(false),
+                    ]),
                     Tr::text('cookies.title', 'Banner title'),
                     Tr::textarea('cookies.text', 'Banner text'),
                 ]),
                 Tab::make('Footer & forms')->icon('heroicon-o-envelope')->schema([
-                    Tr::textarea('footer.tagline', 'Footer tagline'),
+                    Tr::textarea('footer.tagline', 'Footer description'),
                     Tr::text('footer.copyright', 'Copyright text'),
+                    Section::make('Footer layout')->columns(2)->schema([
+                        Toggle::make('footer.show_services')->label('Show service columns')->default(true)->inline(false),
+                        Toggle::make('footer.cta_enabled')->label('Show a call-to-action strip above the footer links')->inline(false),
+                        Tr::text('footer.cta_title', 'Call-to-action heading'),
+                        Tr::text('footer.cta_label', 'Call-to-action button text'),
+                        TextInput::make('footer.cta_link')->label('Call-to-action link')->maxLength(500)->placeholder('/contact#contact-form'),
+                    ]),
                     TextInput::make('forms.notify_email')->label('Send form notifications to')->email()->maxLength(190)
                         ->helperText('Defaults to the contact email. Requires SMTP settings in .env.'),
                     Tr::textarea('forms.success_message', 'Form success message'),
+                ]),
+                Tab::make('Site behaviour')->icon('heroicon-o-adjustments-horizontal')->schema([
+                    Section::make('Language')->columns(2)->schema([
+                        Toggle::make('general.language_switcher')->label('Show the English / العربية language switcher')->default(true)->inline(false)
+                            ->helperText('English is served at the root (/) and Arabic under /ar. Both versions are edited independently — nothing is auto-translated.'),
+                    ]),
+                    Section::make('Maintenance mode')->description('Visitors see a “back shortly” page (HTTP 503). Signed-in CMS users can still browse the site, and the admin panel keeps working.')->columns(2)->schema([
+                        Toggle::make('general.maintenance')->label('Enable maintenance mode')->inline(false),
+                        Tr::text('general.maintenance_title', 'Maintenance page title'),
+                        Tr::textarea('general.maintenance_message', 'Maintenance page message'),
+                    ]),
                 ]),
             ]),
         ]);

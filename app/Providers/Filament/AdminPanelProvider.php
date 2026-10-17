@@ -33,12 +33,16 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->brandName('WAFA CMS')
-            ->favicon(asset('favicon.svg'))
+            ->brandLogo(asset('images/brand/wafa-logo.png'))
+            ->brandLogoHeight('2.1rem')
+            ->favicon(asset('images/brand/favicon-32.png'))
             ->login(Login::class)
             ->passwordReset()
             ->profile(EditProfile::class, isSimple: false)
             ->colors([
-                'primary' => Color::hex('#0f7a76'),
+                // WAFA teal, pinned so buttons use #0E7F75 (white text passes WCAG AA).
+                'primary' => [50 => '#f1f7f7', 100 => '#ddedec', 200 => '#bcdbd8', 300 => '#8bc2bd', 400 => '#56a59e', 500 => '#2b8e86',
+                    600 => '#0e7f75', 700 => '#0b6860', 800 => '#09544d', 900 => '#07403a', 950 => '#042925'],
                 'gray' => Color::Slate,
             ])
             ->defaultAvatarProvider(\App\Filament\Support\InitialsAvatar::class)
@@ -56,7 +60,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([Dashboard::class])
-            ->widgets([StatsOverview::class, TrafficChart::class, AudienceBreakdown::class, LatestLeads::class])
+            ->widgets([\Filament\Widgets\AccountWidget::class, StatsOverview::class, TrafficChart::class, AudienceBreakdown::class, LatestLeads::class])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

@@ -7,6 +7,12 @@ use Filament\Widgets\Widget;
 
 class AudienceBreakdown extends Widget
 {
+    // Analytics and leads are Super Admin information.
+    public static function canView(): bool
+    {
+        return (bool) auth()->user()?->isSuperAdmin();
+    }
+
     protected static ?int $sort = 3;
 
     protected int|string|array $columnSpan = 'full';

@@ -7,7 +7,7 @@ return [
         'nav_title' => tx('Insurance', 'التأمين'),
         'summary' => tx(
             'Corporate medical insurance as our core, complemented by life, auto and property insurance — structured, compared and supported by WAFA as your insurance broker.',
-            'التأمين الطبي للشركات في صميم عملنا، تكمله حلول التأمين على الحياة والمركبات والممتلكات، مع هيكلة ومقارنة ودعم من وفاء بصفتها وسيط التأمين الخاص بك.'
+            'التأمين الطبي للشركات في صميم عملنا، تكمله حلول التأمين على الحياة والمركبات والممتلكات، مع هيكلة ومقارنة ودعم من WAFA بصفتها وسيط التأمين الخاص بك.'
         ),
         'hero' => [
             'eyebrow' => tx('Insurance & brokerage', 'التأمين والوساطة التأمينية'),
@@ -16,7 +16,7 @@ return [
         ],
         'seo' => SEO(
             tx('Insurance Solutions & Brokerage for Companies', 'حلول التأمين والوساطة التأمينية للشركات'),
-            tx('Corporate medical insurance, life, auto and property insurance for companies. WAFA structures, compares and manages your insurance programs.', 'التأمين الطبي للشركات والتأمين على الحياة والمركبات والممتلكات. تهيكل وفاء برامجك التأمينية وتقارنها وتديرها.'),
+            tx('Corporate medical insurance, life, auto and property insurance for companies. WAFA structures, compares and manages your insurance programs.', 'التأمين الطبي للشركات والتأمين على الحياة والمركبات والممتلكات. تهيكل WAFA برامجك التأمينية وتقارنها وتديرها.'),
             tx('insurance brokerage', 'الوساطة التأمينية'),
         ),
         'sections' => [
@@ -46,11 +46,11 @@ return [
         'hero' => [
             'eyebrow' => tx('People & Organization', 'الأفراد والمؤسسة'),
             'title' => tx('Strong organizations are built *by design*', 'المؤسسات القوية تُبنى *بتصميم مدروس*'),
-            'lead' => tx('From HR policies and job descriptions to full organizational transformation, we help you build the foundations your people need to perform.', 'من سياسات الموارد البشرية والأوصاف الوظيفية إلى التحوّل المؤسسي الشامل، نساعدك على بناء الأسس التي يحتاجها موظفوك للأداء المتميز.'),
+            'lead' => tx('From organizational structure and HR policies to organizational development, we help you build efficient, compliant and people-focused foundations.', 'من الهيكل التنظيمي وسياسات الموارد البشرية إلى التطوير المؤسسي، نساعدك على بناء أسس فعّالة وملتزمة ومتمحورة حول الأفراد.'),
         ],
         'seo' => SEO(
             tx('People & Organization: HR Consulting and Organizational Development', 'الأفراد والمؤسسة: استشارات الموارد البشرية والتطوير المؤسسي'),
-            tx('HR consulting and organizational development services: policies, structures, performance, transformation and capability building with WAFA.', 'خدمات استشارات الموارد البشرية والتطوير المؤسسي: السياسات والهياكل والأداء والتحوّل وبناء القدرات مع وفاء.'),
+            tx('HR consulting and organizational development services: policies, structures, performance, transformation and capability building with WAFA.', 'خدمات استشارات الموارد البشرية والتطوير المؤسسي: السياسات والهياكل والأداء والتحوّل وبناء القدرات مع WAFA.'),
         ),
         'sections' => [
             B('pillars', [
@@ -77,11 +77,11 @@ return [
         'hero' => [
             'eyebrow' => tx('Learning & Leadership', 'التعلّم والقيادة'),
             'title' => tx('Develop the people who *drive your results*', 'طوّر الأفراد الذين *يصنعون نتائجك*'),
-            'lead' => tx('Practical training for teams, focused coaching for business owners and confidential coaching for senior leaders.', 'تدريب عملي للفرق، وكوتشينغ مركّز لأصحاب الأعمال، وكوتشينغ سري للقادة التنفيذيين.'),
+            'lead' => tx('Training that develops skills that drive growth, business coaching for owners and managers, and one-to-one executive coaching for senior leaders.', 'تدريب يطوّر المهارات التي تدفع النمو، وكوتشينغ أعمال لأصحاب الأعمال والمديرين، وكوتشينغ تنفيذي فردي للقادة.'),
         ],
         'seo' => SEO(
             tx('Learning & Leadership: Training, Business & Executive Coaching', 'التعلّم والقيادة: التدريب وكوتشينغ الأعمال والكوتشينغ التنفيذي'),
-            tx('Corporate training programs, business coaching and executive coaching to develop skills and leadership across your organization with WAFA.', 'برامج تدريب مؤسسي وكوتشينغ أعمال وكوتشينغ تنفيذي لتطوير المهارات والقيادة في مؤسستك مع وفاء.'),
+            tx('Corporate training programs, business coaching and executive coaching to develop skills and leadership across your organization with WAFA.', 'برامج تدريب مؤسسي وكوتشينغ أعمال وكوتشينغ تنفيذي لتطوير المهارات والقيادة في مؤسستك مع WAFA.'),
         ),
         'sections' => [
             B('programs', ['background' => 'mist', 'eyebrow' => tx('Training programs', 'البرامج التدريبية'), 'title' => tx('Selected *programs*', 'برامج *مختارة*'), 'limit' => 6]),

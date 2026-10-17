@@ -13,9 +13,10 @@
     <script nonce="{{ $nonce }}">document.documentElement.classList.replace('no-js','js');</script>
     @include('partials.seo')
     @include('partials.tracking-head')
-    <link rel="icon" href="{{ \App\Support\Brand::media('favicon')?->url() ?? asset('favicon.svg') }}">
-    <link rel="apple-touch-icon" href="{{ \App\Support\Brand::media('favicon')?->url() ?? asset('favicon.svg') }}">
-    <meta name="theme-color" content="{{ setting('brand.color_primary') ?: '#0d3150' }}">
+    <link rel="icon" href="{{ \App\Support\Brand::faviconUrl(32) }}" sizes="32x32">
+    <link rel="icon" href="{{ \App\Support\Brand::faviconUrl(192) }}" sizes="192x192">
+    <link rel="apple-touch-icon" href="{{ \App\Support\Brand::faviconUrl(180) }}">
+    <meta name="theme-color" content="{{ setting('brand.color_primary') ?: '#16191c' }}">
     @php
         $preload = $locale === 'ar'
             ? ['node_modules/@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-400-normal.woff2', 'node_modules/@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-700-normal.woff2']
@@ -31,7 +32,7 @@
     @endif
     @stack('head')
 </head>
-<body class="{{ $bodyClass ?? '' }}" data-locale="{{ $locale }}" data-track="{{ route('track') }}">
+<body class="{{ trim(($bodyClass ?? '').' '.((setting('quickbar.enabled') ?? true) ? '' : 'no-quickbar')) }}" data-locale="{{ $locale }}" data-track="{{ route('track') }}">
     @include('partials.tracking-body')
     <a class="skip-link" href="#main">{{ __('site.skip_to_content') }}</a>
     @include('partials.header')

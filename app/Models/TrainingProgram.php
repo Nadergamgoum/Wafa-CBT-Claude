@@ -10,7 +10,7 @@ class TrainingProgram extends Model
 {
     use HasSeo;
 
-    public const DELIVERY_MODES = ['in_person' => 'In person', 'online' => 'Live online', 'blended' => 'Blended', 'in_house' => 'In-house (at your organization)'];
+    public const DELIVERY_MODES = ['in_person' => 'In person', 'online' => 'Live online', 'blended' => 'Blended', 'in_house' => 'In-house (at your organization)', 'in_house_online' => 'In-house or online workshops'];
 
     public const STATUSES = ['open' => 'Registration open', 'upcoming' => 'Coming soon', 'on_request' => 'Available on request', 'full' => 'Fully booked', 'closed' => 'Registration closed'];
 

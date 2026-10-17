@@ -1,12 +1,16 @@
 # Photography & imagery brief
 
+Verified photography already in use: the founder portrait (About) and six genuine corporate
+engagement photos (Corporate engagements — not used as homepage imagery). The official logo and
+favicon are built in.
+
 The site ships with **built-in editorial illustrations** (brand-coloured SVG compositions) in every
 image slot so that no page looks empty. They are placeholders: replace them with professional
 photography through **Admin → Media library** and each page's image fields. Every image is
 independent — never reuse one hero across several services.
 
 General direction: real professionals and employees in calm, credible settings; natural light;
-the brand’s navy / teal / warm-neutral palette; diverse, regionally appropriate people; no cheesy
+the brand’s ink / teal / neutral palette; diverse, regionally appropriate people; no cheesy
 handshakes, generic stock poses, or event photos. Supply at least **2000 px wide** originals;
 the CMS creates responsive WebP versions automatically. Add English and Arabic alt text.
 

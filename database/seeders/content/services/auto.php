@@ -10,8 +10,8 @@ return [
     'hero_variant' => 'asymmetric',
     'title' => tx('Auto Insurance', 'تأمين السيارات'),
     'summary' => tx(
-        'Vehicle and fleet insurance arranged around how your vehicles are actually used — with support when you need to claim.',
-        'تأمين المركبات والأساطيل مرتّب وفق طريقة الاستخدام الفعلية لمركباتك، مع دعم عند الحاجة إلى المطالبة.'
+        'Reliable protection for your vehicle on every journey — from a single car to a company fleet, with support when you need to claim.',
+        'حماية موثوقة لمركبتك في كل رحلة، من سيارة واحدة إلى أسطول الشركة، مع دعم عند الحاجة إلى المطالبة.'
     ),
     'hero' => [
         'eyebrow' => tx('Insurance · Vehicles & fleets', 'التأمين · المركبات والأساطيل'),
@@ -59,7 +59,7 @@ return [
         B('process', [
             'layout' => 'chevrons',
             'background' => 'mist',
-            'eyebrow' => tx('How WAFA supports selection', 'كيف تدعمك وفاء في الاختيار'),
+            'eyebrow' => tx('How WAFA supports selection', 'كيف تدعمك WAFA في الاختيار'),
             'title' => tx('From vehicle list to *claims support*', 'من قائمة المركبات إلى *دعم المطالبات*'),
             'items' => [
                 ['title' => tx('Review vehicles & use', 'مراجعة المركبات والاستخدام'), 'text' => tx('Vehicle types, drivers and how they are used.', 'أنواع المركبات والسائقون وطريقة الاستخدام.')],
@@ -90,7 +90,7 @@ return [
     ],
     'seo' => SEO(
         tx('Auto & Fleet Insurance for Companies', 'تأمين المركبات والأساطيل للشركات'),
-        tx('Auto insurance and fleet programs for companies: understand vehicle risks, compare comprehensive and third-party cover, and get claims guidance with WAFA.', 'تأمين المركبات وبرامج الأساطيل للشركات: افهم مخاطر المركبات وقارن بين التأمين الشامل والتأمين ضد الغير واحصل على إرشاد في المطالبات مع وفاء.'),
+        tx('Auto insurance and fleet programs for companies: understand vehicle risks, compare comprehensive and third-party cover, and get claims guidance with WAFA.', 'تأمين المركبات وبرامج الأساطيل للشركات: افهم مخاطر المركبات وقارن بين التأمين الشامل والتأمين ضد الغير واحصل على إرشاد في المطالبات مع WAFA.'),
         tx('auto insurance', 'تأمين السيارات'),
         tx('fleet insurance, company car insurance, comprehensive motor insurance', 'تأمين الأساطيل, تأمين سيارات الشركات, التأمين الشامل للمركبات'),
     ),

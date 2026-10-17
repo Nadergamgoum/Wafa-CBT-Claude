@@ -10,7 +10,7 @@
                     @else
                         <div style="margin-bottom:8px">
                             <div style="display:flex;justify-content:space-between;gap:8px;font-size:13px"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="{{ $label }}">{{ $label }}</span><strong>{{ number_format($count) }}</strong></div>
-                            <div style="height:6px;border-radius:6px;background:rgba(127,127,127,.15);margin-top:4px"><div style="height:6px;border-radius:6px;background:#0f7a76;width:{{ round($count / $max * 100) }}%"></div></div>
+                            <div style="height:6px;border-radius:6px;background:rgba(127,127,127,.15);margin-top:4px"><div style="height:6px;border-radius:6px;background:#0e7f75;width:{{ round($count / $max * 100) }}%"></div></div>
                         </div>
                     @endif
                 @empty

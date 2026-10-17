@@ -7,7 +7,7 @@
 @foreach ($entry['urls'] as $l => $href)
     <xhtml:link rel="alternate" hreflang="{{ $l }}" href="{{ $href }}"/>
 @endforeach
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ $entry['urls']['en'] }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ $entry['urls'][setting('seo.x_default') === 'ar' ? 'ar' : 'en'] }}"/>
 @if ($entry['updated'])
     <lastmod>{{ $entry['updated']->toAtomString() }}</lastmod>
 @endif

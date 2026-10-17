@@ -16,6 +16,7 @@ class Page extends Model
         'contact' => 'Contact',
         'insights' => 'Insights listing',
         'programs' => 'Training programs listing',
+        'engagements' => 'Corporate engagements listing',
         'legal' => 'Legal / policy text',
         'generic' => 'Generic content page',
     ];
@@ -42,6 +43,7 @@ class Page extends Model
             'contact' => lroute('contact', [], $locale),
             'insights' => lroute('insights.index', [], $locale),
             'programs' => lroute('programs.index', [], $locale),
+            'engagements' => lroute('engagements.index', [], $locale),
             default => lroute('page', ['slug' => $this->slug], $locale),
         };
     }

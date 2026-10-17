@@ -9,6 +9,12 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class StatsOverview extends StatsOverviewWidget
 {
+    // Analytics and leads are Super Admin information.
+    public static function canView(): bool
+    {
+        return (bool) auth()->user()?->isSuperAdmin();
+    }
+
     protected static ?int $sort = 1;
 
     protected ?string $heading = 'Last 30 days';
