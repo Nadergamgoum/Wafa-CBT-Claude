@@ -12,7 +12,7 @@
                     <li class="qmodel__q qmodel__q--{{ $ii + 1 }}">
                         <div class="qmodel__head">
                             <span class="icon-tile">{!! icon($it['icon'] ?? 'circle-check') !!}</span>
-                            <span class="qmodel__step">{{ str_pad($ii + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                            <span class="qmodel__step" aria-hidden="true">{{ str_pad($ii + 1, 2, '0', STR_PAD_LEFT) }}</span>
                         </div>
                         <h3 class="h3">{{ t($it['title'] ?? null) }}</h3>
                         <p>{{ t($it['text'] ?? null) }}</p>

@@ -16,6 +16,15 @@
     <link rel="icon" href="{{ \App\Support\Brand::media('favicon')?->url() ?? asset('favicon.svg') }}">
     <link rel="apple-touch-icon" href="{{ \App\Support\Brand::media('favicon')?->url() ?? asset('favicon.svg') }}">
     <meta name="theme-color" content="{{ setting('brand.color_primary') ?: '#0d3150' }}">
+    @php
+        $preload = $locale === 'ar'
+            ? ['node_modules/@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-400-normal.woff2', 'node_modules/@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-700-normal.woff2']
+            : ['node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2', 'node_modules/@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2'];
+    @endphp
+    @foreach ($preload as $font)
+        @php try { $fontUrl = \Illuminate\Support\Facades\Vite::asset($font); } catch (\Throwable) { $fontUrl = null; } @endphp
+        @if ($fontUrl)<link rel="preload" href="{{ $fontUrl }}" as="font" type="font/woff2" crossorigin>@endif
+    @endforeach
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @if ($vars = \App\Support\Brand::cssVariables())
         <style>{!! $vars !!}</style>

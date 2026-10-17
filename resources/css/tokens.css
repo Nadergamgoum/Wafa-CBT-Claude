@@ -117,7 +117,7 @@
 [data-accent='teal'] { --svc: var(--c-secondary); --svc-soft: var(--c-secondary-50); --svc-tint: var(--c-secondary-100); }
 [data-accent='navy'] { --svc: var(--c-primary); --svc-soft: var(--c-primary-50); --svc-tint: var(--c-primary-100); }
 [data-accent='sky'] { --svc: #1f6fa8; --svc-soft: #eef5fb; --svc-tint: #dcebf6; }
-[data-accent='amber'] { --svc: #a8661a; --svc-soft: #fdf6ec; --svc-tint: #f7e6cc; }
+[data-accent='amber'] { --svc: #8a5212; --svc-soft: #fdf6ec; --svc-tint: #f7e6cc; }
 [data-accent='sage'] { --svc: #4c7a5b; --svc-soft: #f1f6f2; --svc-tint: #dde9e0; }
 [data-accent='plum'] { --svc: #6b4a7a; --svc-soft: #f6f1f8; --svc-tint: #e8dcee; }
 [data-accent='gold'] { --svc: var(--c-accent-700); --svc-soft: #fbf7ee; --svc-tint: var(--c-accent-100); }

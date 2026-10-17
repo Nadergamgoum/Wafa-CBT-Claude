@@ -209,7 +209,7 @@
   .qmodel__q--4 { padding-inline-start: 110px; border-start-start-radius: 80px; }
 }
 .qmodel__head { display: flex; align-items: center; justify-content: space-between; }
-.qmodel__step { font-family: var(--font-display); font-size: 1.6rem; color: var(--n-300); }
+.qmodel__step { font-family: var(--font-display); font-size: 1.6rem; color: var(--n-500); }
 .qmodel__q p { color: var(--c-muted); }
 .qmodel__pts { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin-block-start: 6px; }
 .qmodel__pts li { padding: 4px 12px; border-radius: 999px; background: var(--svc-soft); color: var(--c-ink-2); font-size: .9rem; font-weight: 500; }
