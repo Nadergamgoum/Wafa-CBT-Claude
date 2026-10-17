@@ -14,6 +14,7 @@
 /* ===================== Rails (horizontal carousels) ===================== */
 .rail { position: relative; }
 .rail__track {
+  list-style: none;
   display: grid; grid-auto-flow: column; grid-auto-columns: var(--rail-item, min(82%, 340px)); gap: 16px;
   overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
   padding-inline: var(--gutter); margin-inline: calc(-1 * var(--gutter)); padding-block: 4px 18px;

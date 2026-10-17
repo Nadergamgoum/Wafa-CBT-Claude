@@ -150,7 +150,7 @@ if (! function_exists('art')) {
     /** URL of a built-in illustration in public/images/art. */
     function art(?string $name, string $default = 'abstract'): string
     {
-        $name = preg_replace('/[^a-z0-9-]/', '', (string) $name) ?: $default;
+        $name = preg_replace('/[^a-z0-9_-]/', '', (string) $name) ?: $default;
 
         return asset('images/art/'.$name.'.svg');
     }

@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 600; color: inherit; text-wrap: bal
 .small { font-size: var(--fs-small); }
 em.hl, .hl { font-style: italic; color: var(--svc); }
 [dir='rtl'] em.hl, [dir='rtl'] .hl { font-style: normal; }
+.on-dark .hl { color: var(--c-accent); }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: .6em;
@@ -140,3 +141,6 @@ em.hl, .hl { font-style: italic; color: var(--svc); }
 /* Visibility helpers */
 @media (max-width: 767.98px) { .hide-mobile { display: none !important; } }
 @media (min-width: 768px) { .hide-desktop { display: none !important; } }
+
+/* Grid/flex children that contain horizontal rails must be allowed to shrink. */
+[class*='__grid'] > *, .rail, .rail__track { min-inline-size: 0; }

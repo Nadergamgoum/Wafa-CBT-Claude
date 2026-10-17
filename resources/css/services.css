@@ -75,9 +75,11 @@
 
 /* Overlay — property */
 .shero--overlay { min-block-size: clamp(480px, 62vh, 640px); display: grid; align-items: end; padding-block: 40px; }
-.shero__cover { position: absolute; inset: 0; z-index: -1; }
+.shero__cover { position: absolute; inset: 0; z-index: -2; }
 .shero__cover img { inline-size: 100%; block-size: 100%; object-fit: cover; }
-.shero--overlay::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgb(6 22 36 / 92%) 0%, rgb(6 22 36 / 60%) 45%, rgb(6 22 36 / 20%) 100%); }
+.shero--overlay::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgb(6 22 36 / 70%) 0%, transparent 40%), linear-gradient(90deg, rgb(6 22 36 / 92%) 0%, rgb(6 22 36 / 80%) 45%, rgb(6 22 36 / 25%) 100%); }
+[dir='rtl'] .shero--overlay::before { background: linear-gradient(0deg, rgb(6 22 36 / 70%) 0%, transparent 40%), linear-gradient(270deg, rgb(6 22 36 / 92%) 0%, rgb(6 22 36 / 80%) 45%, rgb(6 22 36 / 25%) 100%); }
+@media (max-width: 767.98px) { .shero--overlay::before { background: rgb(6 22 36 / 82%); } }
 .shero--overlay { isolation: isolate; }
 .shero--overlay .shero__copy { max-inline-size: 720px; }
 .shero--overlay .shero__title { color: #fff; }

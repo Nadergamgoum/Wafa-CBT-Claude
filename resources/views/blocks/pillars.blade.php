@@ -6,7 +6,8 @@
 <section class="section pillars pillars--{{ $layout }} {{ $bg === 'dark' ? 'on-dark' : 'bg-'.$bg }}" id="{{ $bid }}" aria-labelledby="{{ $bid }}-title">
     <div class="container">
         @include('partials.shead', ['b' => $b, 'align' => $layout === 'lines' ? 'start' : 'split'])
-        <ul class="pillars__grid" style="--cols: {{ min(4, max(2, count($items))) }}">
+        <div class="rail pillars__rail" data-rail>
+        <ul class="pillars__grid rail__track" data-rail-track tabindex="0" aria-label="{{ plain_title(t($b['title'] ?? null)) }}" style="--cols: {{ min(4, max(2, count($items))) }}">
             @foreach ($items as $ii => $it)
                 <li class="pillar reveal">
                     @if ($layout === 'numbers')
@@ -19,5 +20,7 @@
                 </li>
             @endforeach
         </ul>
+        <div class="hide-desktop">@include('partials.rail-controls')</div>
+        </div>
     </div>
 </section>

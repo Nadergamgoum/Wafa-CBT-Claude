@@ -24,7 +24,7 @@
                 </ol>
             </div>
         @elseif ($layout === 'cards')
-            <div class="rail rail--grid" data-rail style="--cols: {{ min(4, max(2, $n)) }}; --rail-item: min(78%, 300px)">
+            <div class="rail rail--grid" data-rail style="--cols: {{ $n % 3 === 0 ? 3 : min(4, max(2, $n)) }}; --rail-item: min(78%, 300px)">
                 <ol class="rail__track phase-cards" data-rail-track tabindex="0" aria-label="{{ plain_title(t($b['title'] ?? null)) }}">
                     @foreach ($items as $ii => $it)
                         <li class="phase">
