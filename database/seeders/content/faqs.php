@@ -1,0 +1,37 @@
+<?php
+
+// Topic FAQs (service-specific FAQs live in each service file).
+return [
+    'home' => [
+        [tx('What services does WAFA provide?', 'ما الخدمات التي تقدّمها وفاء؟'), tx('Our core focus is corporate medical insurance and employee health benefits. We also arrange life, auto and property insurance, and provide HR consulting, organizational development, training, business coaching and executive coaching.', 'يتركّز عملنا الأساسي في التأمين الطبي للشركات ومزايا الموظفين الصحية، كما نرتّب التأمين على الحياة والمركبات والممتلكات، ونقدّم الاستشارات في الموارد البشرية والتطوير المؤسسي والتدريب وكوتشينغ الأعمال والكوتشينغ التنفيذي.')],
+        [tx('How can WAFA help with our employee medical insurance?', 'كيف يمكن لوفاء المساعدة في التأمين الصحي لموظفينا؟'), tx('We help you understand your needs, structure the policy, compare insurer options, implement the program and support HR and employees throughout the year — including renewal preparation.', 'نساعدك على فهم احتياجاتك وهيكلة الوثيقة ومقارنة خيارات شركات التأمين وتطبيق البرنامج، وندعم فريق الموارد البشرية والموظفين طوال العام بما في ذلك الاستعداد للتجديد.')],
+        [tx('Can you review our current medical insurance before renewal?', 'هل يمكنكم مراجعة تأميننا الطبي الحالي قبل التجديد؟'), tx('Yes. A review ahead of renewal is one of the most useful starting points. We look at your cover, how it is used and what employees experience.', 'نعم. تُعد مراجعة التغطية قبل التجديد من أفضل نقاط البداية، فنحن ننظر إلى تغطيتك وطريقة استخدامها وتجربة الموظفين معها.')],
+        [tx('Do we need to use all of your services?', 'هل يجب أن نستفيد من جميع خدماتكم؟'), tx('No. Each service can be used on its own. Many clients start with one area, such as medical insurance or training, and add others as needed.', 'لا. يمكن الاستفادة من كل خدمة على حدة، ويبدأ كثير من العملاء بمجال واحد مثل التأمين الطبي أو التدريب ثم يضيفون غيره عند الحاجة.')],
+        [tx('Do you provide services in Arabic and English?', 'هل تقدمون خدماتكم باللغتين العربية والإنجليزية؟'), tx('Our website is available in both languages. Please let us know your preferred language when you contact us.', 'موقعنا متاح باللغتين، ويُرجى إخبارنا باللغة المفضلة لديك عند التواصل معنا.')],
+        [tx('How do we get started?', 'كيف نبدأ؟'), tx('Send us a message through the contact form, call us or reach us on WhatsApp. We will arrange an initial conversation to understand your needs.', 'أرسل إلينا رسالة عبر نموذج التواصل أو اتصل بنا أو راسلنا عبر واتساب، وسنرتّب محادثة أولية لفهم احتياجاتك.')],
+    ],
+    'insurance' => [
+        [tx('What does an insurance broker do for my organization?', 'ما الذي يقدّمه وسيط التأمين لمؤسستي؟'), tx('A broker works on your side: understanding your needs, approaching insurers, comparing proposals, helping you decide and supporting you during the policy period and at claims.', 'يعمل الوسيط لصالحك: يفهم احتياجاتك ويتواصل مع شركات التأمين ويقارن العروض ويساعدك على اتخاذ القرار ويدعمك خلال مدة الوثيقة وعند المطالبات.')],
+        [tx('Can you handle several insurance lines together?', 'هل يمكنكم إدارة عدة أنواع من التأمين معًا؟'), tx('Yes. Many organizations prefer one partner for medical, life, auto and property insurance, which simplifies renewals and communication.', 'نعم. تفضّل مؤسسات كثيرة التعامل مع شريك واحد في التأمين الطبي والتأمين على الحياة والمركبات والممتلكات، ما يبسّط التجديد والتواصل.')],
+        [tx('Will you help us when we need to claim?', 'هل تساعدوننا عند الحاجة إلى المطالبة؟'), tx('Yes. We guide you on the documents needed and follow up with the insurer to help the process run smoothly.', 'نعم. نرشدك إلى المستندات المطلوبة ونتابع مع شركة التأمين لتسهيل الإجراءات.')],
+    ],
+    'people' => [
+        [tx('Where should we start if our HR practices are informal?', 'من أين نبدأ إذا كانت ممارساتنا في الموارد البشرية غير رسمية؟'), tx('Usually with the essentials: an organization structure, job descriptions and core HR policies. We help you prioritize based on your current situation.', 'عادةً بالأساسيات: الهيكل التنظيمي والأوصاف الوظيفية وسياسات الموارد البشرية الأساسية، ونساعدك على ترتيب الأولويات حسب وضعك الحالي.')],
+        [tx('Do you work with both small and large organizations?', 'هل تعملون مع المؤسسات الصغيرة والكبيرة؟'), tx('Yes. The scope and depth of each engagement is adapted to the size and needs of the organization.', 'نعم. يُكيّف نطاق كل مشروع وعمقه وفق حجم المؤسسة واحتياجاتها.')],
+        [tx('Can consulting be combined with training?', 'هل يمكن الجمع بين الاستشارات والتدريب؟'), tx('Yes. Training and coaching are often used to help managers apply new frameworks and lead change.', 'نعم. كثيرًا ما يُستخدم التدريب والكوتشينغ لمساعدة المديرين على تطبيق الأطر الجديدة وقيادة التغيير.')],
+    ],
+    'learning' => [
+        [tx('What is the difference between training and coaching?', 'ما الفرق بين التدريب والكوتشينغ؟'), tx('Training builds specific skills in a group, usually around a defined curriculum. Coaching is a one-to-one or small-group process focused on an individual’s goals, decisions and development.', 'يبني التدريب مهارات محددة لمجموعة من المشاركين وفق منهج واضح، بينما الكوتشينغ عملية فردية أو لمجموعات صغيرة تركّز على أهداف الفرد وقراراته وتطوّره.')],
+        [tx('Can you design a program for our team only?', 'هل يمكنكم تصميم برنامج لفريقنا فقط؟'), tx('Yes. In-house programs are tailored to your objectives, context and participants.', 'نعم. تُصمّم البرامج الداخلية وفق أهدافك وسياقك والمشاركين.')],
+        [tx('How do we register for a program?', 'كيف نسجّل في أحد البرامج؟'), tx('Open the program page and send the registration form, or contact us directly. Our team will confirm availability and next steps.', 'افتح صفحة البرنامج وأرسل نموذج التسجيل، أو تواصل معنا مباشرة، وسيؤكد فريقنا التوفر والخطوات التالية.')],
+    ],
+    'contact' => [
+        [tx('What information should I include in my message?', 'ما المعلومات التي يجب أن أذكرها في رسالتي؟'), tx('A short description of your organization, the service you are interested in and any timing — for example, your medical insurance renewal date — helps us respond faster.', 'وصف مختصر لمؤسستك والخدمة التي تهتم بها وأي مواعيد مهمة، مثل تاريخ تجديد التأمين الطبي، يساعدنا على الرد بشكل أسرع.')],
+        [tx('Can I reach you on WhatsApp?', 'هل يمكنني التواصل معكم عبر واتساب؟'), tx('Yes, when WhatsApp is available you will find the button on this page and at the bottom of your screen on mobile.', 'نعم، عند تفعيل واتساب ستجد الزر في هذه الصفحة وأسفل الشاشة على الجوال.')],
+        [tx('Is there a cost for the first conversation?', 'هل هناك تكلفة للمحادثة الأولى؟'), tx('Please contact us to discuss your needs; we will explain how we can work together before any engagement begins.', 'تواصل معنا لمناقشة احتياجاتك، وسنوضح لك آلية العمل المشترك قبل بدء أي ارتباط.')],
+    ],
+    'general' => [
+        [tx('What makes WAFA’s approach different?', 'ما الذي يميز منهجية وفاء؟'), tx('We combine medical insurance and employee benefits with HR, training and coaching, so the way you protect your people connects with the way you organize and develop them.', 'نجمع بين التأمين الطبي ومزايا الموظفين وبين الموارد البشرية والتدريب والكوتشينغ، لترتبط طريقة حمايتك لموظفيك بطريقة تنظيمهم وتطويرهم.')],
+        [tx('How do we start working with WAFA?', 'كيف نبدأ العمل مع وفاء؟'), tx('Contact us through the website, by phone or on WhatsApp. We will arrange an initial conversation to understand your priorities.', 'تواصل معنا عبر الموقع أو الهاتف أو واتساب، وسنرتّب محادثة أولية لفهم أولوياتك.')],
+    ],
+];

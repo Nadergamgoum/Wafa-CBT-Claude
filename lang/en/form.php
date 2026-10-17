@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'title' => 'Tell us about your organization',
+    'intro' => 'Share a few details and the right specialist will get back to you.',
+    'name' => 'Full name',
+    'company' => 'Company',
+    'email' => 'Work email',
+    'phone' => 'Phone',
+    'service' => 'Area of interest',
+    'service_placeholder' => 'Select a service',
+    'other' => 'Something else',
+    'message' => 'How can we help?',
+    'message_training' => 'Number of participants, preferred dates or questions',
+    'optional' => '(optional)',
+    'consent' => 'I agree that WAFA may use these details to respond to my enquiry.',
+    'consent_short' => 'consent',
+    'privacy_link' => 'Privacy policy',
+    'submit' => 'Send enquiry',
+    'submit_training' => 'Send registration request',
+    'success' => 'Thank you — your message has been received. Our team will contact you shortly.',
+    'error' => 'Something went wrong. Please try again, or contact us directly.',
+    'throttled' => 'Too many attempts. Please wait a few minutes and try again.',
+    'expired' => 'This form has expired. Please refresh the page and try again.',
+];

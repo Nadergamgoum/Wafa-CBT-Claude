@@ -1,0 +1,123 @@
+/* ------------------------------------------------------------------
+   Design tokens. Brand colours can be overridden from the CMS
+   (Settings → Brand); the layout prints them into :root at runtime.
+------------------------------------------------------------------- */
+:root {
+  /* Brand */
+  --brand-primary: #0d3150;      /* deep navy — trust, protection */
+  --brand-secondary: #0f7a76;    /* clinical teal — health, care */
+  --brand-accent: #c79a3e;       /* warm gold — premium details */
+
+  --c-primary: var(--brand-primary);
+  --c-primary-700: color-mix(in oklab, var(--brand-primary) 82%, black);
+  --c-primary-600: color-mix(in oklab, var(--brand-primary) 90%, white);
+  --c-primary-100: color-mix(in oklab, var(--brand-primary) 10%, white);
+  --c-primary-50: color-mix(in oklab, var(--brand-primary) 5%, white);
+  --c-secondary: var(--brand-secondary);
+  --c-secondary-700: color-mix(in oklab, var(--brand-secondary) 78%, black);
+  --c-secondary-300: color-mix(in oklab, var(--brand-secondary) 45%, white);
+  --c-secondary-100: color-mix(in oklab, var(--brand-secondary) 13%, white);
+  --c-secondary-50: color-mix(in oklab, var(--brand-secondary) 6%, white);
+  --c-accent: var(--brand-accent);
+  --c-accent-700: color-mix(in oklab, var(--brand-accent) 70%, black);
+  --c-accent-100: color-mix(in oklab, var(--brand-accent) 16%, white);
+
+  /* Surfaces */
+  --c-dark: color-mix(in oklab, var(--brand-primary) 70%, #020a12);
+  --c-dark-2: color-mix(in oklab, var(--brand-primary) 85%, #020a12);
+  --c-ivory: #f6f3ec;
+  --c-mist: #eef3f3;
+  --c-white: #ffffff;
+
+  /* Text */
+  --c-ink: #0e1f2d;
+  --c-ink-2: #2b3c4a;
+  --c-muted: #4a5b69;
+  --c-on-dark: #f3f6f8;
+  --c-on-dark-muted: #b7c4ce;
+
+  /* Neutral scale */
+  --n-50: #f7f9fa;
+  --n-100: #eef2f4;
+  --n-200: #dfe5e9;
+  --n-300: #c7d0d6;
+  --n-400: #9aa7b1;
+  --n-500: #6b7a86;
+  --n-600: #4a5b69;
+  --n-700: #33424e;
+  --n-800: #1f2c37;
+  --n-900: #0e1f2d;
+
+  /* States */
+  --c-success: #17734a;
+  --c-success-bg: #e6f4ec;
+  --c-error: #b42318;
+  --c-error-bg: #fdecea;
+  --c-warning: #8a5a00;
+  --c-warning-bg: #fff4dc;
+
+  /* Accent used by an individual service page (set via data-accent) */
+  --svc: var(--c-secondary);
+  --svc-soft: var(--c-secondary-50);
+  --svc-tint: var(--c-secondary-100);
+
+  /* Typography */
+  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-display: 'Fraunces Variable', 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+
+  --fs-hero: clamp(2.25rem, 1.45rem + 3.3vw, 4.4rem);
+  --fs-h1: clamp(2.1rem, 1.5rem + 2.4vw, 3.6rem);
+  --fs-h2: clamp(1.75rem, 1.35rem + 1.6vw, 2.85rem);
+  --fs-h3: clamp(1.25rem, 1.12rem + 0.55vw, 1.6rem);
+  --fs-h4: clamp(1.125rem, 1.07rem + 0.25vw, 1.3rem);
+  --fs-lead: clamp(1.125rem, 1.06rem + 0.32vw, 1.35rem);
+  --fs-body: clamp(1rem, 0.965rem + 0.18vw, 1.125rem);
+  --fs-small: 0.9375rem;
+  --fs-eyebrow: 0.875rem;
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-body: 1.65;
+
+  /* Space & shape */
+  --gutter: clamp(16px, 4vw, 40px);
+  --container: 1280px;
+  --container-narrow: 860px;
+  --section: clamp(56px, 6.5vw, 112px);
+  --section-sm: clamp(40px, 4.5vw, 72px);
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --shadow-sm: 0 1px 2px rgb(14 31 45 / 6%), 0 2px 8px rgb(14 31 45 / 5%);
+  --shadow: 0 2px 6px rgb(14 31 45 / 6%), 0 12px 32px rgb(14 31 45 / 9%);
+  --shadow-lg: 0 8px 24px rgb(14 31 45 / 10%), 0 30px 70px rgb(14 31 45 / 16%);
+  --ease: cubic-bezier(.22, .61, .36, 1);
+
+  --header-h: 76px;
+  --quickbar-h: 0px;
+}
+
+@media (max-width: 1023.98px) {
+  :root { --header-h: 64px; }
+}
+@media (max-width: 767.98px) {
+  :root { --quickbar-h: 64px; }
+}
+
+[dir='rtl'] {
+  --font-sans: var(--font-arabic);
+  --font-display: var(--font-arabic);
+  --lh-body: 1.8;
+  --lh-tight: 1.3;
+  --lh-snug: 1.45;
+}
+
+/* Service accents */
+[data-accent='teal'] { --svc: var(--c-secondary); --svc-soft: var(--c-secondary-50); --svc-tint: var(--c-secondary-100); }
+[data-accent='navy'] { --svc: var(--c-primary); --svc-soft: var(--c-primary-50); --svc-tint: var(--c-primary-100); }
+[data-accent='sky'] { --svc: #1f6fa8; --svc-soft: #eef5fb; --svc-tint: #dcebf6; }
+[data-accent='amber'] { --svc: #a8661a; --svc-soft: #fdf6ec; --svc-tint: #f7e6cc; }
+[data-accent='sage'] { --svc: #4c7a5b; --svc-soft: #f1f6f2; --svc-tint: #dde9e0; }
+[data-accent='plum'] { --svc: #6b4a7a; --svc-soft: #f6f1f8; --svc-tint: #e8dcee; }
+[data-accent='gold'] { --svc: var(--c-accent-700); --svc-soft: #fbf7ee; --svc-tint: var(--c-accent-100); }
