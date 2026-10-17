@@ -15,33 +15,18 @@ echo "› Building front-end assets"
 echo "› Staging application"
 APP=$STAGE/wafa-app
 mkdir -p "$APP"
-rsync -a --exclude-from=- "$ROOT/" "$APP/" <<'EXCL'
-.git/
-.github/
-node_modules/
-vendor/
-dist/
-public/
-tests/
-.env
-.env.backup
-.phpunit.result.cache
-storage/logs/*
-storage/framework/cache/data/*
-storage/framework/sessions/*
-storage/framework/views/*
-storage/app/livewire-tmp/*
-database/*.sqlite
-scripts/
-*.log
-EXCL
-(cd "$APP" && COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-interaction --quiet --no-scripts && composer dump-autoload --optimize --no-dev --quiet)
+EXCLUDES=(--exclude='.git/' --exclude='.github/' --exclude='node_modules/' --exclude='vendor/' --exclude='dist/' --exclude='public/' --exclude='tests/' --exclude='.env' --exclude='.env.backup' --exclude='.phpunit.result.cache' --exclude='storage/logs/*' --exclude='storage/framework/cache/data/*' --exclude='storage/framework/sessions/*' --exclude='storage/framework/views/*' --exclude='storage/app/livewire-tmp/*' --exclude='database/*.sqlite' --exclude='scripts/' --exclude='docs/' --exclude='deploy/' --exclude='.env.install' --exclude='*.log')
+rsync -a "${EXCLUDES[@]}" "$ROOT/" "$APP/"
+(cd "$APP" && rm -rf vendor && COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --prefer-dist --no-interaction --quiet --no-scripts)
+# Strip VCS metadata and package test suites, then build the optimized autoloader.
+find "$APP/vendor" -type d \( -name .git -o -name .github \) -prune -exec rm -rf {} +
+find "$APP/vendor" -mindepth 3 -maxdepth 3 -type d \( -name tests -o -name Tests -o -name docs \) -prune -exec rm -rf {} +
+(cd "$APP" && COMPOSER_ALLOW_SUPERUSER=1 composer dump-autoload --optimize --no-dev --no-scripts --quiet)
+rm -rf "$APP/public" && mkdir -p "$APP/public"
 cp "$ROOT/deploy/wafa-app.htaccess" "$APP/.htaccess"
 cp "$ROOT/.env.example" "$APP/.env.example"
 mkdir -p "$APP/storage/logs" "$APP/storage/framework/"{cache/data,sessions,views} "$APP/storage/app/private" "$APP/bootstrap/cache"
 rm -f "$APP/bootstrap/cache/"*.php
-# Laravel expects ./public for some commands; the real web root is APP_PUBLIC_PATH.
-mkdir -p "$APP/public"
 
 echo "› Staging public_html"
 PUB=$STAGE/public_html
